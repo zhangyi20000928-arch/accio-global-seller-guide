@@ -692,6 +692,13 @@ function switchLang(lang) {
     var src = lang === 'zh-Hant' ? img.getAttribute('data-img-zh') : img.getAttribute('data-img-en');
     if (src) img.setAttribute('src', src);
   });
+  document.querySelectorAll('.gif-showcase.has-real-gif.playing').forEach(function(container) {
+    var newSrc = lang === 'zh-Hant' ? container.dataset.gifZh : container.dataset.gifEn;
+    if (newSrc) {
+      var img = container.querySelector('img.gif-real');
+      if (img) { img.src = ''; setTimeout(function() { img.src = newSrc; }, 50); }
+    }
+  });
   var langLabel = document.getElementById('langLabel');
   if (langLabel) { langLabel.textContent = lang === 'en' ? '\u7e41\u4e2d' : 'EN'; }
   document.documentElement.lang = lang === 'zh-Hant' ? 'zh-Hant' : 'en';
