@@ -693,11 +693,9 @@ function switchLang(lang) {
     if (src) img.setAttribute('src', src);
   });
   document.querySelectorAll('.gif-showcase.has-real-gif.playing').forEach(function(container) {
-    var newSrc = lang === 'zh-Hant' ? container.dataset.gifZh : container.dataset.gifEn;
-    if (newSrc) {
-      var img = container.querySelector('img.gif-real');
-      if (img) { img.src = ''; setTimeout(function() { img.src = newSrc; }, 50); }
-    }
+    container.classList.remove('playing', 'gif-loaded');
+    var img = container.querySelector('img.gif-real');
+    if (img) img.remove();
   });
   var langLabel = document.getElementById('langLabel');
   if (langLabel) { langLabel.textContent = lang === 'en' ? '\u7e41\u4e2d' : 'EN'; }
