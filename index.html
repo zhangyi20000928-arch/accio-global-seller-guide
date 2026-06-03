@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#ECFDF5" />
+<title>Accio Work × Global Seller Agent — User Guide Playbook</title>
+<meta name="description" content="Install Accio Work and the Global Seller Agent plugin in 3 minutes. Your AI e-commerce agent for Alibaba.com — built for GGS sellers." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          mint: {
+            50:'#ECFDF5',100:'#D1FAE5',200:'#A7F3D0',300:'#6EE7B7',
+            400:'#34D399',500:'#14B8A6',600:'#0D9488',700:'#0F766E',
+            800:'#115E59',900:'#134E4A',
+          },
+          navy:{DEFAULT:'#0F172A',soft:'#1E293B',mid:'#334155'},
+          slate2:{400:'#94A3B8',500:'#64748B',600:'#475569'},
+          paper:'#FAFAFA',
+        },
+        fontFamily: {
+          display:['Manrope','Noto Sans TC','system-ui','sans-serif'],
+          sans:['Manrope','Noto Sans TC','system-ui','sans-serif'],
+          mono:['JetBrains Mono','ui-monospace','monospace'],
+        },
+        boxShadow: {
+          'soft':'0 4px 24px -8px rgba(15,23,42,0.08),0 2px 8px -2px rgba(15,23,42,0.04)',
+          'lift':'0 24px 48px -16px rgba(15,23,42,0.18),0 8px 16px -4px rgba(15,23,42,0.08)',
+          'mint':'0 16px 40px -12px rgba(20,184,166,0.35)',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  :root{--mint-50:#ECFDF5;--mint-100:#D1FAE5;--mint-300:#6EE7B7;--mint-500:#14B8A6;--mint-600:#0D9488;--mint-700:#0F766E;--navy:#0F172A;--navy-soft:#1E293B;--slate-500:#64748B;--slate-400:#94A3B8;--paper:#FAFAFA;}
+  html{scroll-behavior:smooth;scroll-padding-top:96px;}
+  *{-webkit-tap-highlight-color:transparent;}
+  #langToggle > *{pointer-events:none;}
+  body{font-family:'Manrope','Noto Sans TC',system-ui,sans-serif;background:var(--paper);color:var(--navy);-webkit-font-smoothing:antialiased;}
+  .hero-grid{background-image:linear-gradient(rgba(20,184,166,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(20,184,166,0.05) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 70% 60% at 30% 50%,#000 30%,transparent 80%);}
+  .sidebar{position:sticky;top:96px;height:calc(100vh - 112px);overflow-y:auto;scrollbar-width:none;}
+  .sidebar::-webkit-scrollbar{display:none;}
+  .sidebar-link{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:12px;font-size:14px;font-weight:500;color:var(--slate-500);transition:all 0.2s ease;text-decoration:none;border-left:3px solid transparent;margin-bottom:2px;}
+  .sidebar-link:hover{background:var(--mint-50);color:var(--mint-700);}
+  .sidebar-link.active{background:var(--mint-50);color:var(--navy);font-weight:700;border-left-color:var(--mint-500);}
+  .sidebar-link .num{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--mint-600),var(--mint-400));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:var(--navy);flex-shrink:0;font-family:'Manrope',sans-serif;transition:all 0.2s ease;}
+  .sidebar-link.active .num,.sidebar-link:hover .num{background:linear-gradient(135deg,var(--mint-700),var(--mint-500));color:var(--navy);}
+  .sidebar-link[data-section^="section-2-step"]{padding-left:24px;font-size:13px;}
+  .sidebar-link[data-section^="section-2-step"] .num{width:24px;height:24px;font-size:11px;background:linear-gradient(135deg,var(--mint-600),var(--mint-400));color:var(--navy);}
+  .section-num{flex-shrink:0;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--mint-600),var(--mint-400));color:var(--navy);font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;box-shadow:0 8px 24px -8px rgba(20,184,166,0.5);}
+  .big-step{position:relative;background:#fff;border:1px solid rgba(15,23,42,0.06);border-radius:24px;padding:28px;transition:all 0.3s ease;}
+  .big-step:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 12px 36px -12px rgba(20,184,166,0.18);}
+  .big-step-label{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--mint-50);color:var(--mint-700);font-size:11px;font-weight:800;letter-spacing:0.08em;font-family:'Manrope',sans-serif;}
+  .gif-showcase{position:relative;border-radius:16px;overflow:hidden;border:2px solid rgba(20,184,166,0.18);background:linear-gradient(135deg,rgba(20,184,166,0.06),rgba(20,184,166,0.02));min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;transition:all 0.3s ease;cursor:pointer;}
+  .gif-showcase:hover{border-color:rgba(20,184,166,0.4);background:linear-gradient(135deg,rgba(20,184,166,0.1),rgba(20,184,166,0.04));}
+  .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(20,184,166,0.2);transition:transform 0.2s ease;margin-bottom:14px;}
+  .gif-showcase:hover .gif-play-btn{transform:scale(1.08);}
+  .gif-play-btn svg{width:22px;height:22px;fill:var(--mint-700);margin-left:3px;}
+  .gif-label{font-size:12px;font-weight:600;color:var(--mint-700);text-align:center;}
+  .gif-caption{margin-top:4px;font-size:11px;color:var(--slate-500);text-align:center;font-family:'JetBrains Mono',monospace;}
+  .gif-showcase.has-real-gif{min-height:0!important;padding:0;overflow:hidden;}
+  .gif-showcase.has-real-gif .gif-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(20,184,166,0.08),rgba(20,184,166,0.02));padding:24px;z-index:2;}
+  .gif-showcase.has-real-gif img.gif-real{width:100%;height:auto;display:none;background:#fff;z-index:1;}
+  .gif-showcase.has-real-gif.playing img.gif-real{display:block;}
+  .gif-showcase.has-real-gif.playing .gif-overlay{display:none;}
+  .gif-replay-btn{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);border:1px solid rgba(20,184,166,0.25);display:none;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:all 0.2s ease;box-shadow:0 4px 12px rgba(15,23,42,0.12);}
+  .gif-replay-btn:hover{background:#fff;transform:rotate(-45deg);}
+  .gif-replay-btn svg{width:16px;height:16px;color:var(--mint-700);}
+  .gif-showcase.has-real-gif.playing .gif-replay-btn{display:flex;}
+  .gif-showcase.placeholder-only{cursor:default;border-style:dashed;border-color:rgba(20,184,166,0.25);}
+  .gif-showcase.placeholder-only:hover{border-color:rgba(20,184,166,0.25);background:linear-gradient(135deg,rgba(20,184,166,0.06),rgba(20,184,166,0.02));}
+  .gif-showcase.placeholder-only .gif-play-btn{opacity:0.55;}
+  .gif-showcase.placeholder-only:hover .gif-play-btn{transform:none;}
+  .gif-showcase.has-real-gif .gif-placeholder{height:140px;background:linear-gradient(135deg,rgba(20,184,166,0.08),rgba(20,184,166,0.03));display:flex;align-items:center;justify-content:center;}
+  .gif-showcase.has-real-gif.playing .gif-placeholder{display:none;}
+  .prompt-category{margin-bottom:20px;}
+  .prompt-category:last-child{margin-bottom:0;}
+  .prompt-category-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:12px 16px;background:linear-gradient(135deg,var(--mint-50),rgba(20,184,166,0.03));border-left:4px solid var(--mint-500);border-radius:8px;}
+  .prompt-category-icon{font-size:24px;flex-shrink:0;}
+  .prompt-category-title{font-weight:800;font-size:14px;color:var(--navy);flex:1;}
+  .prompt-category-tag{font-size:11px;color:var(--slate-400);font-weight:600;padding:3px 8px;background:white;border-radius:12px;border:1px solid var(--slate-200);}
+  .prompt-list{display:grid;gap:8px;padding-left:20px;}
+  .prompt-item{position:relative;padding:12px 16px;background:white;border:1px solid rgba(15,23,42,0.06);border-radius:10px;font-size:13px;line-height:1.6;color:var(--slate-600);transition:all 0.25s cubic-bezier(0.16,1,0.3,1);cursor:default;}
+  .prompt-item::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:0;background:linear-gradient(180deg,var(--mint-600),var(--mint-400));border-radius:2px;transition:height 0.25s ease;}
+  .prompt-item:hover{border-color:var(--mint-300);box-shadow:0 4px 16px -4px rgba(20,184,166,0.2);transform:translateX(4px);}
+  .prompt-item:hover::before{height:60%;}
+  .faq-item{background:linear-gradient(135deg,#ffffff,rgba(20,184,166,0.02));border:1px solid rgba(15,23,42,0.08);border-radius:16px;margin-bottom:12px;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);overflow:hidden;}
+  .faq-item:hover{box-shadow:0 6px 24px -6px rgba(20,184,166,0.18);border-color:rgba(20,184,166,0.2);}
+  .faq-item.open{background:linear-gradient(135deg,rgba(20,184,166,0.04),rgba(20,184,166,0.01));border-color:rgba(20,184,166,0.35);box-shadow:0 8px 32px -8px rgba(20,184,166,0.22);}
+  .faq-question{width:100%;padding:20px 24px;display:flex;align-items:center;gap:14px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:inherit;transition:background 0.25s ease;}
+  .faq-question:hover{background:rgba(20,184,166,0.04);}
+  .faq-item.open .faq-question{background:linear-gradient(135deg,rgba(20,184,166,0.06),rgba(20,184,166,0.02));border-bottom:1px solid rgba(20,184,166,0.12);}
+  .faq-question:focus{outline:none;}
+  .faq-num{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--mint-600),var(--mint-400));color:var(--navy);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;box-shadow:0 2px 8px -2px rgba(20,184,166,0.3);}
+  .faq-title{flex:1;font-weight:700;font-size:15px;color:var(--navy);line-height:1.5;}
+  .faq-chevron{flex-shrink:0;width:20px;height:20px;color:var(--slate-400);transition:transform 0.3s ease;}
+  .faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--mint-700);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1);}
+  .faq-item.open .faq-answer{max-height:5000px;}
+  .faq-answer-inner{padding:20px 24px 24px 70px;font-size:14px;line-height:1.8;color:var(--slate-600);background:rgba(255,255,255,0.6);}
+  .faq-answer-inner strong{color:var(--navy);font-weight:700;}
+  .faq-answer-inner ul{margin-top:8px;}
+  .faq-answer-inner li{position:relative;padding-left:18px;margin-bottom:6px;}
+  .faq-answer-inner li::before{content:'\2192';position:absolute;left:0;color:var(--mint-500);font-weight:700;}
+  .faq-answer-inner img{display:block;width:100%;max-width:700px;height:auto;margin-top:12px;border-radius:10px;border:2px solid rgba(15,23,42,0.06);box-shadow:0 4px 16px -4px rgba(15,23,42,0.1);transition:all 0.3s ease;}
+  .faq-answer-inner img:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 8px 24px -6px rgba(20,184,166,0.2);transform:scale(1.01);}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:var(--mint-50);color:var(--mint-700);font-size:12px;font-weight:700;border:1px solid rgba(20,184,166,0.2);}
+  .highlight-box{background:linear-gradient(135deg,var(--mint-50),rgba(255,255,255,0.5));border:1px solid rgba(20,184,166,0.2);border-radius:14px;padding:16px 18px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
+  .warning-box{background:linear-gradient(135deg,#FFF7ED,rgba(255,255,255,0.5));border:1px solid rgba(251,146,60,0.25);border-radius:14px;padding:16px 18px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
+  .tip-card{background:#fff;border:1px solid rgba(15,23,42,0.06);border-radius:20px;padding:24px;transition:all 0.3s ease;position:relative;overflow:hidden;}
+  .tip-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--mint-600),var(--mint-400));opacity:0;transition:opacity 0.3s ease;}
+  .tip-card:hover{transform:translateY(-4px);border-color:rgba(20,184,166,0.3);box-shadow:0 16px 36px -12px rgba(20,184,166,0.18);}
+  .tip-card:hover::before{opacity:1;}
+  .tip-icon{width:44px;height:44px;border-radius:12px;background:var(--mint-50);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:14px;background:linear-gradient(135deg,var(--mint-600),var(--mint-500));color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.25s ease;box-shadow:0 8px 24px -8px rgba(20,184,166,0.45);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(20,184,166,0.55);}
+  .btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:12px 18px;border-radius:12px;background:rgba(255,255,255,0.7);color:var(--navy-soft);font-weight:600;font-size:14px;text-decoration:none;border:1px solid rgba(15,23,42,0.08);transition:all 0.2s ease;}
+  .btn-ghost:hover{background:#fff;border-color:rgba(20,184,166,0.3);color:var(--mint-700);}
+  .lang-en-only{display:block;}
+  .lang-zh-only{display:none;}
+  html[lang="zh-Hant"] .lang-en-only{display:none;}
+  html[lang="zh-Hant"] .lang-zh-only{display:block;}
+  @media(max-width:1024px){.sidebar{display:none;}}
+  @media(max-width:640px){.big-step{padding:20px;}.faq-answer-inner{padding-left:24px;}}
+</style>
+</head>
+<body>
+<header class="sticky top-0 z-50 bg-white/85 backdrop-blur-lg border-b border-mint-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+    <a href="#top" class="flex items-center gap-3 group">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-mint-600 to-mint-400 flex items-center justify-center shadow-mint group-hover:scale-105 transition-transform">
+        <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M12 3 L4 21 L20 21 Z" fill="#fff"/></svg>
+      </div>
+      <div class="flex flex-col leading-tight">
+        <span class="font-display font-extrabold text-navy text-[15px] tracking-tight" data-i18n="nav.brand">Accio Work x Global Seller Agent</span>
+        <span class="text-[10px] font-bold text-mint-600 tracking-widest" data-i18n="nav.tagline">USER GUIDE PLAYBOOK</span>
+      </div>
+    </a>
+    <div class="flex items-center gap-2">
+      <button id="langToggle" class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-mint-50 border border-mint-200 text-xs font-bold text-mint-700 hover:bg-mint-100 transition" style="cursor:pointer">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span id="langLabel">繁中</span>
+      </button>
+    </div>
+  </div>
+</header>
+<section id="top" class="relative overflow-hidden">
+  <div class="absolute inset-0 hero-grid"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-mint-50/40 via-transparent to-transparent"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div class="lg:col-span-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-mint-200 mb-5 shadow-soft">
+          <span class="w-2 h-2 rounded-full bg-mint-500 animate-pulse"></span>
+          <span class="text-xs font-bold text-mint-700 tracking-wide" data-i18n="hero.badge">FOR ALIBABA.COM SELLERS</span>
+        </div>
+        <h1 class="font-display font-extrabold text-navy leading-[1.1] tracking-tight text-4xl sm:text-5xl lg:text-[56px]">
+          <span data-i18n="hero.title.l1">Install once,</span><br/>
+          <span data-i18n="hero.title.l2">use forever.</span><br/>
+          <span class="bg-gradient-to-r from-mint-700 via-mint-500 to-mint-400 bg-clip-text text-transparent" data-i18n="hero.title.l3">Everyone gets their own AI e-commerce agent.</span>
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-slate2-500 leading-relaxed max-w-xl" data-i18n="hero.subtitle">In 3 minutes, you'll have a personal AI agent that knows your Alibaba.com store inside out -- and works for you 24/7 on listings, product selection, buyer communication, and store operations.</p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v14M5 10l7 7 7-7M5 21h14"/></svg>
+            <span data-i18n="hero.cta.primary">Download Accio Work</span>
+          </a>
+          <a href="#section-2" class="btn-ghost" data-i18n="hero.cta.secondary">I already have it -- set up the plugin</a>
+        </div>
+        <div class="mt-10 grid grid-cols-3 gap-4 max-w-md">
+          <div><div class="text-2xl sm:text-3xl font-display font-extrabold text-navy">3 <span class="text-mint-500">min</span></div><div class="text-xs text-slate2-500 mt-1" data-i18n="hero.stat1">to set up</div></div>
+          <div><div class="text-2xl sm:text-3xl font-display font-extrabold text-navy">20<span class="text-mint-500">+</span></div><div class="text-xs text-slate2-500 mt-1" data-i18n="hero.stat2">pre-loaded skills</div></div>
+          <div><div class="text-2xl sm:text-3xl font-display font-extrabold text-navy">24/<span class="text-mint-500">7</span></div><div class="text-xs text-slate2-500 mt-1" data-i18n="hero.stat3">always on duty</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
+  <div class="flex gap-10 lg:gap-14">
+    <aside class="hidden lg:block w-60 flex-shrink-0">
+      <nav class="sidebar pt-2">
+        <div class="text-[10px] font-bold text-slate2-400 tracking-widest pl-3 mb-3" data-i18n="nav.contents">CONTENTS</div>
+        <a href="#section-1" class="sidebar-link" data-section="section-1"><span class="num">01</span><span data-i18n="nav.s1">What is Accio Work?</span></a>
+        <a href="#section-2" class="sidebar-link" data-section="section-2"><span class="num">02</span><span data-i18n="nav.s2">Install the plugin</span></a>
+        <a href="#section-2-step1" class="sidebar-link" data-section="section-2-step1"><span class="num">02.1</span><span data-i18n="nav.s2.1">Install &amp; authorize</span></a>
+        <a href="#section-2-step2" class="sidebar-link" data-section="section-2-step2"><span class="num">02.2</span><span data-i18n="nav.s2.2">Start chatting</span></a>
+        <a href="#section-2-step3" class="sidebar-link" data-section="section-2-step3"><span class="num">02.3</span><span data-i18n="nav.s2.3">Use in other agents</span></a>
+        <a href="#section-3" class="sidebar-link" data-section="section-3"><span class="num">03</span><span data-i18n="nav.s3">Troubleshooting</span></a>
+        <a href="#section-4" class="sidebar-link" data-section="section-4"><span class="num">04</span><span data-i18n="nav.s4">Merchant FAQ</span></a>
+        <a href="#section-5" class="sidebar-link" data-section="section-5"><span class="num">05</span><span data-i18n="nav.s5">Pro tips</span></a>
+        <a href="#cta-final" class="sidebar-link" data-section="cta-final"><span class="num" style="background:linear-gradient(135deg,#FF7A00,#FFB877);color:#fff;">&#8594;</span><span data-i18n="nav.cta">Get started</span></a>
+      </nav>
+    </aside>
+    <div class="flex-1 min-w-0 max-w-3xl">
+
+      <section id="section-1" class="scroll-mt-24 mb-16">
+        <div class="flex items-center gap-3 mb-5"><div class="section-num">01</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s1.title">What is Accio Work?</h2></div>
+        <p class="text-[15px] sm:text-base text-slate2-500 leading-relaxed mb-6 max-w-2xl" data-i18n="s1.lead">Accio Work is your <strong class="text-navy">desktop AI workstation for cross-border business</strong>. Imagine a team of AI agents sitting on your computer, ready to handle market research, listings, marketing, customer follow-ups, and store operations -- all in plain language, no coding required.</p>
+        <div class="highlight-box">
+          <div class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">&#x1F517;</span>
+            <div>
+              <p class="font-bold text-navy mb-1" data-i18n="s1.install.title">How to install Accio Work</p>
+              <p data-i18n="s1.install.body"><strong>Download:</strong> <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a><br/>Pick your OS (macOS or Windows), download, install, sign up with your email, verify with the code in your inbox -- that's it. You can change the interface language anytime under <strong>Avatar &#8594; Language</strong>.</p>
+              <p class="mt-2" data-i18n="s1.install.note">&#9989; <strong>Already have Accio Work?</strong> Skip ahead to Section 2 to install the Global Seller Agent.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-2" class="scroll-mt-24 mb-16">
+        <div class="flex items-center gap-3 mb-5"><div class="section-num">02</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s2.title">Install the Global Seller Agent Plugin</h2></div>
+        <p class="text-[15px] sm:text-base text-slate2-500 leading-relaxed mb-5 max-w-2xl" data-i18n="s2.lead">The <strong class="text-navy">Global Seller Agent</strong> is the agent on Accio Work made for Alibaba.com sellers. It connects to your store, knows your products and buyers, and uses <strong class="text-navy">20+ pre-loaded professional skills</strong> -- so you don't need to configure anything yourself.</p>
+        <div class="highlight-box mb-8"><div class="flex items-start gap-3"><span class="text-xl flex-shrink-0">&#x1F4A1;</span><p data-i18n="s2.rename"><strong>A familiar name with a new home.</strong> If you've used <strong>Smart Assistant</strong> on Alibaba.com before, you'll feel right at home -- it's been renamed to <strong>Global Seller Agent</strong> inside Accio Work, with even more powerful capabilities.</p></div></div>
+
+        <div id="section-2-step1" class="big-step mb-6 scroll-mt-24">
+          <div class="flex items-center gap-2 mb-4"><span class="big-step-label" data-i18n="s2.step1.label">STEP 1</span><h3 class="font-display font-extrabold text-lg text-navy" data-i18n="s2.step1.title">Install the plugin &amp; authorize your account</h3></div>
+          <p class="text-sm text-slate2-500 leading-relaxed mb-5" data-i18n="s2.step1.body">On the Accio Work home page, click <strong class="text-navy">New Message</strong> &#8594; select <strong class="text-navy">Global Seller Agent</strong>. If you haven't authorized yet, an authorization prompt will appear &#8594; click <strong class="text-navy">"Go to bind"</strong> to be redirected to the authorization page &#8594; log in with your Alibaba.com account to complete authorization.</p>
+          <div class="gif-showcase has-real-gif mb-5" data-gif-en="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780390136320-58fff343-c282-422b-9cb2-1cc1eeeb5401.gif" data-gif-zh="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780306128986-584b07a6-95c7-47e2-9939-03d33bf324bc.gif" onclick="playGif(this)">
+            <div class="gif-overlay"><div class="gif-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><div class="gif-label" data-i18n="s2.step1.gif">&#8593; Install &amp; authorize walkthrough</div><div class="gif-caption" data-i18n="s2.step1.gifHint">Click to play</div></div>
+            <div class="gif-placeholder"></div>
+            <button class="gif-replay-btn" onclick="event.stopPropagation(); replayGif(this.parentElement)" aria-label="Replay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg></button>
+          </div>
+          <div class="space-y-3">
+            <div class="highlight-box"><p data-i18n="s2.step1.security">&#x1F512; <strong>Your data stays safe.</strong> Authorization only enables the agent to access your store on your behalf -- your data continues to live where it always has.</p></div>
+            <div class="highlight-box"><p data-i18n="s2.step1.highlight">&#x1F381; <strong>What's included:</strong> &#10003; 20+ professional skills pre-loaded -- selection, listing, optimization, reception, diagnostics. &#10003; All ready to use, no configuration needed.</p></div>
+          </div>
+        </div>
+
+        <div id="section-2-step2" class="big-step mb-6 scroll-mt-24">
+          <div class="flex items-center gap-2 mb-4"><span class="big-step-label" data-i18n="s2.step2.label">STEP 2</span><h3 class="font-display font-extrabold text-lg text-navy" data-i18n="s2.step2.title">Start chatting</h3></div>
+          <p class="text-sm text-slate2-500 leading-relaxed mb-5" data-i18n="s2.step2.body">Head back to chat and start a conversation with <strong class="text-navy">Global Seller Agent</strong>. Just type what you need in your own words. If you're using Alibaba.com capabilities with a non-official agent, make sure the <strong class="text-navy">Global Seller Agent plugin is turned on</strong> in the toolbar -- the plugin must be active for the agent to access your Alibaba.com data and skills.</p>
+          <div class="gif-showcase has-real-gif mb-5" data-gif-en="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780390501175-1f9d4980-3468-4fb0-a1e0-06951e6a9756.gif" data-gif-zh="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780306172671-b0760ad5-7359-46db-a3d2-93ae38668cad.gif" onclick="playGif(this)">
+            <div class="gif-overlay"><div class="gif-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><div class="gif-label" data-i18n="s2.step2.gif">&#8593; Chat interface in action</div><div class="gif-caption" data-i18n="s2.step2.gifHint">Click to play</div></div>
+            <div class="gif-placeholder"></div>
+            <button class="gif-replay-btn" onclick="event.stopPropagation(); replayGif(this.parentElement)" aria-label="Replay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg></button>
+          </div>
+          <div class="space-y-3">
+            <div class="warning-box"><p data-i18n="s2.step2.warning">&#9888;&#65039; <strong>The number of active plugins affects guided prompts.</strong> When only the Global Seller Agent plugin is enabled, the chat will display Alibaba.com-specific guided prompts (e.g. Bulk product upload, Product optimization). If multiple plugins are enabled at the same time, these prompts will not appear. For the best guided experience, keep only the Global Seller Agent plugin turned on.</p></div>
+            <div class="highlight-box"><p data-i18n="s2.step2.tip">&#x1F4A1; <strong>Tip:</strong> Just click the suggested prompts under the chat box -- the agent will automatically use the right skill for you. No need to memorize anything.</p></div>
+          </div>
+        </div>
+
+        <div id="section-2-step3" class="big-step mb-6 scroll-mt-24">
+          <div class="flex items-center gap-2 mb-4"><span class="big-step-label" data-i18n="s2.step3.label">STEP 3</span><h3 class="font-display font-extrabold text-lg text-navy" data-i18n="s2.step3.title">Enable Alibaba.com capabilities in other agents</h3></div>
+          <p class="text-sm text-slate2-500 leading-relaxed mb-5" data-i18n="s2.step3.body">The Global Seller Agent plugin is not exclusive to the official agent. Other agents in Accio Work -- including custom-built agents -- may also be bound to this plugin to access Alibaba.com capabilities such as store data queries, product analysis, and buyer inquiry handling.</p>
+          <p class="text-sm text-slate2-500 leading-relaxed mb-5" data-i18n="s2.step3.howto"><strong class="text-navy">How to bind:</strong> Go to <strong class="text-navy">Plugins</strong> &#8594; open the Global Seller Agent detail page &#8594; find the <strong class="text-navy">Applied to Agents</strong> section &#8594; click <strong class="text-navy">Manage</strong> to add or remove agents.</p>
+          <div class="gif-showcase has-real-gif mb-5" data-gif-en="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780390855590-4c6daf8a-e57d-450d-aa76-5ccdafa10eb6.gif" data-gif-zh="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780300674944-47e65efd-a4d7-4b78-918a-1792a0251445.gif" onclick="playGif(this)">
+            <div class="gif-overlay"><div class="gif-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><div class="gif-label" data-i18n="s2.step3.gif">&#8593; Binding plugin to other agents</div><div class="gif-caption" data-i18n="s2.step3.gifHint">Click to play</div></div>
+            <div class="gif-placeholder"></div>
+            <button class="gif-replay-btn" onclick="event.stopPropagation(); replayGif(this.parentElement)" aria-label="Replay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg></button>
+          </div>
+          <div class="highlight-box"><p data-i18n="s2.step3.example">&#x1F6D2; <strong>Example use case:</strong> A merchant builds a custom agent focused on operations reviews. By adding the Global Seller Agent plugin, that agent can pull live store data from Alibaba.com and generate a weekly performance summary -- all within the same Accio Work workspace.</p></div>
+        </div>
+
+        <div class="mb-6">
+          <p class="text-sm text-slate2-500 mb-5" data-i18n="s2.prompts.intro">Not sure where to start? Try these -- just copy, paste, and go!</p>
+          <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F50D;</span><span class="prompt-category-title" data-i18n="s2.cat1.title">Find a winning product</span><span class="prompt-category-tag" data-i18n="s2.cat1.tag">(Market &amp; Selection)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p1">"What's selling well in the men's clothing category on Alibaba.com right now? Where are the buyers from?"</div><div class="prompt-item" data-i18n="s2.p2">"Analyze why leather motorcycle jackets are trending -- what 3 selling points should I highlight?"</div><div class="prompt-item" data-i18n="s2.p3">"Find blue ocean opportunities in [your category] for buyers in [target market]."</div><div class="prompt-item" data-i18n="s2.p4">"Mine top-selling products on Amazon for [keyword] and tell me which I can source competitively."</div></div></div>
+          <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4E6;</span><span class="prompt-category-title" data-i18n="s2.cat2.title">Publish &amp; optimize products</span><span class="prompt-category-tag" data-i18n="s2.cat2.tag">(Listing)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p5">"Help me publish this product from 1688: [URL]. Fill in all details and optimize the title."</div><div class="prompt-item" data-i18n="s2.p6">"Batch-optimize my listings -- fix titles, keywords, attributes, and main images for better search ranking."</div><div class="prompt-item" data-i18n="s2.p7">"Migrate these 50 products to my Alibaba.com store with optimized SEO."</div><div class="prompt-item" data-i18n="s2.p8">"Generate a new main image for this product and tell me which would convert better."</div></div></div>
+          <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4AC;</span><span class="prompt-category-title" data-i18n="s2.cat3.title">Handle buyer communication</span><span class="prompt-category-tag" data-i18n="s2.cat3.tag">(Reception)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p9">"Review my recently published products and tell me which have weak titles or attributes -- and how to fix them."</div><div class="prompt-item" data-i18n="s2.p10">"Score the quality of this inquiry and tell me how to prioritize follow-up."</div><div class="prompt-item" data-i18n="s2.p11">"Translate and reply to this buyer message in their native language."</div><div class="prompt-item" data-i18n="s2.p12">"Summarize this 30-message chat with the buyer and tell me the next best step."</div></div></div>
+          <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4CA;</span><span class="prompt-category-title" data-i18n="s2.cat4.title">Diagnose &amp; grow your store</span><span class="prompt-category-tag" data-i18n="s2.cat4.tag">(Operations)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p13">"Give my store a full health check. What should I fix first?"</div><div class="prompt-item" data-i18n="s2.p14">"Why did my star rating drop last week? Show me the root causes."</div><div class="prompt-item" data-i18n="s2.p15">"Compare my store with my top 3 competitors -- where am I losing out?"</div><div class="prompt-item" data-i18n="s2.p16">"What's working in my best-selling category that I should replicate elsewhere?"</div></div></div>
+          <div class="highlight-box mt-4"><p data-i18n="s2.tip.bottom">&#x1F4A1; <strong>Tip:</strong> Just click the suggested prompts under the chat box -- the agent will automatically use the right skill for you. No need to memorize anything.</p></div>
+        </div>
+      </section>
+
+      <section id="section-3" class="scroll-mt-24 mb-16">
+        <div class="flex items-center gap-3 mb-3"><div class="section-num">03</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s3.title">Hit a Snag? Quick Fixes</h2></div>
+        <div class="space-y-3">
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">1</div><div class="faq-title" data-i18n="s3.q1.title">Can't find the Global Seller Agent plugin?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">
+            <p data-i18n="s3.q1.body">First, make sure you're on the <strong>latest version</strong> of Accio Work. If your version is up to date, head to the <strong>Plugins</strong> panel on the left sidebar and search for <strong>"Global Seller Agent"</strong>.</p>
+            <p class="mt-3" data-i18n="s3.q1.howto"><strong>How to confirm you're on the latest version:</strong></p>
+            <p data-i18n="s3.q1.howto2">Download the latest version directly from <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a>, or check and update within the app using the steps below:</p>
+            <ul><li data-i18n="s3.q1.step1">Click your avatar at the <strong>bottom-left</strong> of Accio Work &#8594; select <strong>About</strong>.</li><li data-i18n="s3.q1.step2">In the pop-up, click <strong>Check for Updates</strong> to confirm you're on the latest build.</li></ul>
+            <div class="mt-4 space-y-3">
+              <div class="text-sm font-semibold text-navy" data-i18n="s3.q1.step1label">Step 1 -- Open the account menu</div>
+              <img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1780298952199-83a6e061-068f-4d03-ae98-bc78208c093f.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1780298031336-288fd97e-28e1-4623-a1e3-caac9bbb6268.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1780298952199-83a6e061-068f-4d03-ae98-bc78208c093f.png" alt="Check version step 1" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+              <div class="text-sm font-semibold text-navy" data-i18n="s3.q1.step2label">Step 2 -- Check for updates</div>
+              <img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1780298996301-26f15d23-ca6f-4b5d-be98-96687c5842cc.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1780298094528-03843ba7-e697-48ff-93dc-48a4759d4e43.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1780298996301-26f15d23-ca6f-4b5d-be98-96687c5842cc.png" alt="Check version step 2" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+            </div>
+          </div></div></div>
+
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">2</div><div class="faq-title" data-i18n="s3.q2.title">"Authorization failed"</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">
+            <div class="highlight-box mb-4"><p data-i18n="s3.q2.tip">&#x1F4A1; <strong>Check your linked account first.</strong> In the chat, type <em>"What account is currently linked?"</em> -- Global Seller Agent will return the current connection status right away. Use that to confirm whether the right account is authorized before troubleshooting further.</p></div>
+            <p data-i18n="s3.q2.body">Two common reasons:</p>
+            <ul><li data-i18n="s3.q2.cause1"><strong>Your Alibaba.com login expired</strong> &#8594; log in to Alibaba.com in Chrome first, then return to Accio Work and try again.</li><li data-i18n="s3.q2.cause2"><strong>The Chrome browser connection isn't set up</strong> &#8594; go to <strong>Settings &#8594; Browser &#8594; Connection Guide</strong> in Accio Work and follow the steps.</li></ul>
+            <div class="mt-4 space-y-3">
+              <div class="text-sm font-semibold text-navy" data-i18n="s3.q2.browserTitle">How to connect to a browser</div>
+              <div class="lang-en-only">
+                <div class="text-sm font-semibold text-navy" data-i18n="s3.q2.en.step1">Step 1 -- Open Settings</div>
+                <img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657455869-7a2ef910-3117-4d17-ad68-0f07fe70c935.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778653017288-1afd0142-660f-4da3-976b-091717b1e279.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657455869-7a2ef910-3117-4d17-ad68-0f07fe70c935.png" alt="Open Settings" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+                <div class="text-sm font-semibold text-navy" data-i18n="s3.q2.en.step2">Step 2 -- Open chrome://extensions/ and enable Developer Mode</div>
+                <img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657456048-03ea370c-979f-4758-8ca0-3945511fddd7.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778653468717-c0bc413b-2dce-41f3-8017-ca834e766e2f.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657456048-03ea370c-979f-4758-8ca0-3945511fddd7.png" alt="Chrome extensions" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+                <div class="text-sm font-semibold text-navy" data-i18n="s3.q2.en.step3">Step 3 -- Drag the extension folder into Chrome</div>
+                <img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657456034-ddf010d8-7ed9-4208-9e1a-e6eab3cca6d3.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778654592775-33e72b12-4f8c-4cab-bba0-b305e0031cca.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657456034-ddf010d8-7ed9-4208-9e1a-e6eab3cca6d3.png" alt="Drag folder" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+              </div>
+              <div class="lang-zh-only">
+                <div class="text-sm font-semibold text-navy" data-i18n="s3.q2.zh.step1">Step 1 -- 打開帳號菜單</div>
+                <img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657455869-7a2ef910-3117-4d17-ad68-0f07fe70c935.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778653017288-1afd0142-660f-4da3-976b-091717b1e279.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778653017288-1afd0142-660f-4da3-976b-091717b1e279.png" alt="打開帳號菜單" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+                <div class="text-sm font-semibold text-navy" data-i18n="s3.q2.zh.step2">Step 2 -- 連結 Chrome</div>
+                <img src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778653544127-9edeaf40-e9e1-4e65-b2f0-6d1df2a9df54.png" alt="瀏覽器連接引導" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+                <div class="text-sm font-semibold text-navy" data-i18n="s3.q2.zh.step3">Step 3 -- 打開開發者模式</div>
+                <img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657456048-03ea370c-979f-4758-8ca0-3945511fddd7.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778653468717-c0bc413b-2dce-41f3-8017-ca834e766e2f.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778653468717-c0bc413b-2dce-41f3-8017-ca834e766e2f.png" alt="開啟開發者模式" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+                <div class="text-sm font-semibold text-navy" data-i18n="s3.q2.zh.step4">Step 4 -- 拖曳文件夾</div>
+                <img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657456034-ddf010d8-7ed9-4208-9e1a-e6eab3cca6d3.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778654592775-33e72b12-4f8c-4cab-bba0-b305e0031cca.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778654592775-33e72b12-4f8c-4cab-bba0-b305e0031cca.png" alt="拖曳文件夾" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+              </div>
+            </div>
+          </div></div></div>
+
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">3</div><div class="faq-title" data-i18n="s3.q3.title">"I asked something, but nothing happened"</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">
+            <p data-i18n="s3.q3.body">Try one of the suggested prompts under the chat box, or be more specific. The clearer your ask, the better the agent's response.</p>
+          </div></div></div>
+        </div>
+
+        <div class="highlight-box mt-6">
+          <p class="font-bold text-navy mb-3" data-i18n="s3.help.title">Still stuck? Three ways to get help</p>
+          <ul class="space-y-2">
+            <li data-i18n="s3.help.way1">1&#65039;&#8419; <strong>Just ask the agent directly.</strong> It has built-in Q&amp;A -- try <em>"Why is my Accio app crashing?"</em> or <em>"What can you do for me?"</em></li>
+            <li data-i18n="s3.help.way2">2&#65039;&#8419; <strong>Hover over any response</strong> after a task -- you'll see a &#x1F44E; thumbs-down or a &#x1F41E; bug icon. Click either one to submit an issue report directly to our team.</li>
+            <li data-i18n="s3.help.way3">3&#65039;&#8419; Click <strong>"Help Center"</strong> in the bottom left corner to contact online customer service.</li>
+          </ul>
+          <div class="mt-4">
+            <img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657957128-7f055947-a21a-4bd2-bf42-4e069ee7bcca.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778655051864-0e4f99a3-86f1-474d-879b-817853911856.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778657957128-7f055947-a21a-4bd2-bf42-4e069ee7bcca.png" alt="Help Center" class="w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <section id="section-4" class="scroll-mt-24 mb-16">
+        <div class="flex items-center gap-3 mb-6"><div class="section-num">04</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s4.title">Things Merchants Often Ask</h2></div>
+        <div class="space-y-3">
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">Q1</div><div class="faq-title" data-i18n="s4.q1.title">I'm not tech-savvy. Will I be able to use it?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner"><p data-i18n="s4.q1.body"><strong>Absolutely yes.</strong> The chat box comes with example prompts for every common scenario -- just click one to start. You don't need to memorize commands, learn prompts, or configure anything. If you've ever chatted online, you can use this.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">Q2</div><div class="faq-title" data-i18n="s4.q2.title">Will it do anything I didn't approve?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner"><p data-i18n="s4.q2.body"><strong>No.</strong> For sensitive actions like publishing products, the agent works in two modes:</p><ul><li data-i18n="s4.q2.mode1"><strong>Direct publish</strong> -- only for products that pass the rules you've already set in your Alibaba.com backend (e.g., quality score &#8805; 4.2).</li><li data-i18n="s4.q2.mode2"><strong>Draft mode</strong> -- for newer capabilities (e.g., image+text listing), products go into your Alibaba.com <strong>draft box</strong> for your final confirmation before going live.</li></ul><p class="mt-3" data-i18n="s4.q2.extra">Plus, when recommending products, it always flags potential infringement and compliance risks.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">Q3</div><div class="faq-title" data-i18n="s4.q3.title">Where does my data go?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner"><p data-i18n="s4.q3.body"><strong>Your data stays local on your device.</strong> Accio Work meets enterprise-grade security standards, with a dedicated sandbox mechanism -- already validated in international markets where data security is taken extremely seriously.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">Q4</div><div class="faq-title" data-i18n="s4.q4.title">What can it actually do? Give me real examples.</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner"><p data-i18n="s4.q4.body">Here are 5 skills that merchants use every day:</p><img data-img-en="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778658155585-d5916697-ce36-4959-8335-2d82da245c36.png" data-img-zh="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778655415549-5cd0593b-bb06-4ab4-bd7a-279decf0668d.png" src="https://cdn.nlark.com/yuque/0/2026/png/56643120/1778658155585-d5916697-ce36-4959-8335-2d82da245c36.png" alt="Skills overview" class="mt-3 w-full max-w-2xl rounded-lg border border-slate-200 shadow-sm" loading="lazy"><p class="mt-3 italic" data-i18n="s4.q4.extra">That's just a starting point -- you can ask anything related to your cross-border business.</p></div></div></div>
+        </div>
+      </section>
+
+      <section id="section-5" class="scroll-mt-24 mb-16">
+        <div class="flex items-center gap-3 mb-3"><div class="section-num">05</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s5.title">Pro Tips: Make Every Credit Count</h2></div>
+        <p class="text-sm text-slate2-500 mb-6 ml-[52px]" data-i18n="s5.formula"><span class="font-mono text-mint-700 bg-mint-50 px-2 py-1 rounded">Credits Spent = Model Compute Cost + Tokens Used</span></p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="tip-card"><div class="tip-icon">&#x1F4A1;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip1.title">Use the right model for the job</h3><p class="text-sm text-slate2-500 leading-relaxed" data-i18n="s5.tip1.body">Daily routine tasks (drafting messages, simple lookups)? Use a <strong class="text-navy">lighter model</strong>. Complex tasks (full store diagnostics, deep market analysis)? Switch to an <strong class="text-navy">advanced model</strong>. You can pick the model right in the chat box.</p></div>
+          <div class="tip-card"><div class="tip-icon">&#x1F3AF;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip2.title">Keep your prompts focused</h3><p class="text-sm text-slate2-500 leading-relaxed" data-i18n="s5.tip2.body">Ask <strong class="text-navy">one clear thing at a time</strong>. Don't pile 5 unrelated questions into one message -- break them up. Bonus: tell it the length you want ("top 3" / "in 100 words") to save tokens.</p></div>
+          <div class="tip-card"><div class="tip-icon">&#x1F9F0;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip3.title">Don't over-load on skills</h3><p class="text-sm text-slate2-500 leading-relaxed" data-i18n="s5.tip3.body">Only enable the skills you actually use. Loading every available skill makes the agent <strong class="text-navy">slower and more expensive</strong> to run.</p></div>
+          <div class="tip-card"><div class="tip-icon">&#9209;&#65039;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip4.title">Stop runaway tasks</h3><p class="text-sm text-slate2-500 leading-relaxed" data-i18n="s5.tip4.body">If a task is taking unusually long -- a deep analysis, a large batch operation, or a chain that's clearly going off course -- you don't have to wait it out. Click the <strong class="text-navy">Stop</strong> button in the chat to halt execution immediately.</p></div>
+        </div>
+      </section>
+
+      <section id="cta-final" class="scroll-mt-24">
+        <div class="relative overflow-hidden rounded-3xl px-8 sm:px-12 py-12 sm:py-14 text-white" style="background:linear-gradient(to bottom right,#0F172A,#1E293B,#134E4A)">
+          <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full blur-3xl" style="background:rgba(20,184,166,0.2)"></div>
+          <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full blur-3xl" style="background:rgba(52,211,153,0.15)"></div>
+          <div class="relative">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-sm mb-5" style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15)"><span class="text-xs">&#x1F680;</span><span class="text-xs font-bold tracking-wide" data-i18n="cta.badge">READY TO GET STARTED?</span></div>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-4 max-w-xl leading-tight" data-i18n="cta.title">3 minutes, 3 steps. Your AI agent is waiting.</h2>
+            <p class="text-base leading-relaxed mb-8 max-w-lg" style="color:rgba(255,255,255,0.7)" data-i18n="cta.subtitle">Install Accio Work &#8594; add Global Seller Agent &#8594; authorize with your Alibaba.com account. Then just say what you need. In your own words.</p>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white font-bold text-sm hover:bg-mint-50 transition shadow-lg" style="color:#0F172A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v14M5 10l7 7 7-7M5 21h14"/></svg><span data-i18n="cta.button">Download Accio Work</span></a>
+            </div>
+            <div class="mt-10 pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm" style="border-top:1px solid rgba(255,255,255,0.1)">
+              <div class="flex items-start gap-3"><div class="w-7 h-7 rounded-lg font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:rgba(20,184,166,0.2);color:#6EE7B7">1</div><div><div class="font-semibold text-white" data-i18n="cta.s1.title">Install Accio Work</div><div class="text-xs mt-1" style="color:rgba(255,255,255,0.55)" data-i18n="cta.s1.body">at accio.com/work</div></div></div>
+              <div class="flex items-start gap-3"><div class="w-7 h-7 rounded-lg font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:rgba(20,184,166,0.2);color:#6EE7B7">2</div><div><div class="font-semibold text-white" data-i18n="cta.s2.title">Click New Message &#8594; select Global Seller Agent</div><div class="text-xs mt-1" style="color:rgba(255,255,255,0.55)" data-i18n="cta.s2.body">follow the prompt to complete authorization</div></div></div>
+              <div class="flex items-start gap-3"><div class="w-7 h-7 rounded-lg font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:rgba(20,184,166,0.2);color:#6EE7B7">3</div><div><div class="font-semibold text-white" data-i18n="cta.s3.title">Head back to chat &#8594; plugin is on by default</div><div class="text-xs mt-1" style="color:rgba(255,255,255,0.55)" data-i18n="cta.s3.body">say what you need in your own words</div></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+<footer class="bg-navy text-white/55 py-8 px-4 sm:px-6 border-t border-mint-900/20">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+    <div class="flex items-center gap-3"><div class="w-7 h-7 rounded-md bg-white/8 flex items-center justify-center"><svg viewBox="0 0 24 24" class="w-3.5 h-3.5"><path d="M12 3 L4 21 L20 21 Z" fill="#14B8A6"/></svg></div><div class="flex flex-col leading-tight"><span class="font-semibold text-white/80" data-i18n="footer.title">Accio Work x Global Seller Agent</span><span class="text-[10px] mt-0.5" data-i18n="footer.tagline">Your business agent team on desktop. Business made real.</span></div></div>
+    <div class="flex items-center gap-4"><span data-i18n="footer.copyright">&#169; 2026 Accio Work. All rights reserved.</span></div>
+  </div>
+</footer>
+<script>
+/* ============ Language Switch ============ */
+var currentLang = 'en';
+var I18N = {
+  en: {
+    'nav.brand': 'Accio Work \u00d7 Global Seller Agent',
+    'nav.tagline': 'USER GUIDE PLAYBOOK',
+    'nav.contents': 'CONTENTS',
+    'nav.s1': 'What is Accio Work?',
+    'nav.s2': 'Install the plugin',
+    'nav.s2.1': 'Install & authorize',
+    'nav.s2.2': 'Start chatting',
+    'nav.s2.3': 'Use in other agents',
+    'nav.s3': 'Troubleshooting',
+    'nav.s4': 'Merchant FAQ',
+    'nav.s5': 'Pro tips',
+    'nav.cta': 'Get started',
+    'hero.badge': 'FOR ALIBABA.COM SELLERS',
+    'hero.title.l1': 'Install once,',
+    'hero.title.l2': 'use forever.',
+    'hero.title.l3': 'Everyone gets their own AI e-commerce agent.',
+    'hero.subtitle': "In 3 minutes, you\u2019ll have a personal AI agent that knows your Alibaba.com store inside out \u2014 and works for you 24/7 on listings, product selection, buyer communication, and store operations.",
+    'hero.cta.primary': 'Download Accio Work',
+    'hero.cta.secondary': 'I already have it \u2014 set up the plugin \u2192',
+    'hero.stat1': 'to set up',
+    'hero.stat2': 'pre-loaded skills',
+    'hero.stat3': 'always on duty',
+    's1.title': 'What is Accio Work?',
+    's1.lead': 'Accio Work is your <strong class="text-navy">desktop AI workstation for cross-border business</strong>. Imagine a team of AI agents sitting on your computer, ready to handle market research, listings, marketing, customer follow-ups, and store operations \u2014 all in plain language, no coding required.',
+    's1.install.title': 'How to install Accio Work',
+    's1.install.body': '<strong>Download:</strong> <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a><br/>Pick your OS (macOS or Windows), download, install, sign up with your email, verify with the code in your inbox \u2014 that\u2019s it. You can change the interface language anytime under <strong>Avatar \u2192 Language</strong>.',
+    's1.install.note': '\u2705 <strong>Already have Accio Work?</strong> Skip ahead to Section 2 to install the Global Seller Agent.',
+    's2.title': 'Install the Global Seller Agent Plugin',
+    's2.lead': 'The <strong class="text-navy">Global Seller Agent</strong> is the agent on Accio Work made for Alibaba.com sellers. It connects to your store, knows your products and buyers, and uses <strong class="text-navy">20+ pre-loaded professional skills</strong> \u2014 so you don\u2019t need to configure anything yourself.',
+    's2.rename': '<strong>A familiar name with a new home.</strong> If you\u2019ve used <strong>Smart Assistant</strong> on Alibaba.com before, you\u2019ll feel right at home \u2014 it\u2019s been renamed to <strong>Global Seller Agent</strong> inside Accio Work, with even more powerful capabilities.',
+    's2.step1.label': 'STEP 1',
+    's2.step1.title': 'Install the plugin & authorize your account',
+    's2.step1.body': 'On the Accio Work home page, click <strong class="text-navy">New Message</strong> \u2192 select <strong class="text-navy">Global Seller Agent</strong>. If you haven\u2019t authorized yet, an authorization prompt will appear \u2192 click <strong class="text-navy">\u201cGo to bind\u201d</strong> to be redirected to the authorization page \u2192 log in with your Alibaba.com account to complete authorization.',
+    's2.step1.gif': '\u2191 Install & authorize walkthrough',
+    's2.step1.gifHint': 'Click to play',
+    's2.step1.security': '\ud83d\udd12 <strong>Your data stays safe.</strong> Authorization only enables the agent to access your store on your behalf \u2014 your data continues to live where it always has.',
+    's2.step1.highlight': '\ud83c\udf81 <strong>What\u2019s included:</strong> \u2713 20+ professional skills pre-loaded \u2014 selection, listing, optimization, reception, diagnostics. \u2713 All ready to use, no configuration needed.',
+    's2.step2.label': 'STEP 2',
+    's2.step2.title': 'Start chatting',
+    's2.step2.body': 'Head back to chat and start a conversation with <strong class="text-navy">Global Seller Agent</strong>. Just type what you need in your own words. If you\u2019re using Alibaba.com capabilities with a non-official agent, make sure the <strong class="text-navy">Global Seller Agent plugin is turned on</strong> in the toolbar \u2014 the plugin must be active for the agent to access your Alibaba.com data and skills.',
+    's2.step2.gif': '\u2191 Chat interface in action',
+    's2.step2.gifHint': 'Click to play',
+    's2.step2.warning': '\u26a0\ufe0f <strong>The number of active plugins affects guided prompts.</strong> When only the Global Seller Agent plugin is enabled, the chat will display Alibaba.com-specific guided prompts (e.g. Bulk product upload, Product optimization). If multiple plugins are enabled at the same time, these prompts will not appear. For the best guided experience, keep only the Global Seller Agent plugin turned on.',
+    's2.step2.tip': '\ud83d\udca1 <strong>Tip:</strong> Just click the suggested prompts under the chat box \u2014 the agent will automatically use the right skill for you. No need to memorize anything.',
+    's2.step3.label': 'STEP 3',
+    's2.step3.title': 'Enable Alibaba.com capabilities in other agents',
+    's2.step3.body': 'The Global Seller Agent plugin is not exclusive to the official agent. Other agents in Accio Work \u2014 including custom-built agents \u2014 may also be bound to this plugin to access Alibaba.com capabilities such as store data queries, product analysis, and buyer inquiry handling.',
+    's2.step3.howto': '<strong class="text-navy">How to bind:</strong> Go to <strong class="text-navy">Plugins</strong> \u2192 open the Global Seller Agent detail page \u2192 find the <strong class="text-navy">Applied to Agents</strong> section \u2192 click <strong class="text-navy">Manage</strong> to add or remove agents.',
+    's2.step3.gif': '\u2191 Binding plugin to other agents',
+    's2.step3.gifHint': 'Click to play',
+    's2.step3.example': '\ud83d\uded2 <strong>Example use case:</strong> A merchant builds a custom agent focused on operations reviews. By adding the Global Seller Agent plugin, that agent can pull live store data from Alibaba.com and generate a weekly performance summary \u2014 all within the same Accio Work workspace.',
+    's2.prompts.intro': 'Not sure where to start? Try these \u2014 just copy, paste, and go!',
+    's2.cat1.title': 'Find a winning product',
+    's2.cat1.tag': '(Market & Selection)',
+    's2.p1': '\u201cWhat\u2019s selling well in the men\u2019s clothing category on Alibaba.com right now? Where are the buyers from?\u201d',
+    's2.p2': '\u201cAnalyze why leather motorcycle jackets are trending \u2014 what 3 selling points should I highlight?\u201d',
+    's2.p3': '\u201cFind blue ocean opportunities in [your category] for buyers in [target market].\u201d',
+    's2.p4': '\u201cMine top-selling products on Amazon for [keyword] and tell me which I can source competitively.\u201d',
+    's2.cat2.title': 'Publish & optimize products',
+    's2.cat2.tag': '(Listing)',
+    's2.p5': '\u201cHelp me publish this product from 1688: [URL]. Fill in all details and optimize the title.\u201d',
+    's2.p6': '\u201cBatch-optimize my listings \u2014 fix titles, keywords, attributes, and main images for better search ranking.\u201d',
+    's2.p7': '\u201cMigrate these 50 products to my Alibaba.com store with optimized SEO.\u201d',
+    's2.p8': '\u201cGenerate a new main image for this product and tell me which would convert better.\u201d',
+    's2.cat3.title': 'Handle buyer communication',
+    's2.cat3.tag': '(Reception)',
+    's2.p9': '\u201cReview my recently published products and tell me which have weak titles or attributes \u2014 and how to fix them.\u201d',
+    's2.p10': '\u201cScore the quality of this inquiry and tell me how to prioritize follow-up.\u201d',
+    's2.p11': '\u201cTranslate and reply to this buyer message in their native language.\u201d',
+    's2.p12': '\u201cSummarize this 30-message chat with the buyer and tell me the next best step.\u201d',
+    's2.cat4.title': 'Diagnose & grow your store',
+    's2.cat4.tag': '(Operations)',
+    's2.p13': '\u201cGive my store a full health check. What should I fix first?\u201d',
+    's2.p14': '\u201cWhy did my star rating drop last week? Show me the root causes.\u201d',
+    's2.p15': '\u201cCompare my store with my top 3 competitors \u2014 where am I losing out?\u201d',
+    's2.p16': '\u201cWhat\u2019s working in my best-selling category that I should replicate elsewhere?\u201d',
+    's2.tip.bottom': '\ud83d\udca1 <strong>Tip:</strong> Just click the suggested prompts under the chat box \u2014 the agent will automatically use the right skill for you. No need to memorize anything.',
+    's3.title': 'Hit a Snag? Quick Fixes',
+    's3.q1.title': 'Can\u2019t find the Global Seller Agent plugin?',
+    's3.q1.body': 'First, make sure you\u2019re on the <strong>latest version</strong> of Accio Work. If your version is up to date, head to the <strong>Plugins</strong> panel on the left sidebar and search for <strong>\u201cGlobal Seller Agent\u201d</strong>.',
+    's3.q1.howto': '<strong>How to confirm you\u2019re on the latest version:</strong>',
+    's3.q1.howto2': 'Download the latest version directly from <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a>, or check and update within the app using the steps below:',
+    's3.q1.step1': 'Click your avatar at the <strong>bottom-left</strong> of Accio Work \u2192 select <strong>About</strong>.',
+    's3.q1.step2': 'In the pop-up, click <strong>Check for Updates</strong> to confirm you\u2019re on the latest build.',
+    's3.q1.step1label': 'Step 1 \u2014 Open the account menu',
+    's3.q1.step2label': 'Step 2 \u2014 Check for updates',
+    's3.q2.title': '\u201cAuthorization failed\u201d',
+    's3.q2.tip': '\ud83d\udca1 <strong>Check your linked account first.</strong> In the chat, type <em>\u201cWhat account is currently linked?\u201d</em> \u2014 Global Seller Agent will return the current connection status right away. Use that to confirm whether the right account is authorized before troubleshooting further.',
+    's3.q2.body': 'Two common reasons:',
+    's3.q2.cause1': '<strong>Your Alibaba.com login expired</strong> \u2192 log in to Alibaba.com in Chrome first, then return to Accio Work and try again.',
+    's3.q2.cause2': '<strong>The Chrome browser connection isn\u2019t set up</strong> \u2192 go to <strong>Settings \u2192 Browser \u2192 Connection Guide</strong> in Accio Work and follow the steps.',
+    's3.q2.browserTitle': 'How to connect to a browser',
+    's3.q2.en.step1': 'Step 1 \u2014 Open Settings',
+    's3.q2.en.step2': 'Step 2 \u2014 Open chrome://extensions/ and enable Developer Mode',
+    's3.q2.en.step3': 'Step 3 \u2014 Drag the extension folder into Chrome',
+    's3.q2.zh.step1': 'Step 1 \u2014 \u6253\u958b\u5e33\u865f\u83dc\u55ae',
+    's3.q2.zh.step2': 'Step 2 \u2014 \u9023\u7d50 Chrome',
+    's3.q2.zh.step3': 'Step 3 \u2014 \u6253\u958b\u958b\u767c\u8005\u6a21\u5f0f',
+    's3.q2.zh.step4': 'Step 4 \u2014 \u62d6\u66f3\u6587\u4ef6\u593e',
+    's3.q3.title': '\u201cI asked something, but nothing happened\u201d',
+    's3.q3.body': 'Try one of the suggested prompts under the chat box, or be more specific. The clearer your ask, the better the agent\u2019s response.',
+    's3.help.title': 'Still stuck? Three ways to get help',
+    's3.help.way1': '1\ufe0f\u20e3 <strong>Just ask the agent directly.</strong> It has built-in Q&A \u2014 try <em>\u201cWhy is my Accio app crashing?\u201d</em> or <em>\u201cWhat can you do for me?\u201d</em>',
+    's3.help.way2': '2\ufe0f\u20e3 <strong>Hover over any response</strong> after a task \u2014 you\u2019ll see a \ud83d\udc4e thumbs-down or a \ud83d\udc1e bug icon. Click either one to submit an issue report directly to our team.',
+    's3.help.way3': '3\ufe0f\u20e3 Click <strong>\u201cHelp Center\u201d</strong> in the bottom left corner to contact online customer service.',
+    's4.title': 'Things Merchants Often Ask',
+    's4.q1.title': 'I\u2019m not tech-savvy. Will I be able to use it?',
+    's4.q1.body': '<strong>Absolutely yes.</strong> The chat box comes with example prompts for every common scenario \u2014 just click one to start. You don\u2019t need to memorize commands, learn prompts, or configure anything. If you\u2019ve ever chatted online, you can use this.',
+    's4.q2.title': 'Will it do anything I didn\u2019t approve?',
+    's4.q2.body': '<strong>No.</strong> For sensitive actions like publishing products, the agent works in two modes:',
+    's4.q2.mode1': '<strong>Direct publish</strong> \u2014 only for products that pass the rules you\u2019ve already set in your Alibaba.com backend (e.g., quality score \u2265 4.2).',
+    's4.q2.mode2': '<strong>Draft mode</strong> \u2014 for newer capabilities (e.g., image+text listing), products go into your Alibaba.com <strong>draft box</strong> for your final confirmation before going live.',
+    's4.q2.extra': 'Plus, when recommending products, it always flags potential infringement and compliance risks.',
+    's4.q3.title': 'Where does my data go?',
+    's4.q3.body': '<strong>Your data stays local on your device.</strong> Accio Work meets enterprise-grade security standards, with a dedicated sandbox mechanism \u2014 already validated in international markets where data security is taken extremely seriously.',
+    's4.q4.title': 'What can it actually do? Give me real examples.',
+    's4.q4.body': 'Here are 5 skills that merchants use every day:',
+    's4.q4.extra': 'That\u2019s just a starting point \u2014 you can ask anything related to your cross-border business.',
+    's5.title': 'Pro Tips: Make Every Credit Count',
+    's5.formula': '<span class="font-mono text-mint-700 bg-mint-50 px-2 py-1 rounded">Credits Spent = Model Compute Cost + Tokens Used</span>',
+    's5.tip1.title': 'Use the right model for the job',
+    's5.tip1.body': 'Daily routine tasks (drafting messages, simple lookups)? Use a <strong class="text-navy">lighter model</strong>. Complex tasks (full store diagnostics, deep market analysis)? Switch to an <strong class="text-navy">advanced model</strong>. You can pick the model right in the chat box.',
+    's5.tip2.title': 'Keep your prompts focused',
+    's5.tip2.body': 'Ask <strong class="text-navy">one clear thing at a time</strong>. Don\u2019t pile 5 unrelated questions into one message \u2014 break them up. Bonus: tell it the length you want (\u201ctop 3\u201d / \u201cin 100 words\u201d) to save tokens.',
+    's5.tip3.title': 'Don\u2019t over-load on skills',
+    's5.tip3.body': 'Only enable the skills you actually use. Loading every available skill makes the agent <strong class="text-navy">slower and more expensive</strong> to run.',
+    's5.tip4.title': 'Stop runaway tasks',
+    's5.tip4.body': 'If a task is taking unusually long \u2014 a deep analysis, a large batch operation, or a chain that\u2019s clearly going off course \u2014 you don\u2019t have to wait it out. Click the <strong class="text-navy">Stop</strong> button in the chat to halt execution immediately.',
+    'cta.badge': 'READY TO GET STARTED?',
+    'cta.title': '3 minutes, 3 steps. Your AI agent is waiting.',
+    'cta.subtitle': 'Install Accio Work \u2192 add Global Seller Agent \u2192 authorize with your Alibaba.com account. Then just say what you need. In your own words.',
+    'cta.button': 'Download Accio Work',
+    'cta.s1.title': 'Install Accio Work',
+    'cta.s1.body': 'at accio.com/work',
+    'cta.s2.title': 'Click New Message \u2192 select Global Seller Agent',
+    'cta.s2.body': 'follow the prompt to complete authorization',
+    'cta.s3.title': 'Head back to chat \u2192 plugin is on by default',
+    'cta.s3.body': 'say what you need in your own words',
+    'footer.title': 'Accio Work \u00d7 Global Seller Agent',
+    'footer.tagline': 'Your business agent team on desktop. Business made real.',
+    'footer.copyright': '\u00a9 2026 Accio Work. All rights reserved.'
+  },
+  'zh-Hant': {
+    'nav.brand': 'Accio Work \u00d7 \u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b',
+    'nav.tagline': '\u4f7f\u7528\u6307\u5357\u624b\u518a',
+    'nav.contents': '\u76ee\u9304',
+    'nav.s1': 'Accio Work \u662f\u4ec0\u9ebc\uff1f',
+    'nav.s2': '\u5b89\u88dd\u63d2\u4ef6',
+    'nav.s2.1': '\u5b89\u88dd\u4e26\u5b8c\u6210\u6388\u6b0a',
+    'nav.s2.2': '\u958b\u59cb\u5c0d\u8a71',
+    'nav.s2.3': '\u8b93\u5176\u4ed6\u667a\u80fd\u9ad4\u4e5f\u80fd\u4f7f\u7528',
+    'nav.s3': '\u9047\u5230\u554f\u984c\uff1f',
+    'nav.s4': '\u5546\u5bb6\u5e38\u898b\u554f\u984c',
+    'nav.s5': '\u9032\u968e\u6280\u5de7',
+    'nav.cta': '\u7acb\u5373\u958b\u59cb',
+    'hero.badge': '\u5c08\u70ba\u963f\u91cc\u5df4\u5df4\u570b\u969b\u7ad9\u8ce3\u5bb6\u6253\u9020',
+    'hero.title.l1': '\u4e00\u6b21\u5b89\u88dd\uff0c',
+    'hero.title.l2': '\u6c38\u4e45\u4f7f\u7528\u3002',
+    'hero.title.l3': '\u4eba\u4eba\u90fd\u6709 AI \u96fb\u5546\u4ee3\u7406\u3002',
+    'hero.subtitle': '3 \u5206\u9418\u5167\uff0c\u60a8\u5c07\u64c1\u6709\u4e00\u500b\u719f\u6089\u60a8\u570b\u969b\u7ad9\u5e97\u92ea\u7684 AI \u4ee3\u7406 \u2014 \u5b83\u6703 24 \u5c0f\u6642\u4e0d\u6253\u70ca\uff0c\u5e6b\u60a8\u505a\u9078\u54c1\u3001\u767c\u54c1\u3001\u63a5\u5f85\u8cb7\u5bb6\u3001\u71df\u904b\u5e97\u92ea\u3002',
+    'hero.cta.primary': '\u4e0b\u8f09 Accio Work',
+    'hero.cta.secondary': '\u5df2\u5b89\u88dd\uff1f\u76f4\u63a5\u5b89\u88dd\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b \u2192',
+    'hero.stat1': '\u5b8c\u6210\u8a2d\u7f6e',
+    'hero.stat2': '\u9810\u88dd\u5c08\u696d\u6280\u80fd',
+    'hero.stat3': '\u5168\u5929\u5019\u670d\u52d9',
+    's1.title': 'Accio Work \u662f\u4ec0\u9ebc\uff1f',
+    's1.lead': 'Accio Work \u662f\u60a8\u7684<strong class="text-navy">\u684c\u9762\u7aef\u8de8\u5883\u751f\u610f\u5de5\u4f5c\u53f0</strong>\u3002\u53ef\u4ee5\u628a\u5b83\u60f3\u50cf\u6210\u4e00\u652f\u4f4f\u5728\u60a8\u96fb\u8166\u88e1\u7684 AI \u4ee3\u7406\u5718\u968a\uff0c\u96a8\u6642\u5f85\u547d\u5e6b\u60a8\u505a\u5e02\u5834\u8abf\u7814\u3001\u767c\u54c1\u3001\u63a8\u5ee3\u3001\u8ddf\u9032\u5ba2\u6236\u3001\u71df\u904b\u5e97\u92ea \u2014 \u5168\u7a0b\u7528\u5927\u767d\u8a71\u6e9d\u901a\uff0c\u7121\u9700\u5beb\u4ee3\u78bc\u3002',
+    's1.install.title': '\u5982\u4f55\u5b89\u88dd Accio Work',
+    's1.install.body': '<strong>\u4e0b\u8f09\uff1a</strong><a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a><br/>\u9078\u64c7\u60a8\u7684\u4f5c\u696d\u7cfb\u7d71\uff08macOS \u6216 Windows\uff09\uff0c\u4e0b\u8f09\u5b89\u88dd\uff0c\u7528 Email \u8a3b\u518a\uff0c\u8f38\u5165\u4fe1\u7bb1\u6536\u5230\u7684\u9a57\u8b49\u78bc\u5373\u53ef\u3002\u4ecb\u9762\u8a9e\u8a00\u96a8\u6642\u53ef\u5f9e<strong>\u982d\u50cf \u2192 Language</strong> \u5207\u63db\u3002',
+    's1.install.note': '\u2705 <strong>\u5df2\u5b89\u88dd Accio Work\uff1f</strong>\u76f4\u63a5\u8df3\u5230 Section 2 \u5b89\u88dd\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u3002',
+    's2.title': '\u5b89\u88dd\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u63d2\u4ef6',
+    's2.lead': '<strong class="text-navy">\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\uff08Global Seller Agent\uff09</strong>\u662f Accio Work \u4e0a\u70ba\u963f\u91cc\u5df4\u5df4\u570b\u969b\u7ad9\u8ce3\u5bb6\u6253\u9020\u7684\u667a\u80fd\u9ad4\u3002\u5b83\u6703\u9023\u63a5\u60a8\u7684\u5e97\u92ea\u3001\u4e86\u89e3\u60a8\u7684\u5546\u54c1\u548c\u8cb7\u5bb6\uff0c\u4e26\u4f7f\u7528 <strong class="text-navy">20+ \u500b\u9810\u88dd\u7684\u5c08\u696d\u6280\u80fd</strong> \u2014 \u60a8\u5b8c\u5168\u4e0d\u9700\u8981\u81ea\u5df1\u914d\u7f6e\u4efb\u4f55\u6771\u897f\u3002',
+    's2.rename': '<strong>\u719f\u6089\u7684\u540d\u5b57\uff0c\u65b0\u7684\u5bb6\u3002</strong>\u5982\u679c\u60a8\u4e4b\u524d\u5728\u570b\u969b\u7ad9\u7528\u904e <strong>Smart Assistant</strong>\uff0c\u60a8\u6703\u975e\u5e38\u719f\u6089\u5b83 \u2014 \u5b83\u5728 Accio Work \u4e2d\u73fe\u5df2\u66f4\u540d\u70ba<strong>\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\uff08Global Seller Agent\uff09</strong>\uff0c\u80fd\u529b\u66f4\u52a0\u5f37\u5927\u3002',
+    's2.step1.label': '\u7b2c\u4e00\u6b65',
+    's2.step1.title': '\u5b89\u88dd\u63d2\u4ef6\u4e26\u5b8c\u6210\u6388\u6b0a',
+    's2.step1.body': '\u5728 Accio Work \u9996\u9801\uff0c\u9ede\u64ca\u300c<strong class="text-navy">\u65b0\u6d88\u606f</strong>\u300d\u2192 \u9078\u64c7<strong class="text-navy">\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b</strong>\u3002\u82e5\u5c1a\u672a\u5b8c\u6210\u6388\u6b0a\uff0c\u7cfb\u7d71\u6703\u63d0\u793a\u6388\u6b0a \u2192 \u9ede\u64ca\u300c<strong class="text-navy">\u53bb\u7d81\u5b9a</strong>\u300d\u81ea\u52d5\u8df3\u8f49\u81f3\u6388\u6b0a\u9801\u9762 \u2192 \u7528\u570b\u969b\u7ad9\u5e33\u865f\uff08\u4e3b\u5e33\u865f\u6216\u5b50\u5e33\u865f\uff09\u767b\u5165\u6388\u6b0a\u3002',
+    's2.step1.gif': '\u2191 \u63d2\u4ef6\u5b89\u88dd\u8207\u6388\u6b0a\u64cd\u4f5c\u6f14\u793a',
+    's2.step1.gifHint': '\u9ede\u64ca\u64ad\u653e',
+    's2.step1.security': '\ud83d\udd12 <strong>\u60a8\u7684\u6578\u64da\u59cb\u7d42\u5b89\u5168\u3002</strong>\u6388\u6b0a\u50c5\u5141\u8a31\u667a\u80fd\u9ad4\u4ee3\u70ba\u64cd\u4f5c\u60a8\u7684\u5e97\u92ea \u2014 \u60a8\u7684\u6578\u64da\u4f9d\u7136\u4fdd\u7559\u5728\u539f\u672c\u7684\u4f4d\u7f6e\u3002',
+    's2.step1.highlight': '\ud83c\udf81 <strong>\u4e00\u9375\u5373\u4eab\uff1a</strong>\u2713 20+ \u9810\u88dd\u5c08\u696d\u6280\u80fd \u2014 \u9078\u54c1\u3001\u767c\u54c1\u3001\u512a\u5316\u3001\u63a5\u5f85\u3001\u8a3a\u65b7\u3002\u2713 \u5168\u90e8\u5373\u88dd\u5373\u7528\uff0c\u96f6\u914d\u7f6e\u3002',
+    's2.step2.label': '\u7b2c\u4e8c\u6b65',
+    's2.step2.title': '\u958b\u59cb\u5c0d\u8a71',
+    's2.step2.body': '\u56de\u5230\u5c0d\u8a71\u6846\uff0c\u958b\u59cb\u8207<strong class="text-navy">\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b</strong>\u5c0d\u8a71\uff0c\u76f4\u63a5\u7528\u60a8\u81ea\u5df1\u7684\u8a9e\u8a00\u544a\u8a34\u5b83\u60a8\u60f3\u505a\u4ec0\u9ebc\u5373\u53ef\u3002\u82e5\u60a8\u5728\u975e\u5b98\u65b9\u667a\u80fd\u9ad4\u4e2d\u4f7f\u7528\u570b\u969b\u7ad9\u529f\u80fd\uff0c\u8acb\u5148\u78ba\u8a8d\u5de5\u5177\u5217\u4e2d\u7684<strong class="text-navy">\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u63d2\u4ef6\u5df2\u958b\u555f</strong>\u2014\u2014\u53ea\u6709\u63d2\u4ef6\u958b\u555f\uff0c\u667a\u80fd\u9ad4\u624d\u80fd\u8abf\u7528\u570b\u969b\u7ad9\u7684\u6578\u64da\u8207\u6280\u80fd\u3002',
+    's2.step2.gif': '\u2191 \u5c0d\u8a71\u754c\u9762\u64cd\u4f5c\u6f14\u793a',
+    's2.step2.gifHint': '\u9ede\u64ca\u64ad\u653e',
+    's2.step2.warning': '\u26a0\ufe0f <strong>\u63d2\u4ef6\u958b\u555f\u6578\u91cf\u6703\u5f71\u97ff\u5f15\u5c0e\u986f\u793a\u3002</strong>\u50c5\u958b\u555f\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u63d2\u4ef6\u6642\uff0c\u5c0d\u8a71\u6846\u6703\u986f\u793a\u570b\u969b\u7ad9\u76f8\u95dc\u7684\u64cd\u4f5c\u5f15\u5c0e\uff08\u5982\u6279\u91cf\u767c\u54c1\u3001\u5546\u54c1\u512a\u5316\u7b49\uff09\uff1b\u82e5\u540c\u6642\u958b\u555f\u591a\u500b\u63d2\u4ef6\uff0c\u5f15\u5c0e\u6307\u4ee4\u5c07\u4e0d\u6703\u51fa\u73fe\u3002\u5efa\u8b70\u55ae\u7368\u958b\u555f\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u63d2\u4ef6\uff0c\u4ee5\u7372\u5f97\u6700\u4f73\u5f15\u5c0e\u9ad4\u9a57\u3002',
+    's2.step2.tip': '\ud83d\udca1 <strong>\u5c0f\u6280\u5de7\uff1a</strong>\u9ede\u64ca\u5c0d\u8a71\u6846\u4e0b\u65b9\u7684\u63a8\u85a6\u6307\u4ee4\uff0c\u667a\u80fd\u9ad4\u6703\u81ea\u52d5\u8abf\u7528\u5c0d\u61c9\u6280\u80fd\uff0c\u7121\u9700\u8a18\u61b6\u4efb\u4f55\u6307\u4ee4\u3002',
+    's2.step3.label': '\u7b2c\u4e09\u6b65',
+    's2.step3.title': '\u8b93\u5176\u4ed6\u667a\u80fd\u9ad4\u4e5f\u80fd\u4f7f\u7528\u570b\u969b\u7ad9\u80fd\u529b',
+    's2.step3.body': '\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u63d2\u4ef6\u4e26\u975e\u5b98\u65b9\u667a\u80fd\u9ad4\u5c08\u5c6c\u3002Accio Work \u4e2d\u7684\u5176\u4ed6\u667a\u80fd\u9ad4\uff08\u5305\u62ec\u81ea\u5efa\u667a\u80fd\u9ad4\uff09\u4e5f\u53ef\u4ee5\u7d81\u5b9a\u6b64\u63d2\u4ef6\uff0c\u5f9e\u800c\u8abf\u7528\u570b\u969b\u7ad9\u7684\u5b98\u65b9\u80fd\u529b\uff0c\u4f8b\u5982\u5e97\u92ea\u6578\u64da\u67e5\u8a62\u3001\u5546\u54c1\u8868\u73fe\u5206\u6790\u3001\u8a62\u76e4\u63a5\u5f85\u7b49\u3002',
+    's2.step3.howto': '<strong class="text-navy">\u7d81\u5b9a\u65b9\u5f0f\uff1a</strong>\u524d\u5f80\u300c<strong class="text-navy">\u63d2\u4ef6</strong>\u300d\u2192 \u958b\u555f\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u8a73\u60c5\u9801 \u2192 \u627e\u5230\u300c<strong class="text-navy">\u61c9\u7528\u5230\u7684 Agent</strong>\u300d\u5340\u584a \u2192 \u9ede\u64ca\u300c<strong class="text-navy">\u7ba1\u7406</strong>\u300d\u5373\u53ef\u65b0\u589e\u6216\u79fb\u9664\u7d81\u5b9a\u7684\u667a\u80fd\u9ad4\u3002',
+    's2.step3.gif': '\u2191 \u7d81\u5b9a\u63d2\u4ef6\u5230\u5176\u4ed6\u667a\u80fd\u9ad4',
+    's2.step3.gifHint': '\u9ede\u64ca\u64ad\u653e',
+    's2.step3.example': '\ud83d\uded2 <strong>\u61c9\u7528\u5834\u666f\u8209\u4f8b\uff1a</strong>\u5546\u5bb6\u81ea\u5efa\u4e86\u4e00\u500b\u5c08\u6ce8\u65bc\u71df\u904b\u8907\u76e4\u7684\u667a\u80fd\u9ad4\uff0c\u900f\u904e\u7d81\u5b9a\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u63d2\u4ef6\uff0c\u8a72\u667a\u80fd\u9ad4\u4fbf\u80fd\u5373\u6642\u8abf\u53d6\u570b\u969b\u7ad9\u5e97\u92ea\u6578\u64da\uff0c\u81ea\u52d5\u751f\u6210\u6bcf\u9031\u696d\u7e3e\u6458\u8981\u2014\u2014\u4e00\u5207\u90fd\u5728 Accio Work \u540c\u4e00\u5de5\u4f5c\u53f0\u5b8c\u6210\u3002',
+    's2.prompts.intro': '\u4e0d\u77e5\u9053\u5f9e\u54ea\u88e1\u958b\u59cb\uff1f\u8a66\u8a66\u9019\u4e9b\uff0c\u76f4\u63a5\u8907\u88fd\u8cbc\u4e0a\u958b\u59cb\u5c0d\u8a71\uff01',
+    's2.cat1.title': '\u6316\u6398\u7206\u54c1',
+    's2.cat1.tag': '\uff08\u5e02\u5834\u8207\u9078\u54c1\uff09',
+    's2.p1': '\u300c\u73fe\u5728\u570b\u969b\u7ad9\u7537\u88dd\u985e\u76ee\u4ec0\u9ebc\u8ce3\u5f97\u6700\u597d\uff1f\u8cb7\u5bb6\u4e3b\u8981\u4f86\u81ea\u54ea\u88e1\uff1f\u300d',
+    's2.p2': '\u300c\u5e6b\u6211\u5206\u6790\u76ae\u9769\u6469\u6258\u8eca\u593e\u514b\u70ba\u4ec0\u9ebc\u71b1\u92b7 \u2014 \u61c9\u8a72\u5f37\u8abf\u54ea 3 \u500b\u8ce3\u9ede\uff1f\u300d',
+    's2.p3': '\u300c\u627e\u51fa [\u60a8\u7684\u985e\u76ee] \u4e2d\u91dd\u5c0d [\u76ee\u6a19\u5e02\u5834] \u7684\u85cd\u6d77\u6a5f\u6703\u3002\u300d',
+    's2.p4': '\u300c\u6316\u6398\u4e9e\u99ac\u905c [\u95dc\u9375\u5b57] \u7684\u71b1\u92b7\u5546\u54c1\uff0c\u544a\u8a34\u6211\u54ea\u4e9b\u6211\u6709\u722d\u722d\u529b\u53ef\u4ee5\u63a1\u8cfc\u3002\u300d',
+    's2.cat2.title': '\u767c\u54c1\u8207\u512a\u5316',
+    's2.cat2.tag': '\uff08\u767c\u54c1\uff09',
+    's2.p5': '\u300c\u6aa2\u67e5\u6211\u6700\u8fd1\u767c\u5e03\u7684\u5546\u54c1\uff0c\u544a\u8a34\u6211\u54ea\u4e9b\u6a19\u984c\u6216\u5c6c\u6027\u6bd4\u8f03\u5f31 \u2014 \u8a72\u600e\u9ebc\u512a\u5316\uff1f\u300d',
+    's2.p6': '\u300c\u6279\u91cf\u512a\u5316\u6211\u7684\u5546\u54c1 \u2014 \u4fee\u6a19\u984c\u3001\u95dc\u9375\u5b57\u3001\u5c6c\u6027\u548c\u4e3b\u5716\uff0c\u63d0\u5347\u641c\u5c0b\u6392\u540d\u3002\u300d',
+    's2.p7': '\u300c\u628a\u9019 50 \u500b\u5546\u54c1\u642c\u5230\u6211\u7684\u570b\u969b\u7ad9\u5e97\u92ea\uff0c\u505a\u597d SEO \u512a\u5316\u3002\u300d',
+    's2.p8': '\u300c\u5e6b\u9019\u500b\u5546\u54c1\u751f\u6210\u65b0\u7684\u4e3b\u5716\uff0c\u4e26\u544a\u8a34\u6211\u54ea\u4e00\u5f35\u8f49\u5316\u7387\u6703\u66f4\u597d\u7684\u3002\u300d',
+    's2.cat3.title': '\u8655\u7406\u8cb7\u5bb6\u6e9d\u901a',
+    's2.cat3.tag': '\uff08\u63a5\u5f85\uff09',
+    's2.p9': '\u300c\u5217\u51fa\u6211\u9019\u9031\u6700\u6709\u610f\u5411\u7684\u8cb7\u5bb6\uff0c\u544a\u8a34\u6211\u61c9\u8a72\u512a\u5148\u8ddf\u9032\u54ea\u5e7e\u500b\u3002\u300d',
+    's2.p10': '\u300c\u5e6b\u6211\u70ba\u9019\u5247\u8a62\u76e4\u8a55\u5206\uff0c\u544a\u8a34\u6211\u8ddf\u9032\u7684\u512a\u5148\u7d1a\u3002\u300d',
+    's2.p11': '\u300c\u5e6b\u6211\u628a\u9019\u5247\u8cb7\u5bb6\u8a0a\u606f\u7ffb\u8b6f\uff0c\u4e26\u7528\u4ed6\u7684\u6bcd\u8a9e\u56de\u8986\u3002\u300d',
+    's2.p12': '\u300c\u7e3d\u7d50\u6211\u548c\u9019\u4f4d\u8cb7\u5bb6\u7684 30 \u689d\u5c0d\u8a71\uff0c\u544a\u8a34\u6211\u4e0b\u4e00\u6b65\u6700\u4f73\u505a\u6cd5\u3002\u300d',
+    's2.cat4.title': '\u8a3a\u65b7\u8207\u63d0\u5347\u5e97\u92ea',
+    's2.cat4.tag': '\uff08\u71df\u904b\uff09',
+    's2.p13': '\u300c\u5e6b\u6211\u5168\u9762\u9ad4\u6aa2\u5e97\u92ea\uff0c\u6700\u61c9\u8a72\u5148\u8655\u7406\u4ec0\u9ebc\uff1f\u300d',
+    's2.p14': '\u300c\u70ba\u4ec0\u9ebc\u6211\u4e0a\u9031\u661f\u7b49\u7d1a\u4e0b\u6ed1\u4e86\uff1f\u627e\u51fa\u6839\u672c\u539f\u56e0\u3002\u300d',
+    's2.p15': '\u300c\u5c0d\u6bd4\u6211\u7684\u5e97\u92ea\u8207\u6392\u540d\u524d 3 \u7684\u7af6\u54c1 \u2014 \u6211\u5728\u54ea\u4e9b\u5730\u65b9\u843d\u5f8c\u4e86\uff1f\u300d',
+    's2.p16': '\u300c\u6211\u8868\u73fe\u6700\u597d\u7684\u90a3\u500b\u985e\u76ee\u6709\u4ec0\u9ebc\u505a\u5c0d\u4e86\uff1f\u80fd\u8907\u88fd\u5230\u5176\u4ed6\u985e\u76ee\u55ce\uff1f\u300d',
+    's2.tip.bottom': '\ud83d\udca1 <strong>\u63d0\u793a\uff1a</strong>\u76f4\u63a5\u9ede\u64ca\u8f38\u5165\u6846\u4e0b\u65b9\u7684\u7bc4\u4f8b\u63d0\u554f\u5373\u53ef \u2014 \u667a\u80fd\u9ad4\u6703\u81ea\u52d5\u7528\u5c0d\u7684\u6280\u80fd\u5e6b\u60a8\u8655\u7406\u3002\u5b8c\u5168\u4e0d\u7528\u8a18\u4efb\u4f55\u6307\u4ee4\u3002',
+    's3.title': '\u9047\u5230\u554f\u984c\uff1f\u5feb\u901f\u6392\u67e5',
+    's3.q1.title': '\u627e\u4e0d\u5230\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u63d2\u4ef6\u600e\u9ebc\u8fa6\uff1f',
+    's3.q1.body': '\u8acb\u5148\u78ba\u8a8d\u60a8\u4f7f\u7528\u7684\u662f<strong>\u6700\u65b0\u7248\u672c</strong>\u7684 Accio Work\u3002\u5982\u679c\u7248\u672c\u7121\u8aa4\uff0c\u8acb\u5728\u5de6\u5074\u908a\u6b04\u300c\u63d2\u4ef6\u300d\u88e1\u641c\u5c0b<strong>\u300c\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u300d</strong>\u3002',
+    's3.q1.howto': '<strong>\u5982\u4f55\u78ba\u8a8d\u5df2\u662f\u6700\u65b0\u7248\u672c\uff1a</strong>',
+    's3.q1.howto2': '\u524d\u5f80\u5b98\u7db2\u4e0b\u8f09\u6700\u65b0\u7248\u672c\uff1a<a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a>\uff0c\u6216\u900f\u904e\u4ee5\u4e0b\u6b65\u9a5f\u5728\u61c9\u7528\u5167\u67e5\u770b\u7248\u672c\u865f\u4e26\u6aa2\u67e5\u66f4\u65b0\uff1a',
+    's3.q1.step1': '\u9ede\u64ca Accio Work <strong>\u5de6\u4e0b\u89d2\u7684\u982d\u50cf</strong>\uff0c\u9078\u64c7\u300c\u95dc\u65bc\u300d\u3002',
+    's3.q1.step2': '\u5728\u5f48\u51fa\u7684\u8996\u7a97\u4e2d\u5373\u53ef\u770b\u5230\u76ee\u524d\u7248\u672c\u865f\uff0c\u9ede\u64ca\u300c\u6aa2\u67e5\u66f4\u65b0\u300d\u78ba\u8a8d Accio Work \u5df2\u66f4\u65b0\u81f3\u6700\u65b0\u7248\u672c\u3002',
+    's3.q1.step1label': 'Step 1 \u2014 \u6253\u958b\u5e33\u865f\u83dc\u55ae',
+    's3.q1.step2label': 'Step 2 \u2014 \u6aa2\u67e5\u66f4\u65b0',
+    's3.q2.title': '\u300c\u6388\u6b0a\u5931\u6557\u300d',
+    's3.q2.tip': '\ud83d\udca1 <strong>\u5148\u78ba\u8a8d\u7576\u524d\u7d81\u5b9a\u5e33\u865f\u3002</strong>\u5728\u5c0d\u8a71\u6846\u8f38\u5165\u300c<strong>\u67e5\u8a62\u76ee\u524d\u7d81\u5b9a\u7684\u5e33\u865f</strong>\u300d\uff0c\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u6703\u5373\u6642\u56de\u5831\u7576\u524d\u9023\u63a5\u7684\u5e33\u865f\u8cc7\u8a0a\u3002\u78ba\u8a8d\u5e33\u865f\u662f\u5426\u6b63\u78ba\u5f8c\uff0c\u518d\u5c0d\u61c9\u4ee5\u4e0b\u65b9\u5f0f\u8655\u7406\u3002',
+    's3.q2.body': '\u5169\u500b\u5e38\u898b\u539f\u56e0\uff1a',
+    's3.q2.cause1': '<strong>\u570b\u969b\u7ad9\u767b\u5165\u72c0\u614b\u904e\u671f</strong> \u2192 \u5148\u5728 Chrome \u91cd\u65b0\u767b\u5165\u570b\u969b\u7ad9\uff0c\u518d\u56de\u5230 Accio Work \u91cd\u8a66\u3002',
+    's3.q2.cause2': '<strong>Chrome \u9023\u63a5\u672a\u8a2d\u5b9a</strong> \u2192 \u9032\u5165 Accio Work <strong>\u8a2d\u7f6e \u2192 \u700f\u89bd\u5668 \u2192 \u9023\u63a5\u5f15\u5c0e</strong>\uff0c\u4f9d\u6b65\u9a5f\u8a2d\u5b9a\u3002',
+    's3.q2.browserTitle': '\u5982\u4f55\u9023\u7d50\u700f\u89bd\u5668',
+    's3.q2.en.step1': 'Step 1 \u2014 Open Settings',
+    's3.q2.en.step2': 'Step 2 \u2014 Open chrome://extensions/ and enable Developer Mode',
+    's3.q2.en.step3': 'Step 3 \u2014 Drag the extension folder into Chrome',
+    's3.q2.zh.step1': 'Step 1 \u2014 \u6253\u958b\u5e33\u865f\u83dc\u55ae',
+    's3.q2.zh.step2': 'Step 2 \u2014 \u9023\u7d50 Chrome',
+    's3.q2.zh.step3': 'Step 3 \u2014 \u6253\u958b\u958b\u767c\u8005\u6a21\u5f0f',
+    's3.q2.zh.step4': 'Step 4 \u2014 \u62d6\u66f3\u6587\u4ef6\u593e',
+    's3.q3.title': '\u300c\u6211\u554f\u4e86\u554f\u984c\uff0c\u4f46\u6c92\u53cd\u61c9\u300d',
+    's3.q3.body': '\u8a66\u8a66\u8f38\u5165\u6846\u4e0b\u65b9\u7684\u7bc4\u4f8b\u63d0\u554f\uff0c\u6216\u628a\u554f\u984c\u8aaa\u5f97\u66f4\u5177\u9ad4\u4e00\u4e9b\u3002\u6307\u4ee4\u8d8a\u6e05\u6670\uff0c\u56de\u7b54\u8d8a\u7cbe\u6e96\u3002',
+    's3.help.title': '\u4ecd\u672a\u89e3\u6c7a\uff1f\u4e09\u7a2e\u6c42\u52a9\u65b9\u5f0f',
+    's3.help.way1': '1\ufe0f\u20e3 <strong>\u76f4\u63a5\u554f\u667a\u80fd\u9ad4\u3002</strong>\u5167\u5efa\u7b54\u7591\u80fd\u529b \u2014 \u8a66\u554f\u300c\u70ba\u4ec0\u9ebc\u6211\u7684 Accio \u6703\u51fa\u73fe\u9583\u9000\uff1f\u300d\u6216\u300c\u4f60\u80fd\u5e6b\u6211\u505a\u4ec0\u9ebc\uff1f\u300d',
+    's3.help.way2': '2\ufe0f\u20e3 <strong>\u4efb\u52d9\u5b8c\u6210\u5f8c\u5c07\u6ed1\u9f20\u79fb\u5230\u56de\u7b54\u4e0a</strong> \u2014 \u60a8\u6703\u770b\u5230 \ud83d\udc4e \u9ede\u8e29\u6309\u9215\u6216 \ud83d\udc1e \u5c0f\u87f2\u5b50\u6309\u9215\u3002\u4efb\u4e00\u500b\u90fd\u53ef\u4ee5\u4e00\u9375\u63d0\u4ea4\u554f\u984c\u5831\u544a\u7d66\u6211\u5011\u7684\u5718\u968a\u3002',
+    's3.help.way3': '3\ufe0f\u20e3 \u9ede\u64ca\u5de6\u4e0b\u89d2\u300c<strong>\u5e6b\u52a9\u4e2d\u5fc3</strong>\u300d\u806f\u7e6b\u7dda\u4e0a\u5ba2\u670d\u3002',
+    's4.title': '\u5546\u5bb6\u5e38\u898b\u554f\u984c',
+    's4.q1.title': '\u6211\u4e0d\u592a\u61c2\u6280\u8853\uff0c\u80fd\u7528\u55ce\uff1f',
+    's4.q1.body': '<strong>\u5b8c\u5168\u53ef\u4ee5\u3002</strong>\u8f38\u5165\u6846\u4e0b\u65b9\u5df2\u9810\u7f6e\u5404\u985e\u5e38\u898b\u5834\u666f\u7684\u7bc4\u4f8b\u63d0\u554f \u2014 \u9ede\u64ca\u5373\u53ef\u958b\u59cb\u3002\u60a8\u4e0d\u9700\u8981\u8a18\u4efb\u4f55\u6307\u4ee4\u3001\u4e0d\u7528\u5b78\u4ec0\u9ebc prompt\u3001\u4e0d\u7528\u914d\u7f6e\u4efb\u4f55\u6771\u897f\u3002\u6703\u4e0a\u7db2\u804a\u5929\u5c31\u6703\u7528\u3002',
+    's4.q2.title': '\u5b83\u6703\u64c5\u81ea\u505a\u6211\u6c92\u540c\u610f\u7684\u4e8b\u55ce\uff1f',
+    's4.q2.body': '<strong>\u4e0d\u6703\u3002</strong>\u5c0d\u65bc\u767c\u54c1\u9019\u985e\u654f\u611f\u64cd\u4f5c\uff0c\u667a\u80fd\u9ad4\u63a1\u5169\u7a2e\u6a21\u5f0f\uff1a',
+    's4.q2.mode1': '<strong>\u76f4\u63a5\u767c\u5e03</strong> \u2014 \u50c5\u9650\u901a\u904e\u60a8\u5728\u570b\u969b\u7ad9\u5f8c\u53f0\u8a2d\u5b9a\u689d\u4ef6\u7684\u5546\u54c1\uff08\u4f8b\u5982\u8cea\u91cf\u5206 \u2265 4.2\uff09\u3002',
+    's4.q2.mode2': '<strong>\u8349\u7a3f\u6a21\u5f0f</strong> \u2014 \u65b0\u80fd\u529b\uff08\u5982\u5716+\u6587\u767c\u54c1\uff09\u6703\u5148\u653e\u9032\u570b\u969b\u7ad9<strong>\u8349\u7a3f\u7bb1</strong>\uff0c\u7531\u60a8\u78ba\u8a8d\u5f8c\u518d\u6b63\u5f0f\u767c\u5e03\u3002',
+    's4.q2.extra': '\u6b64\u5916\uff0c\u63a8\u85a6\u5546\u54c1\u6642\u4e5f\u6703\u4e3b\u52d5\u63d0\u793a\u4fb5\u6b0a\u8207\u5408\u898f\u98a8\u96aa\u3002',
+    's4.q3.title': '\u6211\u7684\u6578\u64da\u6703\u53bb\u54ea\u88e1\uff1f',
+    's4.q3.body': '<strong>\u60a8\u7684\u6578\u64da\u4fdd\u7559\u5728\u672c\u5730\u8a2d\u5099\u3002</strong>Accio Work \u9054\u5230\u4f01\u696d\u7d1a\u5b89\u5168\u6a19\u6e96\uff0c\u914d\u5099\u5c08\u7528\u6c99\u76d2\u6a5f\u5236 \u2014 \u5df2\u5728\u5c0d\u6578\u64da\u5b89\u5168\u8981\u6c42\u6975\u9ad8\u7684\u6d77\u5916\u5e02\u5834\u9a57\u8b49\u901a\u904e\u3002',
+    's4.q4.title': '\u5b83\u5230\u5e95\u80fd\u505a\u4ec0\u9ebc\uff1f\u7d66\u6211\u4e00\u4e9b\u5177\u9ad4\u4f8b\u5b50\u3002',
+    's4.q4.body': '\u4ee5\u4e0b\u662f\u5546\u5bb6\u6bcf\u5929\u5728\u7528\u7684 5 \u500b\u6280\u80fd\uff1a',
+    's4.q4.extra': '\u9019\u53ea\u662f\u958b\u59cb \u2014 \u4efb\u4f55\u8de8\u5883\u751f\u610f\u76f8\u95dc\u7684\u4e8b\uff0c\u60a8\u90fd\u53ef\u4ee5\u554f\u5b83\u3002',
+    's5.title': '\u9032\u968e\u6280\u5de7\uff1a\u8b93\u6bcf\u4e00\u5206 Credit \u90fd\u7528\u5728\u5200\u5203\u4e0a',
+    's5.formula': '<span class="font-mono text-mint-700 bg-mint-50 px-2 py-1 rounded">Credits \u6d88\u8017 = \u6a21\u578b\u7b97\u529b\u6210\u672c + \u4f7f\u7528\u7684 Tokens</span>',
+    's5.tip1.title': '\u7528\u5c0d\u7684\u6a21\u578b\u505a\u5c0d\u7684\u4e8b',
+    's5.tip1.body': '\u65e5\u5e38\u4efb\u52d9\uff08\u8d77\u8349\u8a0a\u606f\u3001\u7c21\u55ae\u67e5\u8a62\uff09\u7528<strong class="text-navy">\u8f15\u91cf\u6a21\u578b</strong>\u3002\u8907\u96dc\u4efb\u52d9\uff08\u5168\u5e97\u8a3a\u65b7\u3001\u6df1\u5ea6\u5e02\u5834\u5206\u6790\uff09\u624d\u5207\u5230<strong class="text-navy">\u9ad8\u968e\u6a21\u578b</strong>\u3002\u6a21\u578b\u53ef\u4ee5\u5728\u5c0d\u8a71\u6846\u76f4\u63a5\u9078\u64c7\u3002',
+    's5.tip2.title': '\u63d0\u554f\u805a\u7126',
+    's5.tip2.body': '<strong class="text-navy">\u4e00\u6b21\u554f\u4e00\u4ef6\u6e05\u695a\u7684\u4e8b</strong>\u3002\u4e0d\u8981\u628a 5 \u500b\u4e0d\u76f8\u95dc\u7684\u554f\u984c\u585e\u9032\u4e00\u689d\u8a0a\u606f \u2014 \u5206\u958b\u554f\u3002\u984d\u5916\u52a0\u5206\uff1a\u544a\u8a34\u5b83\u60a8\u8981\u7684\u9577\u5ea6\uff08\u300c\u524d 3 \u500b\u300d/\u300c100 \u5b57\u5167\u300d\uff09\uff0c\u66f4\u7701 Token\u3002',
+    's5.tip3.title': '\u5225\u904e\u5ea6\u555f\u7528\u6280\u80fd',
+    's5.tip3.body': '\u53ea\u555f\u7528\u60a8\u5be6\u969b\u6703\u7528\u7684\u6280\u80fd\u3002\u555f\u7528\u904e\u591a\u6280\u80fd\u6703\u8b93\u667a\u80fd\u9ad4\u8b8a\u6162\uff0c\u4e14\u66f4\u8017 Credits\u3002',
+    's5.tip4.title': '\u4efb\u52d9\u8dd1\u592a\u4e45\u5c31\u505c\u624b',
+    's5.tip4.body': '\u9047\u5230\u8017\u6642\u7279\u5225\u9577\u7684\u4efb\u52d9 \u2014 \u6df1\u5ea6\u5206\u6790\u3001\u5927\u6279\u91cf\u64cd\u4f5c\u3001\u6216\u57f7\u884c\u65b9\u5411\u660e\u986f\u8dd1\u504f \u2014 \u4e0d\u9700\u8981\u4e00\u76f4\u7b49\u4e0b\u53bb\u3002\u9ede\u64ca\u5c0d\u8a71\u4e2d\u7684<strong class="text-navy">\u300c\u505c\u6b62\u300d</strong>\u6309\u9215\u5373\u53ef\u7acb\u5373\u4e2d\u6b62\u57f7\u884c\uff0c\u907f\u514d\u904e\u5ea6\u6d88\u8017 Credits\u3002',
+    'cta.badge': '\u6e96\u5099\u597d\u4e86\u55ce\uff1f',
+    'cta.title': '3 \u5206\u9418\uff0c3 \u6b65\u9a5f\u3002\u60a8\u7684 AI \u4ee3\u7406\u6b63\u5728\u7b49\u60a8\u3002',
+    'cta.subtitle': '\u5b89\u88dd Accio Work \u2192 \u5b89\u88dd\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b \u2192 \u7528\u570b\u969b\u7ad9\u5e33\u865f\u6388\u6b0a\u3002\u7136\u5f8c\u7528\u60a8\u81ea\u5df1\u7684\u8a9e\u8a00\u544a\u8a34\u5b83\u60a8\u8981\u4ec0\u9ebc\u3002',
+    'cta.button': '\u4e0b\u8f09 Accio Work',
+    'cta.s1.title': '\u5b89\u88dd Accio Work',
+    'cta.s1.body': '\u524d\u5f80 accio.com/work',
+    'cta.s2.title': '\u9996\u9801\u9ede\u64ca\u300c\u65b0\u6d88\u606f\u300d\u2192 \u9078\u64c7\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b',
+    'cta.s2.body': '\u4f9d\u63d0\u793a\u5b8c\u6210\u300c\u61c9\u7528\u6388\u6b0a\u300d',
+    'cta.s3.title': '\u56de\u5230\u5c0d\u8a71\u6846 \u2192 \u63d2\u4ef6\u9810\u8a2d\u5df2\u958b\u555f',
+    'cta.s3.body': '\u7528\u60a8\u81ea\u5df1\u7684\u8a9e\u8a00\u544a\u8a34\u5b83\u60a8\u8981\u4ec0\u9ebc',
+    'footer.title': 'Accio Work \u00d7 \u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b',
+    'footer.tagline': '\u60a8\u7684\u684c\u9762\u5546\u696d\u4ee3\u7406\u5718\u968a\u3002\u628a\u751f\u610f\u8b8a\u6210\u73fe\u5be6\u3002',
+    'footer.copyright': '\u00a9 2026 Accio Work. \u7248\u6b0a\u6240\u6709\u3002'
+  }
+};
+function switchLang(lang) {
+  currentLang = lang;
+  var dict = I18N[lang] || I18N['en'];
+  document.querySelectorAll('[data-i18n]').forEach(function(element) {
+    var key = element.getAttribute('data-i18n');
+    if (key in dict) {
+      if (dict[key] === '') { element.style.display = 'none'; }
+      else { element.style.display = ''; element.innerHTML = dict[key]; }
+    }
+  });
+  document.querySelectorAll('[data-img-en]').forEach(function(img) {
+    var src = lang === 'zh-Hant' ? img.getAttribute('data-img-zh') : img.getAttribute('data-img-en');
+    if (src) img.setAttribute('src', src);
+  });
+  var langLabel = document.getElementById('langLabel');
+  if (langLabel) { langLabel.textContent = lang === 'en' ? '\u7e41\u4e2d' : 'EN'; }
+  document.documentElement.lang = lang === 'zh-Hant' ? 'zh-Hant' : 'en';
+}
+document.getElementById('langToggle').addEventListener('click', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  switchLang(currentLang === 'en' ? 'zh-Hant' : 'en');
+});
+switchLang('en');
+</script>
+<script>
+/* ============ Accordion Toggle ============ */
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var wasOpen = item.classList.contains('open');
+  item.closest('.space-y-3').querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+  if (!wasOpen) {
+    item.classList.add('open');
+    setTimeout(function() { item.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 420);
+  }
+}
+/* ============ Sidebar Active State (Scroll Spy) ============ */
+var sidebarLinks = document.querySelectorAll('.sidebar-link');
+var sectionIds = ['section-1', 'section-2-step1', 'section-2-step2', 'section-2-step3', 'section-3', 'section-4', 'section-5', 'cta-final'];
+var sections = sectionIds.map(function(id) { return document.getElementById(id); });
+var sectionObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      sidebarLinks.forEach(function(l) { l.classList.remove('active'); });
+      var activeLink = document.querySelector('.sidebar-link[data-section="' + entry.target.id + '"]');
+      if (activeLink) activeLink.classList.add('active');
+      if (entry.target.id.startsWith('section-2-step')) {
+        var section2Link = document.querySelector('.sidebar-link[data-section="section-2"]');
+        if (section2Link) section2Link.classList.add('active');
+      }
+    }
+  });
+}, { threshold: 0.15, rootMargin: '-150px 0px -20% 0px' });
+sections.forEach(function(s) { if (s) sectionObserver.observe(s); });
+/* ============ GIF Preload ============ */
+var gifPreloadCache = {};
+function preloadAllGifs() {
+  document.querySelectorAll('.gif-showcase.has-real-gif').forEach(function(container) {
+    ['gifEn', 'gifZh'].forEach(function(key) {
+      var src = container.dataset[key];
+      if (src && src.startsWith('http') && !gifPreloadCache[src]) {
+        var link = document.createElement('link'); link.rel = 'prefetch'; link.as = 'image'; link.href = src;
+        document.head.appendChild(link); gifPreloadCache[src] = true;
+      }
+    });
+  });
+}
+preloadAllGifs();
+/* ============ GIF Play & Replay ============ */
+function playGif(container) {
+  if (container.classList.contains('playing')) return;
+  var gifSrc = currentLang === 'zh-Hant' ? container.dataset.gifZh : container.dataset.gifEn;
+  if (!gifSrc || (!gifSrc.startsWith('http://') && !gifSrc.startsWith('https://'))) {
+    var overlay = container.querySelector('.gif-overlay');
+    if (overlay) { var label = overlay.querySelector('.gif-label'); if (label) label.textContent = 'GIF not yet uploaded'; var caption = overlay.querySelector('.gif-caption'); if (caption) caption.textContent = ''; }
+    container.classList.add('placeholder-only'); return;
+  }
+  var overlay = container.querySelector('.gif-overlay');
+  var caption = overlay ? overlay.querySelector('.gif-caption') : null;
+  if (caption) caption.textContent = 'Loading...';
+  var img = container.querySelector('img.gif-real');
+  if (!img) {
+    img = document.createElement('img'); img.className = 'gif-real'; img.alt = 'GIF demonstration';
+    img.onload = function() { container.classList.add('playing'); container.classList.add('gif-loaded'); };
+    img.onerror = function() { if (overlay) { var label = overlay.querySelector('.gif-label'); if (label) label.textContent = 'Failed to load GIF'; if (caption) caption.textContent = ''; } };
+    img.src = gifSrc; container.appendChild(img);
+  } else { img.onload = function() { container.classList.add('playing'); container.classList.add('gif-loaded'); }; img.src = gifSrc; }
+}
+function replayGif(container) {
+  var img = container.querySelector('img.gif-real');
+  if (img) { var src = img.src; img.src = ''; setTimeout(function() { img.src = src; }, 50); }
+}
+</script>
+</body>
+</html>
