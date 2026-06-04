@@ -45,80 +45,69 @@
   };
 </script>
 <style>
-  :root{--mint-50:#ECFDF5;--mint-100:#D1FAE5;--mint-300:#6EE7B7;--mint-500:#14B8A6;--mint-600:#0D9488;--mint-700:#0F766E;--navy:#0F172A;--navy-soft:#1E293B;--slate-500:#64748B;--slate-400:#94A3B8;--paper:#FAFAFA;--aurora:linear-gradient(90deg,rgba(145,255,241,0.1) 0%,rgba(0,253,91,0.5) 31%,rgba(0,233,134,0.6) 42%,rgba(0,202,201,0.8) 67%,rgba(0,191,224,0.4) 77%,rgba(0,178,255,0.1) 100%);--brand-gradient:linear-gradient(158deg,#1ADF89 11%,#00B2FF 100%);--info-bg:#EEF7FF;--info-border:#D1E9FF;--success-bg:#EEFFF6;--success-border:#C8F5DC;--warning-bg:#FFF5EC;--warning-border:#FFE4C4;}
+  :root{--mint-50:#ECFDF5;--mint-100:#D1FAE5;--mint-300:#6EE7B7;--mint-500:#14B8A6;--mint-600:#0D9488;--mint-700:#0F766E;--navy:#0F172A;--navy-soft:#1E293B;--slate-500:#64748B;--slate-400:#94A3B8;--paper:#FAFAFA;--brand-gradient:linear-gradient(158deg,#1ADF89 11%,#00B2FF 100%);--info-bg:#EEF7FF;--info-border:#D4E5EA;--success-bg:#EEFFF6;--success-border:#D4EAD8;--warning-bg:#FFF5EC;--warning-border:#FFEDC7;}
   html{scroll-behavior:smooth;scroll-padding-top:96px;}
   *{-webkit-tap-highlight-color:transparent;}
   #langToggle > *{pointer-events:none;}
   body{font-family:'Noto Sans','Noto Sans TC',system-ui,sans-serif;background:var(--paper);color:var(--navy);-webkit-font-smoothing:antialiased;}
-  .aurora-glow{background:var(--aurora);filter:blur(48px);opacity:0.6;pointer-events:none;}
-  .gradient-text{background:var(--brand-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-  .hero-grid{background-image:linear-gradient(rgba(20,184,166,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(20,184,166,0.05) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(ellipse 70% 60% at 30% 50%,#000 30%,transparent 80%);}
-  .orb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;}
-  .orb-green{background:rgba(26,223,137,0.35);width:320px;height:320px;}
-  .orb-blue{background:rgba(0,178,255,0.25);width:280px;height:280px;}
-  .orb-teal{background:rgba(20,184,166,0.20);width:400px;height:400px;}
-  .orb-orange{background:rgba(255,195,126,0.25);width:200px;height:200px;}
+  .gradient-text{color:#14B8A6;}
   .sidebar{position:sticky;top:96px;height:calc(100vh - 112px);overflow-y:auto;scrollbar-width:none;}
   .sidebar::-webkit-scrollbar{display:none;}
-  .sidebar-link{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:12px;font-size:14px;font-weight:500;color:var(--slate-500);transition:all 0.2s ease;text-decoration:none;border-left:3px solid transparent;margin-bottom:2px;}
+  .sidebar-link{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--slate-500);transition:all 0.2s ease;text-decoration:none;border-left:3px solid transparent;margin-bottom:2px;}
   .sidebar-link:hover{background:var(--mint-50);color:var(--mint-700);}
   .sidebar-link.active{background:var(--mint-50);color:var(--navy);font-weight:700;border-left-color:var(--mint-500);}
-  .sidebar-link .num{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--mint-600),var(--mint-400));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:var(--navy);flex-shrink:0;font-family:'Noto Sans',sans-serif;transition:all 0.2s ease;}
-  .sidebar-link.active .num,.sidebar-link:hover .num{background:linear-gradient(135deg,var(--mint-700),var(--mint-500));color:var(--navy);}
+  .sidebar-link .num{width:28px;height:28px;border-radius:8px;background:#14B8A6;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;flex-shrink:0;font-family:'Noto Sans',sans-serif;transition:all 0.2s ease;}
+  .sidebar-link.active .num,.sidebar-link:hover .num{background:#0D9488;color:#fff;}
   .sidebar-link[data-section^="section-2-step"]{padding-left:24px;font-size:13px;}
-  .sidebar-link[data-section^="section-2-step"] .num{width:24px;height:24px;font-size:11px;background:linear-gradient(135deg,var(--mint-600),var(--mint-400));color:var(--navy);}
-  .section-num{flex-shrink:0;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--mint-600),var(--mint-400));color:var(--navy);font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:0 8px 24px -8px rgba(20,184,166,0.5);}
+  .sidebar-link[data-section^="section-2-step"] .num{width:24px;height:24px;font-size:11px;background:#14B8A6;color:#fff;}
+  .section-num{flex-shrink:0;width:40px;height:40px;border-radius:8px;background:#14B8A6;color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:none;}
   .section-alt{background:#F4F4F4;position:relative;isolation:isolate;}
-  .section-alt::before{content:'';position:absolute;top:0;left:0;right:0;height:60px;background:linear-gradient(180deg,#FFFFFF 0%,#F4F4F4 100%);pointer-events:none;z-index:-1;}
-  .section-gradient{background:linear-gradient(180deg,#FFFFFF 0%,#E2F4FB 50%,#FFFFFF 100%);}
-  .big-step{position:relative;background:radial-gradient(circle at 28% -2%,rgba(230,250,242,1) 0%,rgba(255,255,255,1) 100%);border:1px solid #EDEDED;border-radius:24px;padding:28px;transition:all 0.3s ease;box-shadow:0px 2px 4px 0px rgba(0,0,0,0.02);}
-  .big-step:hover{border-color:rgba(20,184,166,0.3);box-shadow:0px 2px 4px 0px rgba(60,64,67,0.3),0px 2px 6px 2px rgba(60,64,67,0.15),8px 8px 40px 0px rgba(0,0,0,0.05);}
-  .big-step-label{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:21px;background:var(--mint-50);color:var(--mint-700);font-size:11px;font-weight:800;letter-spacing:0.08em;font-family:'Noto Sans',sans-serif;border:1.3px solid rgba(20,184,166,0.15);}
-  .gif-showcase{position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(135,167,160,0.47);background:linear-gradient(135deg,rgba(20,184,166,0.06),rgba(20,184,166,0.02));min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;transition:all 0.3s ease;cursor:pointer;box-shadow:8px 8px 20px 0px rgba(183,230,223,0.3);}
-  .gif-showcase:hover{border-color:rgba(20,184,166,0.5);box-shadow:12px 12px 28px 0px rgba(183,230,223,0.4);}
-  .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(20,184,166,0.2);transition:transform 0.2s ease;margin-bottom:14px;}
+  .big-step{position:relative;background:#fff;border:1px solid #E4E4E7;border-radius:12px;padding:24px;transition:all 0.3s ease;box-shadow:none;}
+  .big-step:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);}
+  .big-step-label{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:8px;background:var(--mint-50);color:var(--mint-700);font-size:11px;font-weight:800;letter-spacing:0.08em;font-family:'Noto Sans',sans-serif;border:1px solid rgba(20,184,166,0.15);}
+  .gif-showcase{position:relative;border-radius:12px;overflow:hidden;border:1px solid #E4E4E7;background:#FAFAFA;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;transition:all 0.3s ease;cursor:pointer;box-shadow:none;}
+  .gif-showcase:hover{border-color:rgba(20,184,166,0.4);box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);}
+  .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,0.08);transition:transform 0.2s ease;margin-bottom:14px;}
   .gif-showcase:hover .gif-play-btn{transform:scale(1.08);}
   .gif-play-btn svg{width:22px;height:22px;fill:var(--mint-700);margin-left:3px;}
   .gif-label{font-size:12px;font-weight:600;color:var(--mint-700);text-align:center;}
   .gif-caption{margin-top:4px;font-size:11px;color:var(--slate-500);text-align:center;font-family:'JetBrains Mono',monospace;}
   .gif-showcase.has-real-gif{min-height:0!important;padding:0;overflow:hidden;}
-  .gif-showcase.has-real-gif .gif-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(20,184,166,0.08),rgba(20,184,166,0.02));padding:24px;z-index:2;}
+  .gif-showcase.has-real-gif .gif-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(250,250,250,0.85);padding:24px;z-index:2;}
   .gif-showcase.has-real-gif img.gif-real{width:100%;height:auto;display:none;background:#fff;z-index:1;}
   .gif-showcase.has-real-gif.playing img.gif-real{display:block;}
   .gif-showcase.has-real-gif.playing .gif-overlay{display:none;}
-  .gif-replay-btn{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.92);backdrop-filter:blur(6px);border:1px solid rgba(20,184,166,0.25);display:none;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:all 0.2s ease;box-shadow:0 4px 12px rgba(15,23,42,0.12);}
+  .gif-replay-btn{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.92);border:1px solid rgba(20,184,166,0.25);display:none;align-items:center;justify-content:center;cursor:pointer;z-index:3;transition:all 0.2s ease;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
   .gif-replay-btn:hover{background:#fff;transform:rotate(-45deg);}
   .gif-replay-btn svg{width:16px;height:16px;color:var(--mint-700);}
   .gif-showcase.has-real-gif.playing .gif-replay-btn{display:flex;}
   .gif-showcase.placeholder-only{cursor:default;border-style:dashed;border-color:rgba(20,184,166,0.25);}
-  .gif-showcase.placeholder-only:hover{border-color:rgba(20,184,166,0.25);background:linear-gradient(135deg,rgba(20,184,166,0.06),rgba(20,184,166,0.02));}
+  .gif-showcase.placeholder-only:hover{border-color:rgba(20,184,166,0.25);background:#FAFAFA;}
   .gif-showcase.placeholder-only .gif-play-btn{opacity:0.55;}
   .gif-showcase.placeholder-only:hover .gif-play-btn{transform:none;}
-  .gif-showcase.has-real-gif .gif-placeholder{height:140px;background:linear-gradient(135deg,rgba(20,184,166,0.08),rgba(20,184,166,0.03));display:flex;align-items:center;justify-content:center;}
+  .gif-showcase.has-real-gif .gif-placeholder{height:140px;background:#FAFAFA;display:flex;align-items:center;justify-content:center;}
   .gif-showcase.has-real-gif.playing .gif-placeholder{display:none;}
   .prompt-category{margin-bottom:24px;}
   .prompt-category:last-child{margin-bottom:0;}
-  .prompt-category-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:12px 16px;background:linear-gradient(135deg,var(--mint-50),rgba(20,184,166,0.03));border-left:4px solid var(--mint-500);border-radius:8px;}
+  .prompt-category-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:12px 16px;background:#fff;border-radius:8px;border:1px solid #E4E4E7;border-left:4px solid var(--mint-500);}
   .prompt-category-icon{font-size:24px;flex-shrink:0;}
   .prompt-category-title{font-weight:800;font-size:14px;color:var(--navy);flex:1;}
-  .prompt-category-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--slate-500);font-weight:600;padding:4px 12px;background:rgba(255,255,255,0.8);border-radius:21px;border:1.3px solid #ECEDEE;backdrop-filter:blur(4px);}
+  .prompt-category-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--slate-500);font-weight:600;padding:4px 12px;background:#fff;border-radius:8px;border:1px solid #ECEDEE;}
   .prompt-list{display:grid;gap:8px;padding-left:20px;}
-  .prompt-item{position:relative;padding:12px 40px 12px 16px;background:white;border:1px solid rgba(15,23,42,0.06);border-radius:8px;font-size:13px;line-height:1.6;color:var(--slate-600);transition:all 0.25s cubic-bezier(0.16,1,0.3,1);cursor:default;}
-  .prompt-item::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:0;background:linear-gradient(180deg,var(--mint-600),var(--mint-400));border-radius:2px;transition:height 0.25s ease;}
-  .prompt-item:hover{border-color:var(--mint-300);box-shadow:0 4px 16px -4px rgba(20,184,166,0.2);transform:translateX(4px);}
-  .prompt-item:hover::before{height:60%;}
+  .prompt-item{position:relative;padding:12px 40px 12px 16px;background:white;border:1px solid #F2F2F2;border-radius:8px;font-size:13px;line-height:1.6;color:var(--slate-600);transition:all 0.25s ease;cursor:default;}
+  .prompt-item:hover{border-color:var(--mint-300);box-shadow:0 2px 8px 0 rgba(0,0,0,0.04);transform:translateX(2px);}
   .prompt-copy-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,0.9);border:1px solid rgba(15,23,42,0.08);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:all 0.2s ease;color:var(--slate-400);z-index:2;padding:0;}
   .prompt-item:hover .prompt-copy-btn{opacity:1;}
   .prompt-copy-btn:hover{background:var(--mint-50);border-color:var(--mint-300);color:var(--mint-700);transform:translateY(-50%) scale(1.1);}
   .prompt-copy-btn.copied{background:var(--mint-500);border-color:var(--mint-500);color:white;opacity:1;}
-  .faq-item{background:linear-gradient(135deg,#ffffff,rgba(20,184,166,0.02));border:1px solid rgba(15,23,42,0.08);border-radius:16px;margin-bottom:12px;transition:all 0.3s cubic-bezier(0.16,1,0.3,1);overflow:hidden;}
-  .faq-item:hover{box-shadow:0 6px 24px -6px rgba(20,184,166,0.18);border-color:rgba(20,184,166,0.2);}
-  .faq-item.open{background:linear-gradient(135deg,rgba(20,184,166,0.04),rgba(20,184,166,0.01));border-color:rgba(20,184,166,0.35);box-shadow:0 8px 32px -8px rgba(20,184,166,0.22);}
+  .faq-item{background:#fff;border:1px solid #E4E4E7;border-radius:12px;margin-bottom:12px;transition:all 0.2s ease;overflow:hidden;box-shadow:none;}
+  .faq-item:hover{box-shadow:0 2px 8px 0 rgba(0,0,0,0.04);border-color:rgba(20,184,166,0.2);}
+  .faq-item.open{border-color:#14B8A6;box-shadow:0 2px 8px 0 rgba(0,0,0,0.04);}
   .faq-question{width:100%;padding:20px 24px;display:flex;align-items:center;gap:14px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:inherit;transition:background 0.25s ease;}
-  .faq-question:hover{background:rgba(20,184,166,0.04);}
-  .faq-item.open .faq-question{background:linear-gradient(135deg,rgba(20,184,166,0.06),rgba(20,184,166,0.02));border-bottom:1px solid rgba(20,184,166,0.12);}
+  .faq-question:hover{background:rgba(20,184,166,0.03);}
+  .faq-item.open .faq-question{background:rgba(20,184,166,0.03);border-bottom:1px solid rgba(20,184,166,0.12);}
   .faq-question:focus{outline:none;}
-  .faq-num{flex-shrink:0;width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--mint-600),var(--mint-400));color:var(--navy);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:0 2px 8px -2px rgba(20,184,166,0.3);}
+  .faq-num{flex-shrink:0;width:36px;height:36px;border-radius:8px;background:#14B8A6;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:none;}
   .faq-title{flex:1;font-weight:700;font-size:15px;color:var(--navy);line-height:1.5;}
   .faq-chevron{flex-shrink:0;width:20px;height:20px;color:var(--slate-400);transition:transform 0.3s ease;}
   .faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--mint-700);}
@@ -129,20 +118,18 @@
   .faq-answer-inner ul{margin-top:8px;}
   .faq-answer-inner li{position:relative;padding-left:18px;margin-bottom:6px;}
   .faq-answer-inner li::before{content:'\2192';position:absolute;left:0;color:var(--mint-500);font-weight:700;}
-  .faq-answer-inner img,.screenshot-mockup{display:block;width:100%;max-width:700px;height:auto;margin-top:12px;border-radius:20px;border:1px solid rgba(135,167,160,0.47);box-shadow:8px 8px 20px 0px rgba(183,230,223,0.3);transition:all 0.3s ease;}
-  .faq-answer-inner img:hover,.screenshot-mockup:hover{border-color:rgba(20,184,166,0.4);box-shadow:12px 12px 28px 0px rgba(183,230,223,0.45);transform:scale(1.01);}
-  .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:21px;background:var(--mint-50);color:var(--mint-700);font-size:12px;font-weight:700;border:1.3px solid rgba(20,184,166,0.2);}
-  .highlight-box{background:var(--success-bg);border:3px solid var(--success-border);border-radius:20px;padding:18px 20px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
-  .info-box{background:var(--info-bg);border:3px solid var(--info-border);border-radius:20px;padding:18px 20px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
-  .warning-box{background:var(--warning-bg);border:3px solid var(--warning-border);border-radius:20px;padding:18px 20px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
-  .tip-card{background:#fff;border:1px solid rgba(15,23,42,0.06);border-radius:20px;padding:24px;transition:all 0.3s ease;position:relative;overflow:hidden;}
-  .tip-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--brand-gradient);opacity:0;transition:opacity 0.3s ease;}
-  .tip-card:hover{transform:translateY(-4px);border-color:rgba(20,184,166,0.3);box-shadow:0px 0px 20px 0px rgba(127,127,127,0.1);}
-  .tip-card:hover::before{opacity:1;}
-  .tip-icon{width:44px;height:44px;border-radius:12px;background:var(--mint-50);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
-  .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:60px;background:var(--brand-gradient);color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.25s ease;box-shadow:0 8px 24px -8px rgba(26,223,137,0.45);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(26,223,137,0.55);}
-  .btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border-radius:60px;background:rgba(255,255,255,0.7);color:var(--navy-soft);font-weight:600;font-size:14px;text-decoration:none;border:1px solid rgba(15,23,42,0.08);transition:all 0.2s ease;backdrop-filter:blur(8px);}
+  .faq-answer-inner img,.screenshot-mockup{display:block;width:100%;max-width:700px;height:auto;margin-top:12px;border-radius:12px;border:1px solid #E4E4E7;box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);transition:all 0.3s ease;}
+  .faq-answer-inner img:hover,.screenshot-mockup:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 4px 12px 0 rgba(0,0,0,0.08);transform:scale(1.005);}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:8px;background:var(--mint-50);color:var(--mint-700);font-size:12px;font-weight:700;border:1px solid rgba(20,184,166,0.2);}
+  .highlight-box{background:var(--success-bg);border:1px solid var(--success-border);border-radius:12px;padding:18px 20px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
+  .info-box{background:var(--info-bg);border:1px solid var(--info-border);border-radius:12px;padding:18px 20px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
+  .warning-box{background:var(--warning-bg);border:1px solid var(--warning-border);border-radius:12px;padding:18px 20px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
+  .tip-card{background:#fff;border:1px solid #E4E4E7;border-radius:12px;padding:24px;transition:all 0.2s ease;position:relative;overflow:hidden;box-shadow:none;}
+  .tip-card:hover{transform:translateY(-2px);border-color:rgba(20,184,166,0.3);box-shadow:0 4px 12px 0 rgba(0,0,0,0.06);}
+  .tip-icon{width:44px;height:44px;border-radius:8px;background:var(--mint-50);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;background:#14B8A6;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.25s ease;box-shadow:none;}
+  .btn-primary:hover{background:#0D9488;transform:translateY(-1px);box-shadow:0 4px 12px 0 rgba(0,0,0,0.1);}
+  .btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border-radius:8px;background:#fff;color:var(--navy-soft);font-weight:600;font-size:14px;text-decoration:none;border:1px solid #E4E4E7;transition:all 0.2s ease;}
   .btn-ghost:hover{background:#fff;border-color:rgba(20,184,166,0.3);color:var(--mint-700);}
   .section-divider-gradient{height:4px;border-radius:2px;background:var(--brand-gradient);opacity:0.5;}
   .lang-en-only{display:block;}
@@ -150,14 +137,14 @@
   html[lang="zh-Hant"] .lang-en-only{display:none;}
   html[lang="zh-Hant"] .lang-zh-only{display:block;}
   @media(max-width:1024px){.sidebar{display:none;}}
-  @media(max-width:640px){.big-step{padding:20px;}.faq-answer-inner{padding-left:24px;}.orb{display:none;}}
+  @media(max-width:640px){.big-step{padding:20px;}.faq-answer-inner{padding-left:24px;}}
 </style>
 </head>
 <body>
-<header class="sticky top-0 z-50 bg-white/85 backdrop-blur-lg border-b border-mint-100">
+<header class="sticky top-0 z-50 border-b" style="background:#fff;border-color:#E4E4E7;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
     <a href="#top" class="flex items-center gap-3 group">
-      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-mint-600 to-mint-400 flex items-center justify-center shadow-mint group-hover:scale-105 transition-transform">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:#14B8A6;">
         <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M12 3 L4 21 L20 21 Z" fill="#fff"/></svg>
       </div>
       <div class="flex flex-col leading-tight">
@@ -173,17 +160,11 @@
     </div>
   </div>
 </header>
-<section id="top" class="relative overflow-hidden">
-  <div class="absolute inset-0 hero-grid"></div>
-  <div class="absolute inset-0 bg-gradient-to-b from-mint-50/40 via-transparent to-transparent"></div>
-  <!-- Aurora gradient orbs -->
-  <div class="orb orb-green" style="top:-80px;left:-60px;"></div>
-  <div class="orb orb-blue" style="top:40px;right:-40px;"></div>
-  <div class="orb orb-teal" style="bottom:-120px;left:30%;opacity:0.4;"></div>
+<section id="top" class="relative" style="background:#FAFAFA;">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
       <div class="lg:col-span-12">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-mint-200 mb-5 shadow-soft">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-mint-200 mb-5">
           <span class="w-2 h-2 rounded-full bg-mint-500 animate-pulse"></span>
           <span class="text-xs font-bold text-mint-700 tracking-wide" data-i18n="hero.badge">FOR ALIBABA.COM SELLERS</span>
         </div>
@@ -222,7 +203,7 @@
         <a href="#section-3" class="sidebar-link" data-section="section-3"><span class="num">03</span><span data-i18n="nav.s3">Troubleshooting</span></a>
         <a href="#section-4" class="sidebar-link" data-section="section-4"><span class="num">04</span><span data-i18n="nav.s4">Merchant FAQ</span></a>
         <a href="#section-5" class="sidebar-link" data-section="section-5"><span class="num">05</span><span data-i18n="nav.s5">Pro tips</span></a>
-        <a href="#cta-final" class="sidebar-link" data-section="cta-final"><span class="num" style="background:linear-gradient(135deg,#FF7A00,#FFB877);color:#fff;">&#8594;</span><span data-i18n="nav.cta">Get started</span></a>
+        <a href="#cta-final" class="sidebar-link" data-section="cta-final"><span class="num" style="background:#14B8A6;color:#fff;">&#8594;</span><span data-i18n="nav.cta">Get started</span></a>
       </nav>
     </aside>
     <div class="flex-1 min-w-0 max-w-3xl">
@@ -297,7 +278,7 @@
         </div>
       </section>
 
-      <section id="section-3" class="scroll-mt-24 mb-16 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:24px;">
+      <section id="section-3" class="scroll-mt-24 mb-16 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:12px;">
         <div class="flex items-center gap-3 mb-3"><div class="section-num">03</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s3.title">Something Wrong? Quick Fixes</h2></div>
         <div class="space-y-3">
           <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">1</div><div class="faq-title" data-i18n="s3.q1.title">Can't find the Global Seller Agent plugin?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">
@@ -368,7 +349,7 @@
         </div>
       </section>
 
-      <section id="section-5" class="scroll-mt-24 mb-16 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:24px;">
+      <section id="section-5" class="scroll-mt-24 mb-16 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:12px;">
         <div class="flex items-center gap-3 mb-3"><div class="section-num">05</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s5.title">Pro Tips: Make <span class="gradient-text">Every Credit</span> Count</h2></div>
         <p class="text-sm text-slate2-500 mb-6 ml-[52px]" data-i18n="s5.formula"><span class="font-mono text-mint-700 bg-mint-50 px-2 py-1 rounded">Credits Spent = Model Compute Cost + Tokens Used</span></p>
         <div class="grid sm:grid-cols-2 gap-4">
@@ -380,39 +361,18 @@
       </section>
 
       <section id="cta-final" class="scroll-mt-24">
-        <div class="relative overflow-hidden rounded-r24 px-8 sm:px-12 py-14 sm:py-16 text-white" style="background:#0A0E1A;">
-          <!-- Starfield dots -->
-          <div class="absolute inset-0 overflow-hidden" style="pointer-events:none;">
-            <div style="position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;top:12%;left:8%;opacity:0.4;"></div>
-            <div style="position:absolute;width:1px;height:1px;background:#fff;border-radius:50%;top:24%;left:35%;opacity:0.6;"></div>
-            <div style="position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;top:8%;left:62%;opacity:0.3;"></div>
-            <div style="position:absolute;width:1px;height:1px;background:#fff;border-radius:50%;top:45%;left:78%;opacity:0.5;"></div>
-            <div style="position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;top:65%;left:18%;opacity:0.35;"></div>
-            <div style="position:absolute;width:1px;height:1px;background:#fff;border-radius:50%;top:72%;left:52%;opacity:0.45;"></div>
-            <div style="position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;top:32%;left:88%;opacity:0.25;"></div>
-            <div style="position:absolute;width:1px;height:1px;background:#fff;border-radius:50%;top:88%;left:42%;opacity:0.5;"></div>
-            <div style="position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;top:55%;left:92%;opacity:0.3;"></div>
-            <div style="position:absolute;width:1px;height:1px;background:#fff;border-radius:50%;top:18%;left:48%;opacity:0.4;"></div>
-            <div style="position:absolute;width:1px;height:1px;background:#fff;border-radius:50%;top:38%;left:22%;opacity:0.55;"></div>
-            <div style="position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;top:82%;left:72%;opacity:0.3;"></div>
-          </div>
-          <!-- Space glow orbs -->
-          <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full blur-3xl" style="background:rgba(20,184,166,0.15)"></div>
-          <div class="absolute -bottom-16 -left-16 w-64 h-64 rounded-full blur-3xl" style="background:rgba(52,211,153,0.10)"></div>
-          <div class="absolute top-1/2 left-1/2 w-96 h-96 rounded-full blur-3xl" style="background:rgba(20,184,166,0.05);transform:translate(-50%,-50%)"></div>
-          <!-- Aurora gradient accent bar -->
-          <div class="aurora-glow absolute top-0 left-0 right-0 h-1" style="border-radius:0 0 2px 2px;filter:blur(0);opacity:1;"></div>
+        <div class="relative px-8 sm:px-12 py-14 sm:py-16" style="background:#F4F4F4;border-radius:12px;">
           <div class="relative">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.10);backdrop-filter:blur(8px)"><span class="text-xs">&#x1F680;</span><span class="text-xs font-bold tracking-wide" data-i18n="cta.badge">READY TO GET STARTED?</span></div>
-            <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-4 max-w-xl leading-tight" data-i18n="cta.title">3 minutes, 3 steps. Your AI agent is waiting.</h2>
-            <p class="text-base leading-relaxed mb-8 max-w-lg" style="color:rgba(255,255,255,0.6)" data-i18n="cta.subtitle">Install Accio Work &#8594; enable Global Seller Agent &#8594; authorize with your Alibaba.com account. Then just say what you need. In your own words.</p>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5" style="background:#fff;border:1px solid #E4E4E7;"><span class="text-xs">&#x1F680;</span><span class="text-xs font-bold tracking-wide text-navy" data-i18n="cta.badge">READY TO GET STARTED?</span></div>
+            <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-4 max-w-xl leading-tight text-navy" data-i18n="cta.title">3 minutes, 3 steps. Your AI agent is waiting.</h2>
+            <p class="text-base leading-relaxed mb-8 max-w-lg text-slate2-500" data-i18n="cta.subtitle">Install Accio Work &#8594; enable Global Seller Agent &#8594; authorize with your Alibaba.com account. Then just say what you need. In your own words.</p>
             <div class="flex flex-wrap items-center gap-3">
-              <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-sm transition" style="background:linear-gradient(158deg,#1ADF89 11%,#00B2FF 100%);color:#fff;box-shadow:0 8px 24px -8px rgba(26,223,137,0.45)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v14M5 10l7 7 7-7M5 21h14"/></svg><span data-i18n="cta.button">Download Accio Work</span></a>
+              <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v14M5 10l7 7 7-7M5 21h14"/></svg><span data-i18n="cta.button">Download Accio Work</span></a>
             </div>
-            <div class="mt-10 pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm" style="border-top:1px solid rgba(255,255,255,0.08)">
-              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(12px)"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:rgba(20,184,166,0.2);color:#6EE7B7">1</div><div><div class="font-semibold text-white" data-i18n="cta.s1.title">Install Accio Work</div><div class="text-xs mt-1" style="color:rgba(255,255,255,0.45)" data-i18n="cta.s1.body">at accio.com/work</div></div></div>
-              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(12px)"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:rgba(20,184,166,0.2);color:#6EE7B7">2</div><div><div class="font-semibold text-white" data-i18n="cta.s2.title">Click New Message &#8594; select Global Seller Agent</div><div class="text-xs mt-1" style="color:rgba(255,255,255,0.45)" data-i18n="cta.s2.body">follow the prompt to complete authorization</div></div></div>
-              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(12px)"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:rgba(20,184,166,0.2);color:#6EE7B7">3</div><div><div class="font-semibold text-white" data-i18n="cta.s3.title">Head back to chat &#8594; plugin is on by default</div><div class="text-xs mt-1" style="color:rgba(255,255,255,0.45)" data-i18n="cta.s3.body">say what you need in your own words</div></div></div>
+            <div class="mt-10 pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm" style="border-top:1px solid #E4E4E7">
+              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:#fff;border:1px solid #E4E4E7;"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:#14B8A6;color:#fff;">1</div><div><div class="font-semibold text-navy" data-i18n="cta.s1.title">Install Accio Work</div><div class="text-xs mt-1 text-slate2-500" data-i18n="cta.s1.body">at accio.com/work</div></div></div>
+              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:#fff;border:1px solid #E4E4E7;"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:#14B8A6;color:#fff;">2</div><div><div class="font-semibold text-navy" data-i18n="cta.s2.title">Click New Message &#8594; select Global Seller Agent</div><div class="text-xs mt-1 text-slate2-500" data-i18n="cta.s2.body">follow the prompt to complete authorization</div></div></div>
+              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:#fff;border:1px solid #E4E4E7;"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:#14B8A6;color:#fff;">3</div><div><div class="font-semibold text-navy" data-i18n="cta.s3.title">Head back to chat &#8594; plugin is on by default</div><div class="text-xs mt-1 text-slate2-500" data-i18n="cta.s3.body">say what you need in your own words</div></div></div>
             </div>
           </div>
         </div>
