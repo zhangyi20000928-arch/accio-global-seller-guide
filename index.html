@@ -22,7 +22,7 @@
             800:'#115E59',900:'#134E4A',
           },
           navy:{DEFAULT:'#0F172A',soft:'#1E293B',mid:'#334155'},
-          slate2:{400:'#94A3B8',500:'#64748B',600:'#475569'},
+          slate2:{400:'#94A3B8',500:'#4B5563',600:'#374151'},
           paper:'#FAFAFA',
           space:{DEFAULT:'#0A0E1A',card:'rgba(255,255,255,0.06)',border:'rgba(255,255,255,0.10)',glow:'rgba(20,184,166,0.15)'},
         },
@@ -45,11 +45,11 @@
   };
 </script>
 <style>
-  :root{--mint-50:#ECFDF5;--mint-100:#D1FAE5;--mint-300:#6EE7B7;--mint-500:#14B8A6;--mint-600:#0D9488;--mint-700:#0F766E;--navy:#0F172A;--navy-soft:#1E293B;--slate-500:#64748B;--slate-400:#94A3B8;--paper:#FAFAFA;--brand-gradient:linear-gradient(158deg,#1ADF89 11%,#00B2FF 100%);--info-bg:#EEF7FF;--info-border:#D4E5EA;--success-bg:#EEFFF6;--success-border:#D4EAD8;--warning-bg:#FFF5EC;--warning-border:#FFEDC7;}
+  :root{--mint-50:#ECFDF5;--mint-100:#D1FAE5;--mint-300:#6EE7B7;--mint-500:#14B8A6;--mint-600:#0D9488;--mint-700:#0F766E;--navy:#0F172A;--navy-soft:#1E293B;--slate-500:#475569;--slate-400:#94A3B8;--paper:#FAFAFA;--brand-gradient:linear-gradient(158deg,#1ADF89 11%,#00B2FF 100%);--info-bg:#EEF7FF;--info-border:#D4E5EA;--success-bg:#EEFFF6;--success-border:#D4EAD8;--warning-bg:#FFF5EC;--warning-border:#FFEDC7;}
   html{scroll-behavior:smooth;scroll-padding-top:96px;}
   *{-webkit-tap-highlight-color:transparent;}
   #langToggle > *{pointer-events:none;}
-  body{font-family:'Noto Sans','Noto Sans TC',system-ui,sans-serif;background:var(--paper);color:var(--navy);-webkit-font-smoothing:antialiased;}
+  body{font-family:'Noto Sans','Noto Sans TC',system-ui,sans-serif;background:var(--paper);color:var(--navy);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.75;}
   .gradient-text{color:#14B8A6;}
   .sidebar{position:sticky;top:96px;height:calc(100vh - 112px);overflow-y:auto;scrollbar-width:none;}
   .sidebar::-webkit-scrollbar{display:none;}
@@ -62,7 +62,7 @@
   .sidebar-link[data-section^="section-2-step"] .num{width:24px;height:24px;font-size:11px;background:#14B8A6;color:#fff;}
   .section-num{flex-shrink:0;width:40px;height:40px;border-radius:8px;background:#14B8A6;color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:none;}
   .section-alt{background:#F4F4F4;position:relative;isolation:isolate;}
-  .big-step{position:relative;background:#fff;border:1px solid #E4E4E7;border-radius:12px;padding:24px;transition:all 0.3s ease;box-shadow:none;}
+  .big-step{position:relative;background:#fff;border:1px solid #E4E4E7;border-radius:12px;padding:28px;transition:all 0.3s ease;box-shadow:none;}
   .big-step:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);}
   .big-step-label{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:8px;background:var(--mint-50);color:var(--mint-700);font-size:11px;font-weight:800;letter-spacing:0.08em;font-family:'Noto Sans',sans-serif;border:1px solid rgba(20,184,166,0.15);}
   .gif-showcase{position:relative;border-radius:12px;overflow:hidden;border:1px solid #E4E4E7;background:#FAFAFA;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;transition:all 0.3s ease;cursor:pointer;box-shadow:none;}
@@ -94,37 +94,37 @@
   .prompt-category-title{font-weight:800;font-size:14px;color:var(--navy);flex:1;}
   .prompt-category-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--slate-500);font-weight:600;padding:4px 12px;background:#fff;border-radius:8px;border:1px solid #ECEDEE;}
   .prompt-list{display:grid;gap:8px;padding-left:20px;}
-  .prompt-item{position:relative;padding:12px 40px 12px 16px;background:white;border:1px solid #F2F2F2;border-radius:8px;font-size:13px;line-height:1.6;color:var(--slate-600);transition:all 0.25s ease;cursor:default;}
+  .prompt-item{position:relative;padding:12px 40px 12px 16px;background:white;border:1px solid #F2F2F2;border-radius:8px;font-size:14px;line-height:1.7;color:var(--slate-500);transition:all 0.25s ease;cursor:default;}
   .prompt-item:hover{border-color:var(--mint-300);box-shadow:0 2px 8px 0 rgba(0,0,0,0.04);transform:translateX(2px);}
   .prompt-copy-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,0.9);border:1px solid rgba(15,23,42,0.08);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:all 0.2s ease;color:var(--slate-400);z-index:2;padding:0;}
   .prompt-item:hover .prompt-copy-btn{opacity:1;}
   .prompt-copy-btn:hover{background:var(--mint-50);border-color:var(--mint-300);color:var(--mint-700);transform:translateY(-50%) scale(1.1);}
   .prompt-copy-btn.copied{background:var(--mint-500);border-color:var(--mint-500);color:white;opacity:1;}
-  .faq-item{background:#fff;border:1px solid #E4E4E7;border-radius:12px;margin-bottom:12px;transition:all 0.2s ease;overflow:hidden;box-shadow:none;}
+  .faq-item{background:#fff;border:1px solid #E4E4E7;border-radius:12px;margin-bottom:16px;transition:all 0.2s ease;overflow:hidden;box-shadow:none;}
   .faq-item:hover{box-shadow:0 2px 8px 0 rgba(0,0,0,0.04);border-color:rgba(20,184,166,0.2);}
   .faq-item.open{border-color:#14B8A6;box-shadow:0 2px 8px 0 rgba(0,0,0,0.04);}
-  .faq-question{width:100%;padding:20px 24px;display:flex;align-items:center;gap:14px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:inherit;transition:background 0.25s ease;}
+  .faq-question{width:100%;padding:22px 24px;display:flex;align-items:center;gap:14px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:inherit;transition:background 0.25s ease;}
   .faq-question:hover{background:rgba(20,184,166,0.03);}
   .faq-item.open .faq-question{background:rgba(20,184,166,0.03);border-bottom:1px solid rgba(20,184,166,0.12);}
   .faq-question:focus{outline:none;}
   .faq-num{flex-shrink:0;width:36px;height:36px;border-radius:8px;background:#14B8A6;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:none;}
-  .faq-title{flex:1;font-weight:700;font-size:15px;color:var(--navy);line-height:1.5;}
+  .faq-title{flex:1;font-weight:700;font-size:16px;color:var(--navy);line-height:1.55;}
   .faq-chevron{flex-shrink:0;width:20px;height:20px;color:var(--slate-400);transition:transform 0.3s ease;}
   .faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--mint-700);}
   .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.16,1,0.3,1);}
   .faq-item.open .faq-answer{max-height:5000px;}
-  .faq-answer-inner{padding:20px 24px 24px 70px;font-size:14px;line-height:1.8;color:var(--slate-600);background:rgba(255,255,255,0.6);}
+  .faq-answer-inner{padding:24px 24px 28px 24px;font-size:15px;line-height:1.85;color:var(--slate-500);background:rgba(255,255,255,0.6);}
   .faq-answer-inner strong{color:var(--navy);font-weight:700;}
   .faq-answer-inner ul{margin-top:8px;}
-  .faq-answer-inner li{position:relative;padding-left:18px;margin-bottom:6px;}
+  .faq-answer-inner li{position:relative;padding-left:18px;margin-bottom:8px;}
   .faq-answer-inner li::before{content:'\2192';position:absolute;left:0;color:var(--mint-500);font-weight:700;}
   .faq-answer-inner img,.screenshot-mockup{display:block;width:100%;max-width:700px;height:auto;margin-top:12px;border-radius:12px;border:1px solid #E4E4E7;box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);transition:all 0.3s ease;}
   .faq-answer-inner img:hover,.screenshot-mockup:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 4px 12px 0 rgba(0,0,0,0.08);transform:scale(1.005);}
   .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:8px;background:var(--mint-50);color:var(--mint-700);font-size:12px;font-weight:700;border:1px solid rgba(20,184,166,0.2);}
-  .highlight-box{background:var(--success-bg);border:1px solid var(--success-border);border-radius:12px;padding:18px 20px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
-  .info-box{background:var(--info-bg);border:1px solid var(--info-border);border-radius:12px;padding:18px 20px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
-  .warning-box{background:var(--warning-bg);border:1px solid var(--warning-border);border-radius:12px;padding:18px 20px;font-size:14px;line-height:1.65;color:var(--navy-soft);}
-  .tip-card{background:#fff;border:1px solid #E4E4E7;border-radius:12px;padding:24px;transition:all 0.2s ease;position:relative;overflow:hidden;box-shadow:none;}
+  .highlight-box{background:var(--success-bg);border:1px solid var(--success-border);border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
+  .info-box{background:var(--info-bg);border:1px solid var(--info-border);border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
+  .warning-box{background:var(--warning-bg);border:1px solid var(--warning-border);border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
+  .tip-card{background:#fff;border:1px solid #E4E4E7;border-radius:12px;padding:28px;transition:all 0.2s ease;position:relative;overflow:hidden;box-shadow:none;}
   .tip-card:hover{transform:translateY(-2px);border-color:rgba(20,184,166,0.3);box-shadow:0 4px 12px 0 rgba(0,0,0,0.06);}
   .tip-icon{width:44px;height:44px;border-radius:8px;background:var(--mint-50);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
   .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;background:#14B8A6;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.25s ease;box-shadow:none;}
@@ -178,7 +178,7 @@
           <span data-i18n="hero.title.l2">use forever.</span><br/>
           <span class="gradient-text" data-i18n="hero.title.l3">Everyone gets their own AI e-commerce agent.</span>
         </h1>
-        <p class="mt-6 text-base sm:text-lg text-slate2-500 leading-relaxed max-w-xl" data-i18n="hero.subtitle">In 3 minutes, you'll have a personal AI agent that knows your Alibaba.com store inside out -- and works for you 24/7 on listings, product selection, buyer communication, and store operations.</p>
+        <p class="mt-6 text-base sm:text-[17px] text-slate2-500 leading-[1.8] max-w-xl" data-i18n="hero.subtitle">In 3 minutes, you'll have a personal AI agent that knows your Alibaba.com store inside out -- and works for you 24/7 on listings, product selection, buyer communication, and store operations.</p>
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v14M5 10l7 7 7-7M5 21h14"/></svg>
@@ -213,9 +213,9 @@
     </aside>
     <div class="flex-1 min-w-0 max-w-3xl">
 
-      <section id="section-1" class="scroll-mt-24 mb-16">
+      <section id="section-1" class="scroll-mt-24 mb-20">
         <div class="flex items-center gap-3 mb-5"><div class="section-num">01</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s1.title">What is <span class="gradient-text">Accio Work</span>?</h2></div>
-        <p class="text-[15px] sm:text-base text-slate2-500 leading-relaxed mb-6 max-w-2xl" data-i18n="s1.lead">Accio Work is your <strong class="text-navy">desktop AI workstation for cross-border business</strong>. Imagine a team of AI agents sitting on your computer, ready to handle market research, listings, marketing, customer follow-ups, and store operations -- all in plain language, no coding required.</p>
+        <p class="text-base sm:text-[17px] text-slate2-500 leading-[1.8] mb-6 max-w-2xl" data-i18n="s1.lead">Accio Work is your <strong class="text-navy">desktop AI workstation for cross-border business</strong>. Imagine a team of AI agents sitting on your computer, ready to handle market research, listings, marketing, customer follow-ups, and store operations -- all in plain language, no coding required.</p>
         <div class="highlight-box">
           <div class="flex items-start gap-3">
             <span class="text-xl flex-shrink-0">&#x1F517;</span>
@@ -228,14 +228,14 @@
         </div>
       </section>
 
-      <section id="section-2" class="scroll-mt-24 mb-16">
+      <section id="section-2" class="scroll-mt-24 mb-20">
         <div class="flex items-center gap-3 mb-5"><div class="section-num">02</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s2.title">Enable the <span class="gradient-text">Global Seller Agent</span> Plugin</h2></div>
-        <p class="text-[15px] sm:text-base text-slate2-500 leading-relaxed mb-5 max-w-2xl" data-i18n="s2.lead">The <strong class="text-navy">Global Seller Agent</strong> is the agent on Accio Work made for Alibaba.com sellers. It connects to your store, knows your products and buyers, and uses <strong class="text-navy">20+ pre-loaded professional skills</strong> -- so you don't need to configure anything yourself.</p>
+        <p class="text-base sm:text-[17px] text-slate2-500 leading-[1.8] mb-5 max-w-2xl" data-i18n="s2.lead">The <strong class="text-navy">Global Seller Agent</strong> is the agent on Accio Work made for Alibaba.com sellers. It connects to your store, knows your products and buyers, and uses <strong class="text-navy">20+ pre-loaded professional skills</strong> -- so you don't need to configure anything yourself.</p>
         <div class="info-box mb-8"><div class="flex items-start gap-3"><span class="text-xl flex-shrink-0">&#x1F4A1;</span><p data-i18n="s2.rename"><strong>A familiar name with a new home.</strong> If you've used <strong>Smart Assistant</strong> on Alibaba.com before, you'll feel right at home -- it's been renamed to <strong>Global Seller Agent</strong> inside Accio Work, with even more powerful capabilities.</p></div></div>
 
         <div id="section-2-step1" class="big-step mb-6 scroll-mt-24">
           <div class="flex items-center gap-2 mb-4"><span class="big-step-label" data-i18n="s2.step1.label">STEP 1</span><h3 class="font-display font-extrabold text-lg text-navy" data-i18n="s2.step1.title">Switch to the official AI agent in the new message and complete the authorization.</h3></div>
-          <p class="text-sm text-slate2-500 leading-relaxed mb-5" data-i18n="s2.step1.body">On the Accio Work home page, click <strong class="text-navy">New Message</strong> &#8594; select <strong class="text-navy">Global Seller Agent</strong>. If you haven't authorized yet, an authorization prompt will appear &#8594; click <strong class="text-navy">"Go to bind"</strong> to be redirected to the authorization page &#8594; log in with your Alibaba.com account to complete authorization. Once authorized, your store data, product catalog, and inquiry records will be connected — the agent now knows your business.</p>
+          <p class="text-[15px] text-slate2-500 leading-[1.8] mb-5" data-i18n="s2.step1.body">On the Accio Work home page, click <strong class="text-navy">New Message</strong> &#8594; select <strong class="text-navy">Global Seller Agent</strong>. If you haven't authorized yet, an authorization prompt will appear &#8594; click <strong class="text-navy">"Go to bind"</strong> to be redirected to the authorization page &#8594; log in with your Alibaba.com account to complete authorization. Once authorized, your store data, product catalog, and inquiry records will be connected — the agent now knows your business.</p>
           <div class="gif-showcase has-real-gif mb-5" data-gif-en="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780390136320-58fff343-c282-422b-9cb2-1cc1eeeb5401.gif" data-gif-zh="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780467299853-a4a02f34-1faa-442d-8c6b-7b1a67870883.gif" onclick="playGif(this)">
             <div class="gif-overlay"><div class="gif-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><div class="gif-label" data-i18n="s2.step1.gif">&#8593; Switch agent &amp; authorize walkthrough</div><div class="gif-caption" data-i18n="s2.step1.gifHint">Click to play</div></div>
             <div class="gif-placeholder"></div>
@@ -249,7 +249,7 @@
 
         <div id="section-2-step2" class="big-step mb-6 scroll-mt-24">
           <div class="flex items-center gap-2 mb-4"><span class="big-step-label" data-i18n="s2.step2.label">STEP 2</span><h3 class="font-display font-extrabold text-lg text-navy" data-i18n="s2.step2.title">Start chatting</h3></div>
-          <p class="text-sm text-slate2-500 leading-relaxed mb-5" data-i18n="s2.step2.body">Head back to chat and start a conversation with <strong class="text-navy">Global Seller Agent</strong>. Just type what you need in your own words. If you're using Alibaba.com capabilities with a non-official agent, make sure the <strong class="text-navy">Global Seller Agent plugin is turned on</strong> in the toolbar -- the plugin must be active for the agent to access your Alibaba.com data and skills.</p>
+          <p class="text-[15px] text-slate2-500 leading-[1.8] mb-5" data-i18n="s2.step2.body">Head back to chat and start a conversation with <strong class="text-navy">Global Seller Agent</strong>. Just type what you need in your own words. If you're using Alibaba.com capabilities with a non-official agent, make sure the <strong class="text-navy">Global Seller Agent plugin is turned on</strong> in the toolbar -- the plugin must be active for the agent to access your Alibaba.com data and skills.</p>
           <div class="gif-showcase has-real-gif mb-5" data-gif-en="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780390501175-1f9d4980-3468-4fb0-a1e0-06951e6a9756.gif" data-gif-zh="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780306172671-b0760ad5-7359-46db-a3d2-93ae38668cad.gif" onclick="playGif(this)">
             <div class="gif-overlay"><div class="gif-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><div class="gif-label" data-i18n="s2.step2.gif">&#8593; Chat interface in action</div><div class="gif-caption" data-i18n="s2.step2.gifHint">Click to play</div></div>
             <div class="gif-placeholder"></div>
@@ -263,8 +263,8 @@
 
         <div id="section-2-step3" class="big-step mb-6 scroll-mt-24">
           <div class="flex items-center gap-2 mb-4"><span class="big-step-label" data-i18n="s2.step3.label">STEP 3</span><h3 class="font-display font-extrabold text-lg text-navy" data-i18n="s2.step3.title">Enable Alibaba.com capabilities in other agents</h3></div>
-          <p class="text-sm text-slate2-500 leading-relaxed mb-5" data-i18n="s2.step3.body">The Global Seller Agent plugin is not exclusive to the official agent. Other agents in Accio Work -- including custom-built agents -- may also be bound to this plugin to access Alibaba.com capabilities such as store data queries, product analysis, and buyer inquiry handling.</p>
-          <p class="text-sm text-slate2-500 leading-relaxed mb-5" data-i18n="s2.step3.howto"><strong class="text-navy">How to bind:</strong> Go to <strong class="text-navy">Plugins</strong> &#8594; open the Global Seller Agent detail page &#8594; find the <strong class="text-navy">Applied to Agents</strong> section &#8594; click <strong class="text-navy">Manage</strong> to add or remove agents.</p>
+          <p class="text-[15px] text-slate2-500 leading-[1.8] mb-5" data-i18n="s2.step3.body">The Global Seller Agent plugin is not exclusive to the official agent. Other agents in Accio Work -- including custom-built agents -- may also be bound to this plugin to access Alibaba.com capabilities such as store data queries, product analysis, and buyer inquiry handling.</p>
+          <p class="text-[15px] text-slate2-500 leading-[1.8] mb-5" data-i18n="s2.step3.howto"><strong class="text-navy">How to bind:</strong> Go to <strong class="text-navy">Plugins</strong> &#8594; open the Global Seller Agent detail page &#8594; find the <strong class="text-navy">Applied to Agents</strong> section &#8594; click <strong class="text-navy">Manage</strong> to add or remove agents.</p>
           <div class="gif-showcase has-real-gif mb-5" data-gif-en="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780390855590-4c6daf8a-e57d-450d-aa76-5ccdafa10eb6.gif" data-gif-zh="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780300674944-47e65efd-a4d7-4b78-918a-1792a0251445.gif" onclick="playGif(this)">
             <div class="gif-overlay"><div class="gif-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><div class="gif-label" data-i18n="s2.step3.gif">&#8593; Binding plugin to other agents</div><div class="gif-caption" data-i18n="s2.step3.gifHint">Click to play</div></div>
             <div class="gif-placeholder"></div>
@@ -274,7 +274,7 @@
         </div>
 
         <div class="mb-6">
-          <p class="text-sm text-slate2-500 mb-5" data-i18n="s2.prompts.intro">Not sure where to start? Try these -- just copy, paste, and go!</p>
+          <p class="text-[15px] text-slate2-500 mb-5" data-i18n="s2.prompts.intro">Not sure where to start? Try these -- just copy, paste, and go!</p>
           <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F50D;</span><span class="prompt-category-title" data-i18n="s2.cat1.title">Find a winning product</span><span class="prompt-category-tag" data-i18n="s2.cat1.tag">(Market &amp; Selection)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p1">"What's selling well in the men's clothing category on Alibaba.com right now? Where are the buyers from?"</div><div class="prompt-item" data-i18n="s2.p2">"Analyze why leather motorcycle jackets are trending -- what 3 selling points should I highlight?"</div><div class="prompt-item" data-i18n="s2.p3">"Find blue ocean opportunities in [your category] for buyers in [target market]."</div><div class="prompt-item" data-i18n="s2.p4">"Mine top-selling products on Amazon for [keyword] and tell me which I can source competitively."</div></div></div>
           <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4E6;</span><span class="prompt-category-title" data-i18n="s2.cat2.title">Publish &amp; optimize products</span><span class="prompt-category-tag" data-i18n="s2.cat2.tag">(Listing)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p5">"Help me publish this product from 1688: [URL]. Fill in all details and optimize the title."</div><div class="prompt-item" data-i18n="s2.p6">"Batch-optimize my listings -- fix titles, keywords, attributes, and main images for better search ranking."</div><div class="prompt-item" data-i18n="s2.p7">"Migrate these 50 products to my Alibaba.com store with optimized SEO."</div><div class="prompt-item" data-i18n="s2.p8">"Generate a new main image for this product and tell me which would convert better."</div></div></div>
           <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4AC;</span><span class="prompt-category-title" data-i18n="s2.cat3.title">Handle buyer communication</span><span class="prompt-category-tag" data-i18n="s2.cat3.tag">(Reception)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p9">"Review my recently published products and tell me which have weak titles or attributes -- and how to fix them."</div><div class="prompt-item" data-i18n="s2.p10">"Score the quality of this inquiry and tell me how to prioritize follow-up."</div><div class="prompt-item" data-i18n="s2.p11">"Translate and reply to this buyer message in their native language."</div><div class="prompt-item" data-i18n="s2.p12">"Summarize this 30-message chat with the buyer and tell me the next best step."</div></div></div>
@@ -283,7 +283,7 @@
         </div>
       </section>
 
-      <section id="section-3" class="scroll-mt-24 mb-16 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:12px;">
+      <section id="section-3" class="scroll-mt-24 mb-20 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:12px;">
         <div class="flex items-center gap-3 mb-3"><div class="section-num">03</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s3.title">Something Wrong? Quick Fixes</h2></div>
         <div class="space-y-3">
           <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">1</div><div class="faq-title" data-i18n="s3.q1.title">Can't find Global Seller Agent? Or why am I seeing '國際站生意助手'?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">
@@ -344,7 +344,7 @@
         </div>
       </section>
 
-      <section id="section-4" class="scroll-mt-24 mb-16">
+      <section id="section-4" class="scroll-mt-24 mb-20">
         <div class="flex items-center gap-3 mb-6"><div class="section-num">04</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s4.title">You Might Be Wondering</h2></div>
         <div class="space-y-3">
           <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">Q1</div><div class="faq-title" data-i18n="s4.q1.title">I'm not tech-savvy. Will I be able to use it?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner"><p data-i18n="s4.q1.body"><strong>Absolutely yes.</strong> The chat box comes with example prompts for every common scenario -- just click one to start. You don't need to memorize commands, learn prompts, or configure anything. If you've ever chatted online, you can use this.</p></div></div></div>
@@ -354,14 +354,14 @@
         </div>
       </section>
 
-      <section id="section-5" class="scroll-mt-24 mb-16 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:12px;">
+      <section id="section-5" class="scroll-mt-24 mb-20 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:12px;">
         <div class="flex items-center gap-3 mb-3"><div class="section-num">05</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s5.title">Pro Tips: Make <span class="gradient-text">Every Credit</span> Count</h2></div>
-        <p class="text-sm text-slate2-500 mb-6 ml-[52px]" data-i18n="s5.formula"><span class="font-mono text-mint-700 bg-mint-50 px-2 py-1 rounded">Credits Spent = Model Compute Cost + Tokens Used</span></p>
+        <p class="text-[15px] text-slate2-500 mb-6 ml-[52px]" data-i18n="s5.formula"><span class="font-mono text-mint-700 bg-mint-50 px-2 py-1 rounded">Credits Spent = Model Compute Cost + Tokens Used</span></p>
         <div class="grid sm:grid-cols-2 gap-4">
-          <div class="tip-card"><div class="tip-icon">&#x1F4A1;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip1.title">Use the right model for the job</h3><p class="text-sm text-slate2-500 leading-relaxed" data-i18n="s5.tip1.body">Daily routine tasks (drafting messages, simple lookups)? Use a <strong class="text-navy">lighter model</strong>. Complex tasks (full store diagnostics, deep market analysis)? Switch to an <strong class="text-navy">advanced model</strong>. You can pick the model right in the chat box.</p></div>
-          <div class="tip-card"><div class="tip-icon">&#x1F3AF;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip2.title">Keep your prompts focused</h3><p class="text-sm text-slate2-500 leading-relaxed" data-i18n="s5.tip2.body">Ask <strong class="text-navy">one clear thing at a time</strong>. Don't pile 5 unrelated questions into one message -- break them up. Bonus: tell it the length you want ("top 3" / "in 100 words") to save tokens.</p></div>
-          <div class="tip-card"><div class="tip-icon">&#x1F9F0;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip3.title">Don't over-load on skills</h3><p class="text-sm text-slate2-500 leading-relaxed" data-i18n="s5.tip3.body">Only enable the skills you actually use. Loading every available skill makes the agent <strong class="text-navy">slower and more expensive</strong> to run.</p></div>
-          <div class="tip-card"><div class="tip-icon">&#9209;&#65039;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip4.title">Stop runaway tasks</h3><p class="text-sm text-slate2-500 leading-relaxed" data-i18n="s5.tip4.body">If a task is taking unusually long -- a deep analysis, a large batch operation, or a chain that's clearly going off course -- you don't have to wait it out. Click the <strong class="text-navy">Stop</strong> button in the chat to halt execution immediately.</p></div>
+          <div class="tip-card"><div class="tip-icon">&#x1F4A1;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip1.title">Use the right model for the job</h3><p class="text-[15px] text-slate2-500 leading-[1.8]" data-i18n="s5.tip1.body">Daily routine tasks (drafting messages, simple lookups)? Use a <strong class="text-navy">lighter model</strong>. Complex tasks (full store diagnostics, deep market analysis)? Switch to an <strong class="text-navy">advanced model</strong>. You can pick the model right in the chat box.</p></div>
+          <div class="tip-card"><div class="tip-icon">&#x1F3AF;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip2.title">Keep your prompts focused</h3><p class="text-[15px] text-slate2-500 leading-[1.8]" data-i18n="s5.tip2.body">Ask <strong class="text-navy">one clear thing at a time</strong>. Don't pile 5 unrelated questions into one message -- break them up. Bonus: tell it the length you want ("top 3" / "in 100 words") to save tokens.</p></div>
+          <div class="tip-card"><div class="tip-icon">&#x1F9F0;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip3.title">Don't over-load on skills</h3><p class="text-[15px] text-slate2-500 leading-[1.8]" data-i18n="s5.tip3.body">Only enable the skills you actually use. Loading every available skill makes the agent <strong class="text-navy">slower and more expensive</strong> to run.</p></div>
+          <div class="tip-card"><div class="tip-icon">&#9209;&#65039;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip4.title">Stop runaway tasks</h3><p class="text-[15px] text-slate2-500 leading-[1.8]" data-i18n="s5.tip4.body">If a task is taking unusually long -- a deep analysis, a large batch operation, or a chain that's clearly going off course -- you don't have to wait it out. Click the <strong class="text-navy">Stop</strong> button in the chat to halt execution immediately.</p></div>
         </div>
       </section>
 
@@ -370,7 +370,7 @@
           <div class="relative">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-5" style="background:#fff;border:1px solid #E4E4E7;"><span class="text-xs">&#x1F680;</span><span class="text-xs font-bold tracking-wide text-navy" data-i18n="cta.badge">READY TO GET STARTED?</span></div>
             <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight mb-4 max-w-xl leading-tight text-navy" data-i18n="cta.title">3 minutes, 3 steps. Your AI agent is waiting.</h2>
-            <p class="text-base leading-relaxed mb-8 max-w-lg text-slate2-500" data-i18n="cta.subtitle">Install Accio Work &#8594; enable Global Seller Agent &#8594; authorize with your Alibaba.com account. Then just say what you need. In your own words.</p>
+            <p class="text-[15px] leading-[1.8] mb-8 max-w-lg text-slate2-500" data-i18n="cta.subtitle">Install Accio Work &#8594; enable Global Seller Agent &#8594; authorize with your Alibaba.com account. Then just say what you need. In your own words.</p>
             <div class="flex flex-wrap items-center gap-3">
               <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v14M5 10l7 7 7-7M5 21h14"/></svg><span data-i18n="cta.button">Download Accio Work</span></a>
             </div>
