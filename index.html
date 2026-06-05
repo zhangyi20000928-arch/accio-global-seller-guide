@@ -138,6 +138,11 @@
   html[lang="zh-Hant"] .lang-zh-only{display:block;}
   @media(max-width:1024px){.sidebar{display:none;}}
   @media(max-width:640px){.big-step{padding:20px;}.faq-answer-inner{padding-left:24px;}}
+  .cs-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:#0A192F;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.15);transition:all 0.2s ease;z-index:100;text-decoration:none;}
+  .cs-float:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+  .cs-float svg{width:24px;height:24px;}
+  .cs-float .cs-24h{position:absolute;font-size:9px;font-weight:700;color:#fff;top:50%;left:50%;transform:translate(-50%,-50%);margin-top:2px;}
+  .cs-tooltip{position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:600;color:#0A192F;background:#fff;padding:3px 8px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
 </style>
 </head>
 <body>
@@ -200,8 +205,8 @@
         <a href="#section-2-step1" class="sidebar-link" data-section="section-2-step1"><span class="num">02.1</span><span data-i18n="nav.s2.1">Enable &amp; authorize</span></a>
         <a href="#section-2-step2" class="sidebar-link" data-section="section-2-step2"><span class="num">02.2</span><span data-i18n="nav.s2.2">Start chatting</span></a>
         <a href="#section-2-step3" class="sidebar-link" data-section="section-2-step3"><span class="num">02.3</span><span data-i18n="nav.s2.3">Use in other agents</span></a>
-        <a href="#section-3" class="sidebar-link" data-section="section-3"><span class="num">03</span><span data-i18n="nav.s3">Troubleshooting</span></a>
-        <a href="#section-4" class="sidebar-link" data-section="section-4"><span class="num">04</span><span data-i18n="nav.s4">Merchant FAQ</span></a>
+        <a href="#section-3" class="sidebar-link" data-section="section-3"><span class="num">03</span><span data-i18n="nav.s3">Hit a snag?</span></a>
+        <a href="#section-4" class="sidebar-link" data-section="section-4"><span class="num">04</span><span data-i18n="nav.s4">Things merchants often ask</span></a>
         <a href="#section-5" class="sidebar-link" data-section="section-5"><span class="num">05</span><span data-i18n="nav.s5">Pro tips</span></a>
         <a href="#cta-final" class="sidebar-link" data-section="cta-final"><span class="num" style="background:#14B8A6;color:#fff;">&#8594;</span><span data-i18n="nav.cta">Get started</span></a>
       </nav>
@@ -217,7 +222,7 @@
             <div>
               <p class="font-bold text-navy mb-1" data-i18n="s1.install.title">How to install Accio Work</p>
               <p data-i18n="s1.install.body"><strong>Download:</strong> <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a><br/>Pick your OS (macOS or Windows), download, install, sign up with your email, verify with the code in your inbox -- that's it. You can change the interface language anytime under <strong>Avatar &#8594; Language</strong>.</p>
-              <p class="mt-2" data-i18n="s1.install.note">&#9989; <strong>Already have Accio Work?</strong> Skip ahead to Section 2 to enable the Global Seller Agent.</p>
+              <p class="mt-2" data-i18n="s1.install.note">&#9989; <strong>Already have Accio Work?</strong> Skip ahead to Section 2 to install the Global Seller Agent.</p>
             </div>
           </div>
         </div>
@@ -271,18 +276,18 @@
         <div class="mb-6">
           <p class="text-sm text-slate2-500 mb-5" data-i18n="s2.prompts.intro">Not sure where to start? Try these -- just copy, paste, and go!</p>
           <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F50D;</span><span class="prompt-category-title" data-i18n="s2.cat1.title">Find a winning product</span><span class="prompt-category-tag" data-i18n="s2.cat1.tag">(Market &amp; Selection)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p1">"What's selling well in the men's clothing category on Alibaba.com right now? Where are the buyers from?"</div><div class="prompt-item" data-i18n="s2.p2">"Analyze why leather motorcycle jackets are trending -- what 3 selling points should I highlight?"</div><div class="prompt-item" data-i18n="s2.p3">"Find blue ocean opportunities in [your category] for buyers in [target market]."</div><div class="prompt-item" data-i18n="s2.p4">"Mine top-selling products on Amazon for [keyword] and tell me which I can source competitively."</div></div></div>
-          <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4E6;</span><span class="prompt-category-title" data-i18n="s2.cat2.title">Publish &amp; optimize products</span><span class="prompt-category-tag" data-i18n="s2.cat2.tag">(Listing)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p5">"Review my recently published products and tell me which have weak titles or attributes -- and how to fix them."</div><div class="prompt-item" data-i18n="s2.p6">"Batch-optimize my listings -- fix titles, keywords, attributes, and main images for better search ranking."</div><div class="prompt-item" data-i18n="s2.p7">"Migrate these 50 products to my Alibaba.com store with optimized SEO."</div><div class="prompt-item" data-i18n="s2.p8">"Generate a new main image for this product and tell me which would convert better."</div></div></div>
-          <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4AC;</span><span class="prompt-category-title" data-i18n="s2.cat3.title">Handle buyer communication</span><span class="prompt-category-tag" data-i18n="s2.cat3.tag">(Reception)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p9">"Help me publish this product from 1688: [URL]. Fill in all details and optimize the title."</div><div class="prompt-item" data-i18n="s2.p10">"Score the quality of this inquiry and tell me how to prioritize follow-up."</div><div class="prompt-item" data-i18n="s2.p11">"Translate and reply to this buyer message in their native language."</div><div class="prompt-item" data-i18n="s2.p12">"Summarize this 30-message chat with the buyer and tell me the next best step."</div></div></div>
+          <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4E6;</span><span class="prompt-category-title" data-i18n="s2.cat2.title">Publish &amp; optimize products</span><span class="prompt-category-tag" data-i18n="s2.cat2.tag">(Listing)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p5">"Help me publish this product from 1688: [URL]. Fill in all details and optimize the title."</div><div class="prompt-item" data-i18n="s2.p6">"Batch-optimize my listings -- fix titles, keywords, attributes, and main images for better search ranking."</div><div class="prompt-item" data-i18n="s2.p7">"Migrate these 50 products to my Alibaba.com store with optimized SEO."</div><div class="prompt-item" data-i18n="s2.p8">"Generate a new main image for this product and tell me which would convert better."</div></div></div>
+          <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4AC;</span><span class="prompt-category-title" data-i18n="s2.cat3.title">Handle buyer communication</span><span class="prompt-category-tag" data-i18n="s2.cat3.tag">(Reception)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p9">"Review my recently published products and tell me which have weak titles or attributes -- and how to fix them."</div><div class="prompt-item" data-i18n="s2.p10">"Score the quality of this inquiry and tell me how to prioritize follow-up."</div><div class="prompt-item" data-i18n="s2.p11">"Translate and reply to this buyer message in their native language."</div><div class="prompt-item" data-i18n="s2.p12">"Summarize this 30-message chat with the buyer and tell me the next best step."</div></div></div>
           <div class="prompt-category"><div class="prompt-category-header"><span class="prompt-category-icon">&#x1F4CA;</span><span class="prompt-category-title" data-i18n="s2.cat4.title">Diagnose &amp; grow your store</span><span class="prompt-category-tag" data-i18n="s2.cat4.tag">(Operations)</span></div><div class="prompt-list"><div class="prompt-item" data-i18n="s2.p13">"Give my store a full health check. What should I fix first?"</div><div class="prompt-item" data-i18n="s2.p14">"Why did my star rating drop last week? Show me the root causes."</div><div class="prompt-item" data-i18n="s2.p15">"Compare my store with my top 3 competitors -- where am I losing out?"</div><div class="prompt-item" data-i18n="s2.p16">"What's working in my best-selling category that I should replicate elsewhere?"</div></div></div>
           <div class="highlight-box mt-4"><p data-i18n="s2.tip.bottom">&#x1F4A1; <strong>Tip:</strong> Just click the suggested prompts under the chat box -- the agent will automatically use the right skill for you. No need to memorize anything.</p></div>
         </div>
       </section>
 
       <section id="section-3" class="scroll-mt-24 mb-16 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:12px;">
-        <div class="flex items-center gap-3 mb-3"><div class="section-num">03</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s3.title">Something Wrong? Quick Fixes</h2></div>
+        <div class="flex items-center gap-3 mb-3"><div class="section-num">03</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s3.title">Hit a Snag? Quick Fixes</h2></div>
         <div class="space-y-3">
-          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">1</div><div class="faq-title" data-i18n="s3.q1.title">Can't find the Global Seller Agent plugin?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">
-            <p data-i18n="s3.q1.body">First, make sure you're on the <strong>latest version</strong> of Accio Work. If your version is up to date, head to the <strong>Agents</strong> panel on the left sidebar and search for <strong>"Global Seller Agent"</strong>.</p>
+          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">1</div><div class="faq-title" data-i18n="s3.q1.title">Can't find Global Seller Agent?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">
+            <p data-i18n="s3.q1.body"><strong>Two names, one agent.</strong> The name displayed depends on your interface language: Chinese interface displays <strong>"國際站生意助手"</strong> and English interface displays <strong>"Global Seller Agent"</strong>. The functionality is identical -- no separate installation or setup needed. The agent's capabilities are tied to your linked Alibaba.com account. Once authorization is complete, the plugin automatically matches the agent to the account you authorized. To switch stores, go to the plugin detail page &#8594; <strong>App Authorization</strong> &#8594; <strong>Disconnect</strong>, then re-authorize with the new account.</p>
             <p class="mt-3" data-i18n="s3.q1.howto"><strong>How to confirm you're on the latest version:</strong></p>
             <p data-i18n="s3.q1.howto2">Download the latest version directly from <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a>, or check and update within the app using the steps below:</p>
             <ul><li data-i18n="s3.q1.step1">Click your avatar at the <strong>bottom-left</strong> of Accio Work &#8594; select <strong>About</strong>.</li><li data-i18n="s3.q1.step2">In the pop-up, click <strong>Check for Updates</strong> to confirm you're on the latest build.</li></ul>
@@ -340,7 +345,7 @@
       </section>
 
       <section id="section-4" class="scroll-mt-24 mb-16">
-        <div class="flex items-center gap-3 mb-6"><div class="section-num">04</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s4.title">You Might Be Wondering</h2></div>
+        <div class="flex items-center gap-3 mb-6"><div class="section-num">04</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s4.title">Things Merchants Often Ask</h2></div>
         <div class="space-y-3">
           <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">Q1</div><div class="faq-title" data-i18n="s4.q1.title">I'm not tech-savvy. Will I be able to use it?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner"><p data-i18n="s4.q1.body"><strong>Absolutely yes.</strong> The chat box comes with example prompts for every common scenario -- just click one to start. You don't need to memorize commands, learn prompts, or configure anything. If you've ever chatted online, you can use this.</p></div></div></div>
           <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">Q2</div><div class="faq-title" data-i18n="s4.q2.title">Will it do anything I didn't approve?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner"><p data-i18n="s4.q2.body"><strong>No.</strong> For sensitive actions like publishing products, the agent works in two modes:</p><ul><li data-i18n="s4.q2.mode1"><strong>Direct publish</strong> -- only for products that pass the rules you've already set in your Alibaba.com backend (e.g., quality score &#8805; 4.2).</li><li data-i18n="s4.q2.mode2"><strong>Draft mode</strong> -- for newer capabilities (e.g., image+text listing), products go into your Alibaba.com <strong>draft box</strong> for your final confirmation before going live.</li></ul><p class="mt-3" data-i18n="s4.q2.extra">Plus, when recommending products, it always flags potential infringement and compliance risks.</p></div></div></div>
@@ -387,6 +392,14 @@
     <div class="flex items-center gap-4"><span data-i18n="footer.copyright">&#169; 2026 Accio Work. All rights reserved.</span></div>
   </div>
 </footer>
+<a id="csWidget" class="cs-float" href="https://buyer.alimebot.alibaba.com/intl/index.htm?spm=a27gk.ggs-index.0.0.84e6bPsEbPsEpv&from=Iho9WsAIe0" target="_blank" rel="noopener" data-href-en="https://buyer.alimebot.alibaba.com/intl/index.htm?spm=a27gk.ggs-index.0.0.84e6bPsEbPsEpv&from=Iho9WsAIe0" data-href-zh="https://ai.alimebot.alibaba.com/intl/index.htm?from=mcobPQmGwJ&">
+  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+  </svg>
+  <span class="cs-24h">24h</span>
+  <span class="cs-tooltip">Online Support</span>
+</a>
 <script>
 /* ============ Language Switch ============ */
 var currentLang = 'en';
@@ -400,8 +413,8 @@ var I18N = {
     'nav.s2.1': 'Enable & authorize',
     'nav.s2.2': 'Start chatting',
     'nav.s2.3': 'Use in other agents',
-    'nav.s3': 'Something wrong?',
-    'nav.s4': 'You might be wondering',
+    'nav.s3': 'Hit a snag?',
+    'nav.s4': 'Things merchants often ask',
     'nav.s5': 'Pro tips',
     'nav.cta': 'Get started',
     'hero.badge': 'FOR ALIBABA.COM SELLERS',
@@ -418,7 +431,7 @@ var I18N = {
     's1.lead': 'Accio Work is your <strong class="text-navy">desktop AI workstation for cross-border business</strong>. Imagine a team of AI agents sitting on your computer, ready to handle market research, listings, marketing, customer follow-ups, and store operations \u2014 all in plain language, no coding required.',
     's1.install.title': 'How to install Accio Work',
     's1.install.body': '<strong>Download:</strong> <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a><br/>Pick your OS (macOS or Windows), download, install, sign up with your email, verify with the code in your inbox \u2014 that\u2019s it. You can change the interface language anytime under <strong>Avatar \u2192 Language</strong>.',
-    's1.install.note': '\u2705 <strong>Already have Accio Work?</strong> Skip ahead to Section 2 to enable the Global Seller Agent.',
+    's1.install.note': '\u2705 <strong>Already have Accio Work?</strong> Skip ahead to Section 2 to install the Global Seller Agent.',
     's2.title': 'Enable the <span class="gradient-text">Global Seller Agent</span> Plugin',
     's2.lead': 'The <strong class="text-navy">Global Seller Agent</strong> is the agent on Accio Work made for Alibaba.com sellers. It connects to your store, knows your products and buyers, and uses <strong class="text-navy">20+ pre-loaded professional skills</strong> \u2014 so you don\u2019t need to configure anything yourself.',
     's2.rename': '<strong>A familiar name with a new home.</strong> If you\u2019ve used <strong>Smart Assistant</strong> on Alibaba.com before, you\u2019ll feel right at home \u2014 it\u2019s been renamed to <strong>Global Seller Agent</strong> inside Accio Work, with even more powerful capabilities.',
@@ -452,7 +465,7 @@ var I18N = {
     's2.p4': '\u201cMine top-selling products on Amazon for [keyword] and tell me which I can source competitively.\u201d',
     's2.cat2.title': 'Publish & optimize products',
     's2.cat2.tag': '(Listing)',
-    's2.p5': '\u201cReview my recently published products and tell me which have weak titles or attributes \u2014 and how to fix them.\u201d',
+    's2.p5': '\u201cHelp me publish this product from 1688: [URL]. Fill in all details and optimize the title.\u201d',
     's2.p6': '\u201cBatch-optimize my listings \u2014 fix titles, keywords, attributes, and main images for better search ranking.\u201d',
     's2.p7': '\u201cMigrate these 50 products to my Alibaba.com store with optimized SEO.\u201d',
     's2.p8': '\u201cGenerate a new main image for this product and tell me which would convert better.\u201d',
@@ -469,9 +482,9 @@ var I18N = {
     's2.p15': '\u201cCompare my store with my top 3 competitors \u2014 where am I losing out?\u201d',
     's2.p16': '\u201cWhat\u2019s working in my best-selling category that I should replicate elsewhere?\u201d',
     's2.tip.bottom': '\ud83d\udca1 <strong>Tip:</strong> Just click the suggested prompts under the chat box \u2014 the agent will automatically use the right skill for you. No need to memorize anything.',
-    's3.title': 'Something Wrong? Quick Fixes',
-    's3.q1.title': 'Can\u2019t find the Global Seller Agent plugin?',
-    's3.q1.body': 'First, make sure you\u2019re on the <strong>latest version</strong> of Accio Work. If your version is up to date, head to the <strong>Agents</strong> panel on the left sidebar and search for <strong>\u201cGlobal Seller Agent\u201d</strong>.',
+    's3.title': 'Hit a Snag? Quick Fixes',
+    's3.q1.title': 'Can\u2019t find Global Seller Agent?',
+    's3.q1.body': '<strong>Two names, one agent.</strong> The name displayed depends on your interface language: Chinese interface displays <strong>\u201c\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u201d</strong> and English interface displays <strong>\u201cGlobal Seller Agent\u201d</strong>. The functionality is identical \u2014 no separate installation or setup needed. The agent\u2019s capabilities are tied to your linked Alibaba.com account. Once authorization is complete, the plugin automatically matches the agent to the account you authorized. To switch stores, go to the plugin detail page \u2192 <strong>App Authorization</strong> \u2192 <strong>Disconnect</strong>, then re-authorize with the new account.',
     's3.q1.howto': '<strong>How to confirm you\u2019re on the latest version:</strong>',
     's3.q1.howto2': 'Download the latest version directly from <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a>, or check and update within the app using the steps below:',
     's3.q1.step1': 'Click your avatar at the <strong>bottom-left</strong> of Accio Work \u2192 select <strong>About</strong>.',
@@ -497,7 +510,7 @@ var I18N = {
     's3.help.way1': '1\ufe0f\u20e3 <strong>Just ask the agent directly.</strong> It has built-in Q&A \u2014 try <em>\u201cWhy is my Accio app crashing?\u201d</em> or <em>\u201cWhat can you do for me?\u201d</em>',
     's3.help.way2': '2\ufe0f\u20e3 <strong>Hover over any response</strong> after a task \u2014 you\u2019ll see a \ud83d\udc4e thumbs-down or a \ud83d\udc1e bug icon. Click either one to submit an issue report directly to our team.',
     's3.help.way3': '3\ufe0f\u20e3 Click <strong>\u201cHelp Center\u201d</strong> in the bottom left corner to contact online customer service.',
-    's4.title': 'You Might Be Wondering',
+    's4.title': 'Things Merchants Often Ask',
     's4.q1.title': 'I\u2019m not tech-savvy. Will I be able to use it?',
     's4.q1.body': '<strong>Absolutely yes.</strong> The chat box comes with example prompts for every common scenario \u2014 just click one to start. You don\u2019t need to memorize commands, learn prompts, or configure anything. If you\u2019ve ever chatted online, you can use this.',
     's4.q2.title': 'Will it do anything I didn\u2019t approve?',
@@ -532,7 +545,9 @@ var I18N = {
     'cta.s3.body': 'say what you need in your own words',
     'footer.title': 'Accio Work \u00d7 Global Seller Agent',
     'footer.tagline': 'Your business agent team on desktop. Business made real.',
-    'footer.copyright': '\u00a9 2026 Accio Work. All rights reserved.'
+    'footer.copyright': '\u00a9 2026 Accio Work. All rights reserved.',
+    'cs.label': 'Angel',
+    'cs.tooltip': 'Online Support'
   },
   'zh-Hant': {
     'nav.brand': 'Accio Work \u00d7 \u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b',
@@ -543,8 +558,8 @@ var I18N = {
     'nav.s2.1': '\u555f\u7528\u4e26\u5b8c\u6210\u6388\u6b0a',
     'nav.s2.2': '\u958b\u59cb\u5c0d\u8a71',
     'nav.s2.3': '\u8b93\u5176\u4ed6\u667a\u80fd\u9ad4\u4e5f\u80fd\u4f7f\u7528',
-    'nav.s3': '\u51fa\u6545\u969c\u4e86\uff1f',
-    'nav.s4': '\u4f60\u53ef\u80fd\u60f3\u554f',
+    'nav.s3': '\u9047\u5230\u554f\u984c\uff1f',
+    'nav.s4': '\u5546\u5bb6\u5e38\u898b\u554f\u984c',
     'nav.s5': '\u9032\u968e\u6280\u5de7',
     'nav.cta': '\u7acb\u5373\u958b\u59cb',
     'hero.badge': '\u5c08\u70ba\u963f\u91cc\u5df4\u5df4\u570b\u969b\u7ad9\u8ce3\u5bb6\u6253\u9020',
@@ -613,8 +628,8 @@ var I18N = {
     's2.p16': '\u300c\u6211\u8868\u73fe\u6700\u597d\u7684\u90a3\u500b\u985e\u76ee\u6709\u4ec0\u9ebc\u505a\u5c0d\u4e86\uff1f\u80fd\u8907\u88fd\u5230\u5176\u4ed6\u985e\u76ee\u55ce\uff1f\u300d',
     's2.tip.bottom': '\ud83d\udca1 <strong>\u63d0\u793a\uff1a</strong>\u76f4\u63a5\u9ede\u64ca\u8f38\u5165\u6846\u4e0b\u65b9\u7684\u7bc4\u4f8b\u63d0\u554f\u5373\u53ef \u2014 \u667a\u80fd\u9ad4\u6703\u81ea\u52d5\u7528\u5c0d\u7684\u6280\u80fd\u5e6b\u60a8\u8655\u7406\u3002\u5b8c\u5168\u4e0d\u7528\u8a18\u4efb\u4f55\u6307\u4ee4\u3002',
     's3.title': '\u51fa\u6545\u969c\u4e86\uff1f\u5feb\u901f\u6392\u67e5',
-    's3.q1.title': '\u627e\u4e0d\u5230\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u63d2\u4ef6\u600e\u9ebc\u8fa6\uff1f',
-    's3.q1.body': '\u8acb\u5148\u78ba\u8a8d\u60a8\u4f7f\u7528\u7684\u662f<strong>\u6700\u65b0\u7248\u672c</strong>\u7684 Accio Work\u3002\u5982\u679c\u7248\u672c\u7121\u8aa4\uff0c\u8acb\u5728\u5de6\u5074\u908a\u6b04\u300c\u63d2\u4ef6\u300d\u88e1\u641c\u5c0b<strong>\u300c\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u300d</strong>\u3002',
+    's3.q1.title': '\u627e\u4e0d\u5230 Global Seller Agent\uff1f',
+    's3.q1.body': '\u5169\u500b\u540d\u7a31\uff0c\u540c\u4e00\u500b\u667a\u80fd\u9ad4\u3002\u540d\u7a31\u986f\u793a\u53d6\u6c7a\u65bc\u4ecb\u9762\u8a9e\u8a00\u8a2d\u5b9a\uff1a\u4e2d\u6587\u4ecb\u9762\u986f\u793a\u300c\u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b\u300d\uff0c\u82f1\u6587\u4ecb\u9762\u986f\u793a\u300cGlobal Seller Agent\u300d\u3002\u529f\u80fd\u5b8c\u5168\u4e00\u81f4\uff0c\u4e0d\u9700\u8981\u5206\u5225\u5b89\u88dd\u6216\u8a2d\u5b9a\u3002\u667a\u80fd\u9ad4\u7684\u80fd\u529b\u8207\u60a8\u7d81\u5b9a\u7684\u570b\u969b\u7ad9\u5e33\u865f\u639b\u9264\u3002\u63d2\u4ef6\u6388\u6b0a\u5b8c\u6210\u5f8c\uff0c\u667a\u80fd\u9ad4\u6703\u4f9d\u7167\u6388\u6b0a\u7684\u5e33\u865f\u5339\u914d\u5c0d\u61c9\u667a\u80fd\u9ad4\u3002\u5982\u9700\u5207\u63db\u5e97\u92ea\uff0c\u524d\u5f80\u63d2\u4ef6\u8a73\u60c5\u9801 \u2192\u300c\u61c9\u7528\u6388\u6b0a\u300d\u2192\u300c\u65b7\u958b\u300d\u5f8c\u91cd\u65b0\u7d81\u5b9a\u5373\u53ef\u3002',
     's3.q1.howto': '<strong>\u5982\u4f55\u78ba\u8a8d\u5df2\u662f\u6700\u65b0\u7248\u672c\uff1a</strong>',
     's3.q1.howto2': '\u524d\u5f80\u5b98\u7db2\u4e0b\u8f09\u6700\u65b0\u7248\u672c\uff1a<a href="https://www.accio.com/work" target="_blank" rel="noopener" class="text-mint-700 underline hover:no-underline">accio.com/work</a>\uff0c\u6216\u900f\u904e\u4ee5\u4e0b\u6b65\u9a5f\u5728\u61c9\u7528\u5167\u67e5\u770b\u7248\u672c\u865f\u4e26\u6aa2\u67e5\u66f4\u65b0\uff1a',
     's3.q1.step1': '\u9ede\u64ca Accio Work <strong>\u5de6\u4e0b\u89d2\u7684\u982d\u50cf</strong>\uff0c\u9078\u64c7\u300c\u95dc\u65bc\u300d\u3002',
@@ -640,7 +655,7 @@ var I18N = {
     's3.help.way1': '1\ufe0f\u20e3 <strong>\u76f4\u63a5\u554f\u667a\u80fd\u9ad4\u3002</strong>\u5167\u5efa\u7b54\u7591\u80fd\u529b \u2014 \u8a66\u554f\u300c\u70ba\u4ec0\u9ebc\u6211\u7684 Accio \u6703\u51fa\u73fe\u9583\u9000\uff1f\u300d\u6216\u300c\u4f60\u80fd\u5e6b\u6211\u505a\u4ec0\u9ebc\uff1f\u300d',
     's3.help.way2': '2\ufe0f\u20e3 <strong>\u4efb\u52d9\u5b8c\u6210\u5f8c\u5c07\u6ed1\u9f20\u79fb\u5230\u56de\u7b54\u4e0a</strong> \u2014 \u60a8\u6703\u770b\u5230 \ud83d\udc4e \u9ede\u8e29\u6309\u9215\u6216 \ud83d\udc1e \u5c0f\u87f2\u5b50\u6309\u9215\u3002\u4efb\u4e00\u500b\u90fd\u53ef\u4ee5\u4e00\u9375\u63d0\u4ea4\u554f\u984c\u5831\u544a\u7d66\u6211\u5011\u7684\u5718\u968a\u3002',
     's3.help.way3': '3\ufe0f\u20e3 \u9ede\u64ca\u5de6\u4e0b\u89d2\u300c<strong>\u5e6b\u52a9\u4e2d\u5fc3</strong>\u300d\u806f\u7e6b\u7dda\u4e0a\u5ba2\u670d\u3002',
-    's4.title': '\u4f60\u53ef\u80fd\u60f3\u554f',
+    's4.title': '\u5546\u5bb6\u5e38\u898b\u554f\u984c',
     's4.q1.title': '\u6211\u4e0d\u592a\u61c2\u6280\u8853\uff0c\u80fd\u7528\u55ce\uff1f',
     's4.q1.body': '<strong>\u5b8c\u5168\u53ef\u4ee5\u3002</strong>\u8f38\u5165\u6846\u4e0b\u65b9\u5df2\u9810\u7f6e\u5404\u985e\u5e38\u898b\u5834\u666f\u7684\u7bc4\u4f8b\u63d0\u554f \u2014 \u9ede\u64ca\u5373\u53ef\u958b\u59cb\u3002\u60a8\u4e0d\u9700\u8981\u8a18\u4efb\u4f55\u6307\u4ee4\u3001\u4e0d\u7528\u5b78\u4ec0\u9ebc prompt\u3001\u4e0d\u7528\u914d\u7f6e\u4efb\u4f55\u6771\u897f\u3002\u6703\u4e0a\u7db2\u804a\u5929\u5c31\u6703\u7528\u3002',
     's4.q2.title': '\u5b83\u6703\u64c5\u81ea\u505a\u6211\u6c92\u540c\u610f\u7684\u4e8b\u9ebc\uff1f',
@@ -675,7 +690,9 @@ var I18N = {
     'cta.s3.body': '\u7528\u60a8\u81ea\u5df1\u7684\u8a9e\u8a00\u544a\u8a34\u5b83\u60a8\u8981\u4ec0\u9ebc',
     'footer.title': 'Accio Work \u00d7 \u570b\u969b\u7ad9\u751f\u610f\u52a9\u624b',
     'footer.tagline': '\u60a8\u7684\u684c\u9762\u5546\u696d\u4ee3\u7406\u5718\u968a\u3002\u628a\u751f\u610f\u8b8a\u6210\u73fe\u5be6\u3002',
-    'footer.copyright': '\u00a9 2026 Accio Work. \u7248\u6b0a\u6240\u6709\u3002'
+    'footer.copyright': '\u00a9 2026 Accio Work. \u7248\u6b0a\u6240\u6709\u3002',
+    'cs.label': '\u5c0f\u4f55\u5728\u7dda',
+    'cs.tooltip': '\u7dda\u4e0a\u5ba2\u670d'
   }
 };
 function switchLang(lang) {
@@ -701,6 +718,13 @@ function switchLang(lang) {
   if (langLabel) { langLabel.textContent = lang === 'en' ? '\u7e41\u4e2d' : 'EN'; }
   document.documentElement.lang = lang === 'zh-Hant' ? 'zh-Hant' : 'en';
   if (typeof initPromptCopyButtons === 'function') initPromptCopyButtons();
+  var csWidget = document.getElementById('csWidget');
+  if (csWidget) {
+    var csHref = lang === 'zh-Hant' ? csWidget.getAttribute('data-href-zh') : csWidget.getAttribute('data-href-en');
+    if (csHref) csWidget.setAttribute('href', csHref);
+    var csTooltip = csWidget.querySelector('.cs-tooltip');
+    if (csTooltip && dict['cs.tooltip']) csTooltip.textContent = dict['cs.tooltip'];
+  }
 }
 document.getElementById('langToggle').addEventListener('click', function(e) {
   e.preventDefault();
