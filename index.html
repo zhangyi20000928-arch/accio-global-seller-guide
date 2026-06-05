@@ -53,19 +53,20 @@
   .gradient-text{color:#14B8A6;}
   .sidebar{position:sticky;top:96px;height:calc(100vh - 112px);overflow-y:auto;scrollbar-width:none;}
   .sidebar::-webkit-scrollbar{display:none;}
-  .sidebar-link{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--slate-500);transition:all 0.2s ease;text-decoration:none;border-left:3px solid transparent;margin-bottom:2px;}
+  .sidebar-link{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:500;color:var(--slate-500);transition:all 0.2s ease;text-decoration:none;border-left:3px solid transparent;margin-bottom:2px;letter-spacing:0.01em;}
   .sidebar-link:hover{background:#EDEAE4;color:var(--mint-700);}
   .sidebar-link.active{background:#EDEAE4;color:var(--navy);font-weight:700;border-left-color:var(--mint-500);}
-  .sidebar-link .num{width:28px;height:28px;border-radius:8px;background:#14B8A6;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;flex-shrink:0;font-family:'Noto Sans',sans-serif;transition:all 0.2s ease;}
-  .sidebar-link.active .num,.sidebar-link:hover .num{background:#0D9488;color:#fff;}
-  .sidebar-link[data-section^="section-2-step"]{padding-left:24px;font-size:13px;}
-  .sidebar-link[data-section^="section-2-step"] .num{width:24px;height:24px;font-size:11px;background:#14B8A6;color:#fff;}
-  .section-num{flex-shrink:0;width:40px;height:40px;border-radius:8px;background:#14B8A6;color:#fff;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:none;}
+  .sidebar-link .num{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#14B8A6,#0D9488);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;color:#fff;flex-shrink:0;font-family:'Noto Sans',sans-serif;transition:all 0.2s ease;box-shadow:0 1px 4px rgba(20,184,166,0.25);}
+  .sidebar-link.active .num,.sidebar-link:hover .num{background:linear-gradient(135deg,#0D9488,#0F766E);color:#fff;box-shadow:0 2px 6px rgba(20,184,166,0.35);}
+  .sidebar-link[data-section^="section-2-step"]{padding-left:24px;font-size:12px;}
+  .sidebar-link[data-section^="section-2-step"] .num{width:22px;height:22px;font-size:10px;background:linear-gradient(135deg,#14B8A6,#0D9488);color:#fff;box-shadow:0 1px 3px rgba(20,184,166,0.2);}
+  .section-num{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#14B8A6,#0D9488);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:0 2px 8px rgba(20,184,166,0.3);}
   .section-alt{background:#EDEAE4;position:relative;isolation:isolate;}
-  .big-step{position:relative;background:#FDFCF9;border:1px solid #E4E4E7;border-radius:12px;padding:28px;transition:all 0.3s ease;box-shadow:none;}
-  .big-step:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);}
-  .big-step-label{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:8px;background:var(--mint-50);color:var(--mint-700);font-size:11px;font-weight:800;letter-spacing:0.08em;font-family:'Noto Sans',sans-serif;border:1px solid rgba(20,184,166,0.15);margin-bottom:8px;}
-  .gif-showcase{position:relative;border-radius:12px;overflow:hidden;border:1px solid #E4E4E7;background:#F5F3EF;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;transition:all 0.3s ease;cursor:pointer;box-shadow:none;}
+  .big-step{position:relative;background:#FDFCF9;border:1px solid #E8E5DF;border-radius:14px;padding:28px;transition:all 0.3s ease;box-shadow:0 1px 3px rgba(0,0,0,0.04),0 4px 12px rgba(0,0,0,0.03);}
+  .big-step:hover{border-color:rgba(20,184,166,0.25);box-shadow:0 2px 8px rgba(0,0,0,0.05),0 8px 24px rgba(0,0,0,0.05);}
+  .big-step-label{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:8px;background:linear-gradient(135deg,#ECFDF5,#D1FAE5);color:var(--mint-700);font-size:11px;font-weight:800;letter-spacing:0.1em;font-family:'Noto Sans',sans-serif;border:1px solid rgba(20,184,166,0.12);margin-bottom:8px;text-transform:uppercase;}
+  .section-heading{display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #E8E5DF;}
+  .gif-showcase{position:relative;border-radius:14px;overflow:hidden;border:1px solid #E8E5DF;background:#F5F3EF;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;transition:all 0.3s ease;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,0.03);}
   .gif-showcase:hover{border-color:rgba(20,184,166,0.4);box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);}
   .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,0.08);transition:transform 0.2s ease;margin-bottom:14px;}
   .gif-showcase:hover .gif-play-btn{transform:scale(1.08);}
@@ -89,7 +90,7 @@
   .gif-showcase.has-real-gif.playing .gif-placeholder{display:none;}
   .prompt-category{margin-bottom:24px;}
   .prompt-category:last-child{margin-bottom:0;}
-  .prompt-category-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:12px 16px;background:#FDFCF9;border-radius:8px;border:1px solid #E4E4E7;border-left:4px solid var(--mint-500);}
+  .prompt-category-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;padding:12px 16px;background:#FDFCF9;border-radius:10px;border:1px solid #E8E5DF;border-left:4px solid var(--mint-500);box-shadow:0 1px 2px rgba(0,0,0,0.02);}
   .prompt-category-icon{font-size:24px;flex-shrink:0;}
   .prompt-category-title{font-weight:800;font-size:14px;color:var(--navy);flex:1;}
   .prompt-category-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--slate-500);font-weight:600;padding:4px 12px;background:#fff;border-radius:8px;border:1px solid #ECEDEE;}
@@ -100,14 +101,14 @@
   .prompt-item:hover .prompt-copy-btn{opacity:1;}
   .prompt-copy-btn:hover{background:var(--mint-50);border-color:var(--mint-300);color:var(--mint-700);transform:translateY(-50%) scale(1.1);}
   .prompt-copy-btn.copied{background:var(--mint-500);border-color:var(--mint-500);color:white;opacity:1;}
-  .faq-item{background:#FDFCF9;border:1px solid #E4E4E7;border-radius:12px;margin-bottom:16px;transition:all 0.2s ease;overflow:hidden;box-shadow:none;}
-  .faq-item:hover{box-shadow:0 2px 8px 0 rgba(0,0,0,0.04);border-color:rgba(20,184,166,0.2);}
-  .faq-item.open{border-color:#14B8A6;box-shadow:0 2px 8px 0 rgba(0,0,0,0.04);}
+  .faq-item{background:#FDFCF9;border:1px solid #E8E5DF;border-radius:14px;margin-bottom:16px;transition:all 0.2s ease;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.03);}
+  .faq-item:hover{box-shadow:0 2px 8px rgba(0,0,0,0.05),0 6px 20px rgba(0,0,0,0.04);border-color:rgba(20,184,166,0.2);}
+  .faq-item.open{border-color:rgba(20,184,166,0.35);box-shadow:0 2px 8px rgba(0,0,0,0.05),0 6px 20px rgba(0,0,0,0.04);}
   .faq-question{width:100%;padding:22px 24px;display:flex;align-items:center;gap:14px;background:transparent;border:none;cursor:pointer;text-align:left;font-family:inherit;transition:background 0.25s ease;}
   .faq-question:hover{background:rgba(20,184,166,0.03);}
   .faq-item.open .faq-question{background:rgba(20,184,166,0.03);border-bottom:1px solid rgba(20,184,166,0.12);}
   .faq-question:focus{outline:none;}
-  .faq-num{flex-shrink:0;width:36px;height:36px;border-radius:8px;background:#14B8A6;color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:none;}
+  .faq-num{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#14B8A6,#0D9488);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;font-family:'Noto Sans',sans-serif;box-shadow:0 2px 6px rgba(20,184,166,0.25);}
   .faq-title{flex:1;font-weight:700;font-size:16px;color:var(--navy);line-height:1.55;}
   .faq-chevron{flex-shrink:0;width:20px;height:20px;color:var(--slate-400);transition:transform 0.3s ease;}
   .faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--mint-700);}
@@ -120,17 +121,17 @@
   .faq-answer-inner li::before{content:'\2192';position:absolute;left:0;color:var(--mint-500);font-weight:700;}
   .faq-answer-inner img,.screenshot-mockup{display:block;width:100%;max-width:700px;height:auto;margin-top:12px;border-radius:12px;border:1px solid #E4E4E7;box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);transition:all 0.3s ease;}
   .faq-answer-inner img:hover,.screenshot-mockup:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 4px 12px 0 rgba(0,0,0,0.08);transform:scale(1.005);}
-  .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:8px;background:var(--mint-50);color:var(--mint-700);font-size:12px;font-weight:700;border:1px solid rgba(20,184,166,0.2);}
-  .highlight-box{background:var(--success-bg);border:1px solid var(--success-border);border-left:3px solid #14B8A6;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
-  .info-box{background:var(--info-bg);border:1px solid var(--info-border);border-left:3px solid #94A3B8;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
-  .warning-box{background:var(--warning-bg);border:1px solid var(--warning-border);border-left:3px solid #D97706;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
-  .tip-card{background:#FDFCF9;border:1px solid #E4E4E7;border-radius:12px;padding:28px;transition:all 0.2s ease;position:relative;overflow:hidden;box-shadow:none;}
-  .tip-card:hover{transform:translateY(-2px);border-color:rgba(20,184,166,0.3);box-shadow:0 4px 12px 0 rgba(0,0,0,0.06);}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:8px;background:linear-gradient(135deg,#ECFDF5,#D1FAE5);color:var(--mint-700);font-size:12px;font-weight:700;border:1px solid rgba(20,184,166,0.15);}
+  .highlight-box{background:var(--success-bg);border:1px solid var(--success-border);border-left:3px solid #14B8A6;border-radius:10px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
+  .info-box{background:var(--info-bg);border:1px solid var(--info-border);border-left:3px solid #94A3B8;border-radius:10px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
+  .warning-box{background:var(--warning-bg);border:1px solid var(--warning-border);border-left:3px solid #D97706;border-radius:10px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
+  .tip-card{background:#FDFCF9;border:1px solid #E8E5DF;border-radius:14px;padding:28px;transition:all 0.2s ease;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04),0 4px 12px rgba(0,0,0,0.03);}
+  .tip-card:hover{transform:translateY(-2px);border-color:rgba(20,184,166,0.25);box-shadow:0 4px 12px rgba(0,0,0,0.06),0 12px 32px rgba(0,0,0,0.06);}
   .tip-icon{width:44px;height:44px;border-radius:8px;background:var(--mint-50);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
-  .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:8px;background:#14B8A6;color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.25s ease;box-shadow:none;}
-  .btn-primary:hover{background:#0D9488;transform:translateY(-1px);box-shadow:0 4px 12px 0 rgba(0,0,0,0.1);}
-  .btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border-radius:8px;background:#FDFCF9;color:var(--navy-soft);font-weight:600;font-size:14px;text-decoration:none;border:1px solid #E4E4E7;transition:all 0.2s ease;}
-  .btn-ghost:hover{background:#fff;border-color:rgba(20,184,166,0.3);color:var(--mint-700);}
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;background:linear-gradient(135deg,#14B8A6,#0D9488);color:#fff;font-weight:700;font-size:15px;text-decoration:none;transition:all 0.25s ease;box-shadow:0 2px 8px rgba(20,184,166,0.3);}
+  .btn-primary:hover{background:linear-gradient(135deg,#0D9488,#0F766E);transform:translateY(-1px);box-shadow:0 4px 16px rgba(20,184,166,0.4);}
+  .btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border-radius:10px;background:#FDFCF9;color:var(--navy-soft);font-weight:600;font-size:14px;text-decoration:none;border:1px solid #E8E5DF;transition:all 0.2s ease;box-shadow:0 1px 2px rgba(0,0,0,0.03);}
+  .btn-ghost:hover{background:#fff;border-color:rgba(20,184,166,0.3);color:var(--mint-700);box-shadow:0 2px 6px rgba(0,0,0,0.05);}
   .section-divider-gradient{height:4px;border-radius:2px;background:var(--brand-gradient);opacity:0.5;}
   .lang-en-only{display:block;}
   .lang-zh-only{display:none;}
@@ -138,18 +139,18 @@
   html[lang="zh-Hant"] .lang-zh-only{display:block;}
   @media(max-width:1024px){.sidebar{display:none;}}
   @media(max-width:640px){.big-step{padding:20px;}.faq-answer-inner{padding-left:24px;}}
-  .cs-float{position:fixed;bottom:48px;right:32px;width:56px;height:56px;border-radius:50%;background:#0A192F;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,25,47,0.35);transition:all 0.2s ease;z-index:100;text-decoration:none;}
-  .cs-float:hover{transform:scale(1.05);box-shadow:0 6px 24px rgba(10,25,47,0.45);}
+  .cs-float{position:fixed;bottom:48px;right:32px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0F172A,#1E293B);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,25,47,0.3),0 8px 24px rgba(10,25,47,0.15);transition:all 0.2s ease;z-index:100;text-decoration:none;}
+  .cs-float:hover{transform:scale(1.05);box-shadow:0 6px 24px rgba(10,25,47,0.35),0 12px 32px rgba(10,25,47,0.2);}
   .cs-float svg{width:24px;height:24px;}
   .cs-float .cs-24h{position:absolute;font-size:9px;font-weight:700;color:#fff;top:50%;left:50%;transform:translate(-50%,-50%);margin-top:2px;}
   .cs-tooltip{position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:600;color:#0A192F;background:#fff;padding:3px 8px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.1);}
 </style>
 </head>
 <body>
-<header class="sticky top-0 z-50 border-b" style="background:#F5F3EF;border-color:#E4E4E7;">
+<header class="sticky top-0 z-50 border-b" style="background:rgba(245,243,239,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:#E8E5DF;">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
     <a href="#top" class="flex items-center gap-3 group">
-      <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:#14B8A6;">
+      <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#14B8A6,#0D9488);box-shadow:0 2px 8px rgba(20,184,166,0.3);">
         <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M12 3 L4 21 L20 21 Z" fill="#fff"/></svg>
       </div>
       <div class="flex flex-col leading-tight">
@@ -169,7 +170,7 @@
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
       <div class="lg:col-span-12">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-mint-200 mb-5">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-mint-200 mb-5" style="box-shadow:0 1px 3px rgba(0,0,0,0.04);">
           <span class="w-2 h-2 rounded-full bg-mint-500 animate-pulse"></span>
           <span class="text-xs font-bold text-mint-700 tracking-wide" data-i18n="hero.badge">FOR ALIBABA.COM SELLERS</span>
         </div>
@@ -214,7 +215,7 @@
     <div class="flex-1 min-w-0 max-w-3xl">
 
       <section id="section-1" class="scroll-mt-24 mb-20">
-        <div class="flex items-center gap-3 mb-5"><div class="section-num">01</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s1.title">What is <span class="gradient-text">Accio Work</span>?</h2></div>
+        <div class="section-heading"><div class="section-num">01</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s1.title">What is <span class="gradient-text">Accio Work</span>?</h2></div>
         <p class="text-base sm:text-[17px] text-slate2-500 leading-[1.8] mb-6 max-w-2xl" data-i18n="s1.lead">Accio Work is your <strong class="text-navy">desktop AI workstation for cross-border business</strong>. Imagine a team of AI agents sitting on your computer, ready to handle market research, listings, marketing, customer follow-ups, and store operations -- all in plain language, no coding required.</p>
         <div class="highlight-box">
           <div class="flex items-start gap-3">
@@ -229,7 +230,7 @@
       </section>
 
       <section id="section-2" class="scroll-mt-24 mb-20">
-        <div class="flex items-center gap-3 mb-5"><div class="section-num">02</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s2.title">Enable the <span class="gradient-text">Global Seller Agent</span> Plugin</h2></div>
+        <div class="section-heading"><div class="section-num">02</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s2.title">Enable the <span class="gradient-text">Global Seller Agent</span> Plugin</h2></div>
         <p class="text-base sm:text-[17px] text-slate2-500 leading-[1.8] mb-5 max-w-2xl" data-i18n="s2.lead">The <strong class="text-navy">Global Seller Agent</strong> is the agent on Accio Work made for Alibaba.com sellers. It connects to your store, knows your products and buyers, and uses <strong class="text-navy">20+ pre-loaded professional skills</strong> -- so you don't need to configure anything yourself.</p>
         <div class="info-box mb-8"><div class="flex items-start gap-3"><span class="text-xl flex-shrink-0">&#x1F4A1;</span><p data-i18n="s2.rename"><strong>A familiar name with a new home.</strong> If you've used <strong>Smart Assistant</strong> on Alibaba.com before, you'll feel right at home -- it's been renamed to <strong>Global Seller Agent</strong> inside Accio Work, with even more powerful capabilities.</p></div></div>
 
@@ -284,7 +285,7 @@
       </section>
 
       <section id="section-3" class="scroll-mt-24 mb-20 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:12px;">
-        <div class="flex items-center gap-3 mb-3"><div class="section-num">03</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s3.title">Something Wrong? Quick Fixes</h2></div>
+        <div class="section-heading"><div class="section-num">03</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s3.title">Something Wrong? Quick Fixes</h2></div>
         <div class="space-y-3">
           <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">1</div><div class="faq-title" data-i18n="s3.q1.title">Can't find Global Seller Agent? Or why am I seeing '國際站生意助手'?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner">
             <p data-i18n="s3.q1.body"><strong>Two names, one agent.</strong> The name displayed depends on your interface language: Chinese interface displays <strong>"國際站生意助手"</strong> and English interface displays <strong>"Global Seller Agent"</strong>. The functionality is identical -- no separate installation or setup needed. The agent's capabilities are tied to your linked Alibaba.com account. Once authorization is complete, the plugin automatically matches the agent to the account you authorized. To switch stores, go to the plugin detail page &#8594; <strong>App Authorization</strong> &#8594; <strong>Disconnect</strong>, then re-authorize with the new account.</p>
@@ -345,7 +346,7 @@
       </section>
 
       <section id="section-4" class="scroll-mt-24 mb-20">
-        <div class="flex items-center gap-3 mb-6"><div class="section-num">04</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s4.title">You Might Be Wondering</h2></div>
+        <div class="section-heading"><div class="section-num">04</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s4.title">You Might Be Wondering</h2></div>
         <div class="space-y-3">
           <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">Q1</div><div class="faq-title" data-i18n="s4.q1.title">I'm not tech-savvy. Will I be able to use it?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner"><p data-i18n="s4.q1.body"><strong>Absolutely yes.</strong> The chat box comes with example prompts for every common scenario -- just click one to start. You don't need to memorize commands, learn prompts, or configure anything. If you've ever chatted online, you can use this.</p></div></div></div>
           <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)"><div class="faq-num">Q2</div><div class="faq-title" data-i18n="s4.q2.title">Will it do anything I didn't approve?</div><svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-answer"><div class="faq-answer-inner"><p data-i18n="s4.q2.body"><strong>No.</strong> For sensitive actions like publishing products, the agent works in two modes:</p><ul><li data-i18n="s4.q2.mode1"><strong>Direct publish</strong> -- only for products that pass the rules you've already set in your Alibaba.com backend (e.g., quality score &#8805; 4.2).</li><li data-i18n="s4.q2.mode2"><strong>Draft mode</strong> -- for newer capabilities (e.g., image+text listing), products go into your Alibaba.com <strong>draft box</strong> for your final confirmation before going live.</li></ul><p class="mt-3" data-i18n="s4.q2.extra">Plus, when recommending products, it always flags potential infringement and compliance risks.</p></div></div></div>
@@ -355,7 +356,7 @@
       </section>
 
       <section id="section-5" class="scroll-mt-24 mb-20 section-alt" style="padding:40px 24px;margin-left:-24px;margin-right:-24px;border-radius:12px;">
-        <div class="flex items-center gap-3 mb-3"><div class="section-num">05</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s5.title">Pro Tips: Make <span class="gradient-text">Every Credit</span> Count</h2></div>
+        <div class="section-heading"><div class="section-num">05</div><h2 class="text-2xl sm:text-3xl font-display font-extrabold text-navy tracking-tight" data-i18n="s5.title">Pro Tips: Make <span class="gradient-text">Every Credit</span> Count</h2></div>
         <p class="text-[15px] text-slate2-500 mb-6 ml-[52px]" data-i18n="s5.formula"><span class="font-mono text-mint-700 bg-mint-50 px-2 py-1 rounded">Credits Spent = Model Compute Cost + Tokens Used</span></p>
         <div class="grid sm:grid-cols-2 gap-4">
           <div class="tip-card"><div class="tip-icon">&#x1F4A1;</div><h3 class="font-display font-extrabold text-navy text-base mb-2" data-i18n="s5.tip1.title">Use the right model for the job</h3><p class="text-[15px] text-slate2-500 leading-[1.8]" data-i18n="s5.tip1.body">Daily routine tasks (drafting messages, simple lookups)? Use a <strong class="text-navy">lighter model</strong>. Complex tasks (full store diagnostics, deep market analysis)? Switch to an <strong class="text-navy">advanced model</strong>. You can pick the model right in the chat box.</p></div>
@@ -375,9 +376,9 @@
               <a href="https://www.accio.com/work" target="_blank" rel="noopener" class="btn-primary"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 3v14M5 10l7 7 7-7M5 21h14"/></svg><span data-i18n="cta.button">Download Accio Work</span></a>
             </div>
             <div class="mt-10 pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm" style="border-top:1px solid #E4E4E7">
-              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:#FDFCF9;border:1px solid #E4E4E7;"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:#14B8A6;color:#fff;">1</div><div><div class="font-semibold text-navy" data-i18n="cta.s1.title">Install Accio Work</div><div class="text-xs mt-1 text-slate2-500" data-i18n="cta.s1.body">at accio.com/work</div></div></div>
-              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:#FDFCF9;border:1px solid #E4E4E7;"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:#14B8A6;color:#fff;">2</div><div><div class="font-semibold text-navy" data-i18n="cta.s2.title">Click New Message &#8594; select Global Seller Agent</div><div class="text-xs mt-1 text-slate2-500" data-i18n="cta.s2.body">follow the prompt to complete authorization</div></div></div>
-              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:#FDFCF9;border:1px solid #E4E4E7;"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:#14B8A6;color:#fff;">3</div><div><div class="font-semibold text-navy" data-i18n="cta.s3.title">Head back to chat &#8594; plugin is on by default</div><div class="text-xs mt-1 text-slate2-500" data-i18n="cta.s3.body">say what you need in your own words</div></div></div>
+              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:#FDFCF9;border:1px solid #E8E5DF;box-shadow:0 1px 2px rgba(0,0,0,0.03);"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:linear-gradient(135deg,#14B8A6,#0D9488);color:#fff;box-shadow:0 1px 4px rgba(20,184,166,0.25);">1</div><div><div class="font-semibold text-navy" data-i18n="cta.s1.title">Install Accio Work</div><div class="text-xs mt-1 text-slate2-500" data-i18n="cta.s1.body">at accio.com/work</div></div></div>
+              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:#FDFCF9;border:1px solid #E8E5DF;box-shadow:0 1px 2px rgba(0,0,0,0.03);"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:linear-gradient(135deg,#14B8A6,#0D9488);color:#fff;box-shadow:0 1px 4px rgba(20,184,166,0.25);">2</div><div><div class="font-semibold text-navy" data-i18n="cta.s2.title">Click New Message &#8594; select Global Seller Agent</div><div class="text-xs mt-1 text-slate2-500" data-i18n="cta.s2.body">follow the prompt to complete authorization</div></div></div>
+              <div class="flex items-start gap-3 p-4 rounded-r12" style="background:#FDFCF9;border:1px solid #E8E5DF;box-shadow:0 1px 2px rgba(0,0,0,0.03);"><div class="w-7 h-7 rounded-r8 font-bold flex items-center justify-center flex-shrink-0 text-xs" style="background:linear-gradient(135deg,#14B8A6,#0D9488);color:#fff;box-shadow:0 1px 4px rgba(20,184,166,0.25);">3</div><div><div class="font-semibold text-navy" data-i18n="cta.s3.title">Head back to chat &#8594; plugin is on by default</div><div class="text-xs mt-1 text-slate2-500" data-i18n="cta.s3.body">say what you need in your own words</div></div></div>
             </div>
           </div>
         </div>
