@@ -45,7 +45,7 @@
   };
 </script>
 <style>
-  :root{--mint-50:#ECFDF5;--mint-100:#D1FAE5;--mint-300:#6EE7B7;--mint-500:#14B8A6;--mint-600:#0D9488;--mint-700:#0F766E;--navy:#0F172A;--navy-soft:#1E293B;--slate-500:#475569;--slate-400:#94A3B8;--paper:#F5F3EF;--brand-gradient:linear-gradient(158deg,#1ADF89 11%,#00B2FF 100%);--info-bg:#EEF7FF;--info-border:#D4E5EA;--success-bg:#EEFFF6;--success-border:#D4EAD8;--warning-bg:#FFF5EC;--warning-border:#FFEDC7;}
+  :root{--mint-50:#ECFDF5;--mint-100:#D1FAE5;--mint-300:#6EE7B7;--mint-500:#14B8A6;--mint-600:#0D9488;--mint-700:#0F766E;--navy:#0F172A;--navy-soft:#1E293B;--slate-500:#475569;--slate-400:#94A3B8;--paper:#F5F3EF;--brand-gradient:linear-gradient(158deg,#1ADF89 11%,#00B2FF 100%);--info-bg:#F0F2F4;--info-border:#E2E5E8;--success-bg:#EFF3EF;--success-border:#DEE3DE;--warning-bg:#F4F1EC;--warning-border:#E6E0D6;}
   html{scroll-behavior:smooth;scroll-padding-top:96px;}
   *{-webkit-tap-highlight-color:transparent;}
   #langToggle > *{pointer-events:none;}
@@ -64,7 +64,7 @@
   .section-alt{background:#EDEAE4;position:relative;isolation:isolate;}
   .big-step{position:relative;background:#FDFCF9;border:1px solid #E4E4E7;border-radius:12px;padding:28px;transition:all 0.3s ease;box-shadow:none;}
   .big-step:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);}
-  .big-step-label{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:8px;background:var(--mint-50);color:var(--mint-700);font-size:11px;font-weight:800;letter-spacing:0.08em;font-family:'Noto Sans',sans-serif;border:1px solid rgba(20,184,166,0.15);}
+  .big-step-label{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:8px;background:var(--mint-50);color:var(--mint-700);font-size:11px;font-weight:800;letter-spacing:0.08em;font-family:'Noto Sans',sans-serif;border:1px solid rgba(20,184,166,0.15);margin-bottom:8px;}
   .gif-showcase{position:relative;border-radius:12px;overflow:hidden;border:1px solid #E4E4E7;background:#F5F3EF;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;transition:all 0.3s ease;cursor:pointer;box-shadow:none;}
   .gif-showcase:hover{border-color:rgba(20,184,166,0.4);box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);}
   .gif-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,0.08);transition:transform 0.2s ease;margin-bottom:14px;}
@@ -121,9 +121,9 @@
   .faq-answer-inner img,.screenshot-mockup{display:block;width:100%;max-width:700px;height:auto;margin-top:12px;border-radius:12px;border:1px solid #E4E4E7;box-shadow:0 2px 8px 0 rgba(0,0,0,0.06);transition:all 0.3s ease;}
   .faq-answer-inner img:hover,.screenshot-mockup:hover{border-color:rgba(20,184,166,0.3);box-shadow:0 4px 12px 0 rgba(0,0,0,0.08);transform:scale(1.005);}
   .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:8px;background:var(--mint-50);color:var(--mint-700);font-size:12px;font-weight:700;border:1px solid rgba(20,184,166,0.2);}
-  .highlight-box{background:var(--success-bg);border:1px solid var(--success-border);border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
-  .info-box{background:var(--info-bg);border:1px solid var(--info-border);border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
-  .warning-box{background:var(--warning-bg);border:1px solid var(--warning-border);border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
+  .highlight-box{background:var(--success-bg);border:1px solid var(--success-border);border-left:3px solid #14B8A6;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
+  .info-box{background:var(--info-bg);border:1px solid var(--info-border);border-left:3px solid #94A3B8;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
+  .warning-box{background:var(--warning-bg);border:1px solid var(--warning-border);border-left:3px solid #D97706;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.75;color:var(--navy-soft);}
   .tip-card{background:#FDFCF9;border:1px solid #E4E4E7;border-radius:12px;padding:28px;transition:all 0.2s ease;position:relative;overflow:hidden;box-shadow:none;}
   .tip-card:hover{transform:translateY(-2px);border-color:rgba(20,184,166,0.3);box-shadow:0 4px 12px 0 rgba(0,0,0,0.06);}
   .tip-icon{width:44px;height:44px;border-radius:8px;background:var(--mint-50);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
@@ -234,7 +234,7 @@
         <div class="info-box mb-8"><div class="flex items-start gap-3"><span class="text-xl flex-shrink-0">&#x1F4A1;</span><p data-i18n="s2.rename"><strong>A familiar name with a new home.</strong> If you've used <strong>Smart Assistant</strong> on Alibaba.com before, you'll feel right at home -- it's been renamed to <strong>Global Seller Agent</strong> inside Accio Work, with even more powerful capabilities.</p></div></div>
 
         <div id="section-2-step1" class="big-step mb-6 scroll-mt-24">
-          <div class="flex items-center gap-2 mb-4"><span class="big-step-label" data-i18n="s2.step1.label">STEP 1</span><h3 class="font-display font-extrabold text-lg text-navy" data-i18n="s2.step1.title">Switch to the official AI agent in the new message and complete the authorization.</h3></div>
+          <div class="mb-4"><span class="big-step-label mb-2" data-i18n="s2.step1.label">STEP 1</span><h3 class="font-display font-extrabold text-lg text-navy leading-snug" data-i18n="s2.step1.title">Switch to the official AI agent in the new message and complete the authorization.</h3></div>
           <p class="text-[15px] text-slate2-500 leading-[1.8] mb-5" data-i18n="s2.step1.body">On the Accio Work home page, click <strong class="text-navy">New Message</strong> &#8594; select <strong class="text-navy">Global Seller Agent</strong>. If you haven't authorized yet, an authorization prompt will appear &#8594; click <strong class="text-navy">"Go to bind"</strong> to be redirected to the authorization page &#8594; log in with your Alibaba.com account to complete authorization. Once authorized, your store data, product catalog, and inquiry records will be connected — the agent now knows your business.</p>
           <div class="gif-showcase has-real-gif mb-5" data-gif-en="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780390136320-58fff343-c282-422b-9cb2-1cc1eeeb5401.gif" data-gif-zh="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780467299853-a4a02f34-1faa-442d-8c6b-7b1a67870883.gif" onclick="playGif(this)">
             <div class="gif-overlay"><div class="gif-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><div class="gif-label" data-i18n="s2.step1.gif">&#8593; Switch agent &amp; authorize walkthrough</div><div class="gif-caption" data-i18n="s2.step1.gifHint">Click to play</div></div>
@@ -248,7 +248,7 @@
         </div>
 
         <div id="section-2-step2" class="big-step mb-6 scroll-mt-24">
-          <div class="flex items-center gap-2 mb-4"><span class="big-step-label" data-i18n="s2.step2.label">STEP 2</span><h3 class="font-display font-extrabold text-lg text-navy" data-i18n="s2.step2.title">Start chatting</h3></div>
+          <div class="mb-4"><span class="big-step-label mb-2" data-i18n="s2.step2.label">STEP 2</span><h3 class="font-display font-extrabold text-lg text-navy leading-snug" data-i18n="s2.step2.title">Start chatting</h3></div>
           <p class="text-[15px] text-slate2-500 leading-[1.8] mb-5" data-i18n="s2.step2.body">Head back to chat and start a conversation with <strong class="text-navy">Global Seller Agent</strong>. Just type what you need in your own words. If you're using Alibaba.com capabilities with a non-official agent, make sure the <strong class="text-navy">Global Seller Agent plugin is turned on</strong> in the toolbar -- the plugin must be active for the agent to access your Alibaba.com data and skills.</p>
           <div class="gif-showcase has-real-gif mb-5" data-gif-en="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780390501175-1f9d4980-3468-4fb0-a1e0-06951e6a9756.gif" data-gif-zh="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780306172671-b0760ad5-7359-46db-a3d2-93ae38668cad.gif" onclick="playGif(this)">
             <div class="gif-overlay"><div class="gif-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><div class="gif-label" data-i18n="s2.step2.gif">&#8593; Chat interface in action</div><div class="gif-caption" data-i18n="s2.step2.gifHint">Click to play</div></div>
@@ -262,7 +262,7 @@
         </div>
 
         <div id="section-2-step3" class="big-step mb-6 scroll-mt-24">
-          <div class="flex items-center gap-2 mb-4"><span class="big-step-label" data-i18n="s2.step3.label">STEP 3</span><h3 class="font-display font-extrabold text-lg text-navy" data-i18n="s2.step3.title">Enable Alibaba.com capabilities in other agents</h3></div>
+          <div class="mb-4"><span class="big-step-label mb-2" data-i18n="s2.step3.label">STEP 3</span><h3 class="font-display font-extrabold text-lg text-navy leading-snug" data-i18n="s2.step3.title">Enable Alibaba.com capabilities in other agents</h3></div>
           <p class="text-[15px] text-slate2-500 leading-[1.8] mb-5" data-i18n="s2.step3.body">The Global Seller Agent plugin is not exclusive to the official agent. Other agents in Accio Work -- including custom-built agents -- may also be bound to this plugin to access Alibaba.com capabilities such as store data queries, product analysis, and buyer inquiry handling.</p>
           <p class="text-[15px] text-slate2-500 leading-[1.8] mb-5" data-i18n="s2.step3.howto"><strong class="text-navy">How to bind:</strong> Go to <strong class="text-navy">Plugins</strong> &#8594; open the Global Seller Agent detail page &#8594; find the <strong class="text-navy">Applied to Agents</strong> section &#8594; click <strong class="text-navy">Manage</strong> to add or remove agents.</p>
           <div class="gif-showcase has-real-gif mb-5" data-gif-en="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780390855590-4c6daf8a-e57d-450d-aa76-5ccdafa10eb6.gif" data-gif-zh="https://cdn.nlark.com/yuque/0/2026/gif/56643120/1780300674944-47e65efd-a4d7-4b78-918a-1792a0251445.gif" onclick="playGif(this)">
